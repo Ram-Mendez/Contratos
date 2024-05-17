@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a routerLink="/contratos-main" class="navbar-brand">Contratos™</a>
+    <div class="col"></div>
+    <div class="d-flex align-items-center justify-content-end">
+      <div class="email-container">
+        <h5>{{ loginService.email }}</h5>
+      </div>
+      <button *ngIf="loginService.isUserLoggedIn"
+              (click)="logOut()"
+              routerLink="/"
+              class="btn btn-danger btn-sm m-2">
+        LOGOUT
+      </button>
+    </div>
+  </div>
+</nav>

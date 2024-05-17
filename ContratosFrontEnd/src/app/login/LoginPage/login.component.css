@@ -1,0 +1,48 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Cambiado de center a flex-start */
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-container h1 {
+  text-align: center;
+  color: #333; /* Cambia el color del texto */
+  font-size: 2em; /* Aumenta el tamaño del texto */
+  font-weight: bold; /* Hace que el texto sea negrita */
+  margin-bottom: 20px; /* Añade un margen inferior para separar el título del formulario */
+}
+
+.login-form {
+  width: 300px;
+  padding: 2em;
+  border-radius: 1em;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.p-float-label {
+  margin-bottom: 1em;
+}
+
+button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+}
+
+.button-margin {
+  margin-top: 20px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Rest of your styles... */
+}
+.input-margin {
+  margin-bottom: 25px;
+}

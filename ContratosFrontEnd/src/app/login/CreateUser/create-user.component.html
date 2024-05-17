@@ -1,0 +1,23 @@
+<p-toast position="top-center"></p-toast>
+
+
+<div class="login-container" >
+  <h1> CREATE ACCOUNT </h1>
+  <form class="login-form" [formGroup]="createUserForm" (ngSubmit)="onCreateAccount()" >
+    <span class="p-float-label input-margin">
+      <input
+        formControlName="email"
+        id="email" type="text" pInputText/>
+      <label for="email">Email</label>
+    </span>
+    <span class="p-float-label">
+      <input id="password"
+             formControlName="password"
+             type="password" pInputText/>
+      <label for="password">Password</label>
+    </span>
+    <a pButton routerLink="/" label="Already have an account?" class="p-button-text"></a>
+    <button pButton type="submit"
+            label="CREATE ACCOUNT" class="p-button-raised p-button-primary button-margin"></button>
+  </form>
+</div>

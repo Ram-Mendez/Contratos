@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Asegura que no haya scroll no deseado */
+}
+
+
+body {
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+button {
+  background-color: #0D47A1; /* Azul oscuro */
+  color: #FFFFFF; /* Blanco */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1565C0; /* Azul un poco más oscuro */
+}
+
+input, textarea {
+  background-color: #FFFFFF; /* Blanco */
+  border: 1px solid #B0BEC5; /* Azul grisáceo */
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  border-color: #0D47A1; /* Azul oscuro */
+  outline: none;
+}
+

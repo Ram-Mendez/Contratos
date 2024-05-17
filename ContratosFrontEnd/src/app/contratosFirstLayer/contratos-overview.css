@@ -1,0 +1,12 @@
+.secondary-content {
+  display: flex;
+  flex-direction: row;
+}
+
+app-sidebar {
+  flex: 0 0 auto;
+}
+
+router-outlet {
+  flex: 1 0 auto;
+}
