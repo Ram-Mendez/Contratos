@@ -8,19 +8,17 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {LoginModule} from "./login/login.module";
 import {ToastModule} from "primeng/toast";
-import {MessageService} from "primeng/api";
+import {ConfirmationService, MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MenubarModule} from "primeng/menubar";
-import { ContratosOverview } from './contratosFirstLayer/contratos-overview';
-import {ContratosModule} from "./contratosFirstLayer/contratos.module";
-import { FooterComponent } from './footerView/footer/footer.component';
+import { FooterComponent } from './headerAndFooter/footerView/footer/footer.component';
+import {HeaderComponent} from "./headerAndFooter/header/header.component";
+import {MainModule} from "./main/main.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContratosOverview,
-    FooterComponent,
-
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,10 +30,12 @@ import { FooterComponent } from './footerView/footer/footer.component';
     ToastModule,
     BrowserAnimationsModule,
     MenubarModule,
-    ContratosModule,
+    MainModule,
+
   ],
-  providers: [MessageService,],
-  exports: [],
+  providers: [MessageService, ConfirmationService],
+    exports: [
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

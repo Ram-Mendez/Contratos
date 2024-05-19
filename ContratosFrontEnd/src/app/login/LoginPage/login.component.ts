@@ -28,12 +28,12 @@ export class LoginComponent {
         if (isValid) {
           this.loginService.setEmail(this.loginForm.value.email as string);
           this.messageService.add({
-            severity: 'info',
+            severity: 'success',
             summary: 'Login Successful',
             detail: 'You have successfully logged in.'
           });
           setTimeout (() => {
-            this.router.navigate(['/contratos-main']);
+            this.router.navigate(['/main']);
           }, 1500);
         } else {
           this.messageService.add({

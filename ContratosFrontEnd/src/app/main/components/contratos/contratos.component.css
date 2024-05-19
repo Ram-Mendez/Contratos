@@ -1,0 +1,20 @@
+button.btn {
+  margin-right: 10px;
+}
+/* Agrega este CSS a tu archivo de estilos */
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.warn-dialog .ui-dialog-content {
+  background-color: #fcf8e3; /* Color de fondo para 'warn' */
+}

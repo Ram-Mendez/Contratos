@@ -1,0 +1,13 @@
+<p-toast position="top-center"></p-toast>
+<button class="btn btn-secondary" routerLink="/main">Go Back</button>
+
+
+<div class="row p-0 m-0">
+  <div class="col-3 container-height" >
+    <p-tree [value]="data" selectionMode="single" (onNodeSelect)="onNodeSelect($event)">
+    </p-tree>
+  </div>
+  <div class="col-6 container-height" >
+    <router-outlet></router-outlet>
+  </div>
+</div>

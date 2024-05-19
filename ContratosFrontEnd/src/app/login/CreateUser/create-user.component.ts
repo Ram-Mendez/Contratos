@@ -25,7 +25,7 @@ export class CreateUserComponent {
       () => {
         if (this.createUserForm.valid) {
           console.log(this.createUserForm.value);
-          this.messageService.add({ severity: 'info', summary: 'Success', detail: "You've created your account" });
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: "You've created your account" });
           setTimeout(() => {
             this.router.navigate(['/login']);
           }, 1500)

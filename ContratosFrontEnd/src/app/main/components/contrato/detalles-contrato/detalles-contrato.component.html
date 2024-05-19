@@ -1,0 +1,26 @@
+
+<div class="text-center">
+  <form [formGroup]="editContractForm" (ngSubmit)="editContract()">
+    <label For="name"><strong>Nombre del contrato</strong></label>
+    <div class="p-field">
+      <input class="form-control text-center" id="name" type="text" pInputText formControlName="name">
+    </div>
+    <label for="creationDate"><strong>Fecha de creación</strong></label>
+    <div class="p-field">
+      <input class="form-control text-center" id="creationDate" type="date" pInputText formControlName="creationDate">
+    </div>
+    <label for="contractingEntity"><strong>Entidad contratante</strong></label>
+    <div class="p-field">
+      <input class="form-control text-center" id="contractingEntity" type="text" pInputText formControlName="contractingEntity">
+    </div>
+    <label for="authorityEntity"><strong>Entidad autorizadora</strong></label>
+    <div class="p-field">
+      <input class="form-control text-center" id="authorityEntity" type="text" pInputText formControlName="authorityEntity">
+      <br>
+      <button class="btn btn-primary m-2">
+        <i class="pi pi-save text-white"></i>
+        Save
+      </button>
+    </div>
+  </form>
+</div>
