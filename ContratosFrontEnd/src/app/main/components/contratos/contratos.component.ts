@@ -74,7 +74,6 @@ export class ContratosComponent implements OnInit {
   onRowSelect(event: any) {
     console.log(event);
     this.isContractSelected = true;
-    this.messageService.add({severity: 'info', summary: 'Contract Selected', detail: event.data.name});
     this.id = event.data.id;
   }
 

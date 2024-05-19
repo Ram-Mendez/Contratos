@@ -1,44 +1,70 @@
-/* Asegura que el html y el body ocupen todo el alto de la ventana */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Define el contenedor principal con flexbox */
 body {
-  display: flex;
-  flex-direction: column;
+  background-color: #e6f7ff;
 }
 
-/* Estilo para el header fijo en la parte superior */
-app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #007bff; /* Cambia esto a tu color deseado */
-  color: #fff;
-  z-index: 1000; /* Asegura que esté sobre otros contenidos */
-}
-
-/* Contenido principal con margen superior para evitar que el contenido se superponga con el header */
-main.content {
-  flex: 1 0 auto;
-  padding-top: 60px; /* Ajusta este valor basado en la altura de tu header */
-  padding-bottom: 60px; /* Ajusta este valor basado en la altura de tu footer */
-  overflow-y: auto; /* Permite el scroll del contenido */
-}
-
-/* Estilo para el footer fijo en la parte inferior */
 .app-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #007bff; /* Cambia esto a tu color deseado */
-  color: #fff;
+  background-color: lightblue;/* Cambia esto a tu color deseado */
+  color: black;
+
   text-align: center;
   padding: 10px 0;
+  height: 40px;
   z-index: 1000; /* Asegura que esté sobre otros contenidos */
+}
+
+
+.p-menubar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: lightblue; /* Custom background color */
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px; /* Adjust height as necessary */
+  padding: 0 20px; /* Space around elements */
+  box-sizing: border-box; /* Ensure padding is included in total height */
+}
+
+.menu-start, .menu-end {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.p-menuitem-link {
+  color: black; /* Link color */
+  padding: 0 10px; /* Space around links */
+  line-height: 50px; /* Ensure links are vertically centered */
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+}
+
+.p-menuitem-link i {
+  margin-right: 8px; /* Space between icon and label */
+}
+
+.p-menuitem-link:hover {
+}
+
+.p-menubar .p-menubar-end .p-button {
+  background-color: #f44336; /* Logout button color */
+  border: none;
+  height: 30px; /* Adjust button height as necessary */
+  line-height: 30px; /* Ensure button text is vertically centered */
+}
+
+.p-menubar .p-menubar-end .p-button:hover {
+  background-color: #d32f2f; /* Hover effect for logout button */
 }

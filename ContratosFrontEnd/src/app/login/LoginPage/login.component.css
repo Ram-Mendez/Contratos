@@ -4,7 +4,6 @@
   justify-content: flex-start; /* Cambiado de center a flex-start */
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
 .login-container h1 {
@@ -19,7 +18,7 @@
   width: 300px;
   padding: 2em;
   border-radius: 1em;
-  background-color: #ffffff;
+  background-color: lightblue;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 

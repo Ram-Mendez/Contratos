@@ -14,11 +14,20 @@ import {MenubarModule} from "primeng/menubar";
 import { FooterComponent } from './headerAndFooter/footerView/footer/footer.component';
 import {HeaderComponent} from "./headerAndFooter/header/header.component";
 import {MainModule} from "./main/main.module";
+import { ContactPageComponent } from './headerAndFooter/header/components/contactUs/contact-page/contact-page.component';
+import {NgOptimizedImage} from "@angular/common";
+import {ButtonModule} from "primeng/button";
+import {InputTextareaModule} from "primeng/inputtextarea";
+import {ChipsModule} from "primeng/chips";
+import {GestionesComponent} from "./headerAndFooter/header/components/gestiones/gestiones.component";
+import {TreeModule} from "primeng/tree";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    ContactPageComponent,
+    GestionesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +40,12 @@ import {MainModule} from "./main/main.module";
     BrowserAnimationsModule,
     MenubarModule,
     MainModule,
+    NgOptimizedImage,
+    ButtonModule,
+    InputTextareaModule,
+    ReactiveFormsModule,
+    ChipsModule,
+    TreeModule,
 
   ],
   providers: [MessageService, ConfirmationService],
