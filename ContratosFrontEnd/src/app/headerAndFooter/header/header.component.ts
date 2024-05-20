@@ -15,26 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.items = [
-    //   {
-    //     label: 'Configuration',
-    //     icon: 'pi pi-cog',
-    //     items: [
-    //       {
-    //         label: 'Gestiones',
-    //         icon: 'pi pi-bolt',
-    //         route: '/gestiones'
-    //       },
-    //       {
-    //         label: 'Contratos',
-    //         icon: 'pi pi-bolt',
-    //         route: '/main'
-    //       },
-    //
-    //     ]
-    //   },
-    //
-    // ]
+
     this.items = [
       {
         label: 'Home',
@@ -46,17 +27,17 @@ export class HeaderComponent implements OnInit {
         icon: 'pi pi-cog',
         items: [
           {
-            label: 'Contratos',
-            icon: 'pi pi-bolt',
-            route: '/main'
-          },
-          {
             label: 'Gestiones',
             icon: 'pi pi-server',
             route : '/gestiones'
           },
 
         ]
+      },
+      {
+        label: 'About Us',
+        icon: 'pi pi-home',
+        route: '/about-page'
       },
       {
         label: 'Contact Us',

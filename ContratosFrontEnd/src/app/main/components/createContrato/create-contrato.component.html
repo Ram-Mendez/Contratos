@@ -1,6 +1,6 @@
 <p-toast position="top-center"></p-toast>
 
-<button class="btn btn-secondary" routerLink="/main">Go Back</button>
+<button pButton type="button" label="Go Back" routerLink="/main"></button>
 
 <div class="container">
   <div class="row">
@@ -12,24 +12,21 @@
       <form [formGroup]="createContractForm" (ngSubmit)="createContract()" class="text-center">
         <label for="name"><strong>Nombre del contrato</strong></label>
         <div class="p-field">
-          <input class="form-control text-center" id="name" type="text" pInputText formControlName="name">
+          <input pInputText id="name" type="text" formControlName="name" class="form-control text-center">
         </div>
         <label for="creationDate"><strong>Fecha de creación</strong></label>
         <div class="p-field">
-          <input  class="form-control text-center" id="creationDate" type="date" pInputText formControlName="creationDate">
+          <input pInputText id="creationDate" type="date" formControlName="creationDate" class="form-control text-center">
         </div>
         <label for="contractingEntity"><strong>Entidad contratante</strong></label>
         <div class="p-field">
-          <input  class="form-control text-center" id="contractingEntity" type="text" pInputText formControlName="contractingEntity">
+          <input pInputText id="contractingEntity" type="text" formControlName="contractingEntity" class="form-control text-center">
         </div>
         <label for="authorityEntity"><strong>Entidad autorizadora</strong></label>
         <div class="p-field">
-          <input  class="form-control text-center" id="authorityEntity" type="text" pInputText formControlName="authorityEntity">
+          <input pInputText id="authorityEntity" type="text" formControlName="authorityEntity" class="form-control text-center">
           <br>
-          <button class="btn btn-primary m-2" [disabled]="createContractForm.invalid" >
-            <i class="pi pi-save text-white"></i>
-            Save
-          </button>
+          <button pButton type="submit" label="Save" [disabled]="createContractForm.invalid" class="btn btn-primary m-2"></button>
         </div>
       </form>
     </div>

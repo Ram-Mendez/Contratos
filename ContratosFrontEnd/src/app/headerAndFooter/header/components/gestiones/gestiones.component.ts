@@ -11,15 +11,33 @@ export class GestionesComponent {
   }
 
   data: TreeNode[] = [
-    // {label: 'Contrato',selectable: false, children: [  ]},
     {
-      label: 'Entidad Contratante', data: {}
+      label: 'Contratos', selectable: false,
+      children: [
+        {label: 'Crear Contrato', data: {path: 'gestiones/crear-contrato'}},
+        {label: 'Editar Contratos', data: {path: 'gestiones/contratos'}},
+      ]
+    },
+
+    {
+      label: 'Entidad Contratante', selectable: false,
+      children: [
+        {label: 'Crear Entidad', data: {}},
+        {label: 'Listar Entidad', data: {path: 'gestiones/contractors'}},
+      ]
+    },
+    {
+      label: 'Autoridades', selectable: false,
+      children: [
+        {label: 'Crear Autoridad', data: {}},
+        {label: 'Listar Autoridades', data: {}},
+      ]
     },
   ];
 
 
   onNodeSelect(event: any) {
     const currentRoutePath = this.route.snapshot.url.map(segment => segment.path);
-    this.router.navigate([...currentRoutePath, event.node.data.path]);
+    this.router.navigate([event.node.data.path]);
   }
 }

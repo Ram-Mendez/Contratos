@@ -11,7 +11,6 @@ import {ContratosComponent} from "./components/contratos/contratos.component";
 import { CreateContratoComponent } from './components/createContrato/create-contrato.component';
 import {ChipsModule} from "primeng/chips";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AppModule} from "../app.module";
 import {FooterComponent} from "../headerAndFooter/footerView/footer/footer.component";
 import {MessageService} from "primeng/api";
 import {ToastModule} from "primeng/toast";
@@ -19,6 +18,9 @@ import {ButtonModule} from "primeng/button";
 import { DetallesContratoComponent } from './components/contrato/detalles-contrato/detalles-contrato.component';
 import {TreeModule} from "primeng/tree";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {CalendarModule} from "primeng/calendar";
+import { EntidadAutoridadComponent } from './components/entidadAutoridad/components/entidad-autoridad/entidad-autoridad.component';
+import { EntidadContratanteComponent } from './components/entidadContratante/components/entidad-contratante/entidad-contratante.component';
 
 
 
@@ -29,7 +31,9 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
         ContratosComponent,
         CreateContratoComponent,
         FooterComponent,
-        DetallesContratoComponent
+        DetallesContratoComponent,
+        EntidadAutoridadComponent,
+        EntidadContratanteComponent,
 
     ],
   imports: [
@@ -45,6 +49,7 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
     TreeModule,
     FormsModule,
     ConfirmDialogModule,
+    CalendarModule,
   ],
     providers: [MessageService],
     exports: [

@@ -8,6 +8,11 @@ import {CreateContratoComponent} from "./main/components/createContrato/create-c
 import {DetallesContratoComponent} from "./main/components/contrato/detalles-contrato/detalles-contrato.component";
 import {GestionesComponent} from "./headerAndFooter/header/components/gestiones/gestiones.component";
 import {ContactPageComponent} from "./headerAndFooter/header/components/contactUs/contact-page/contact-page.component";
+import {
+  EntidadContratanteComponent
+} from "./main/components/entidadContratante/components/entidad-contratante/entidad-contratante.component";
+import {ContratosComponent} from "./main/components/contratos/contratos.component";
+import {AboutUsComponent} from "./headerAndFooter/header/components/about-us/about-us.component";
 
 const routes: Routes = [
 
@@ -21,10 +26,30 @@ const routes: Routes = [
     path: 'contact-page', component: ContactPageComponent
   },
   {
+    path: 'about-page', component: AboutUsComponent
+  },
+  {
     path: 'main', component: MainPageComponent,
   },
   {
+    path: 'contratos', component: ContratosComponent,
+  },
+  {
     path: 'gestiones', component: GestionesComponent,
+    children: [{
+      path: 'crear-contrato', component: CreateContratoComponent
+    },
+      {
+        path: 'contratos', component: ContratosComponent,
+
+      },
+      {
+        path: 'contractors', component: EntidadContratanteComponent,
+        children: [
+          {path: 'createContractor', component: EntidadContratanteComponent}
+        ]
+      }
+    ]
   },
   {
     path: 'contrato/:id', component: ContratoComponent,

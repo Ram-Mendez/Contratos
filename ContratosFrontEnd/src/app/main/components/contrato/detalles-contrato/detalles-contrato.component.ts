@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Contrato} from "../../../services/models/contrato";
+import {Contrato} from "../../../services/contrato";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ContratoService} from "../../../services/contrato.service";
 import {FormBuilder, Validators} from "@angular/forms";

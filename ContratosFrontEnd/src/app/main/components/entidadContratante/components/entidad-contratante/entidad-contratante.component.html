@@ -1,0 +1,46 @@
+<button class="btn btn-secondary" routerLink="/login"> To Login</button>
+
+
+<div class="d-flex justify-content-center align-items-center m-2">
+  <button
+    routerLink="/create-contrato"
+    class="btn btn-primary m-2"><span class="pi pi-plus"></span> Add
+  </button>
+  <button
+    (click)="editContratante()"
+    [disabled]="!isContractSelected"
+    class="btn btn-info m-2"><span class="pi pi-pencil"></span> Edit
+  </button>
+  <button
+    (click)="deleteContratante()"
+    [disabled]="!isContractSelected"
+    class="btn btn-danger m-2"><span class="pi pi-trash"></span> Delete
+  </button>
+</div>
+
+
+
+<div class="card">
+  <p-table [value]="contratantes" selectionMode="single"
+           (onRowSelect)="onRowSelect($event)"
+           (onRowUnselect)="onRowUnselect($event)">
+  >
+    <ng-template pTemplate="header" class="text-center">
+      <tr>
+        <th pSortableColumn="id"> Id <p-sortIcon field="id"></p-sortIcon></th>
+        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-contratante>
+      <tr [pSelectableRow]="contratante">
+        <td>{{ contratante.id }}</td>
+        <td>{{ contratante.name }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+
+<p-toast position="top-center"></p-toast>
+<p-confirmDialog></p-confirmDialog>

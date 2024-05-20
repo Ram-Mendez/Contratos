@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {ContratoService} from "../../services/contrato.service";
-import {Contrato} from "../../services/models/contrato";
+import {Contrato} from "../../services/contrato";
 import {Router} from "@angular/router";
 import {MessageService} from "primeng/api";
 

@@ -1,10 +1,10 @@
 <button class="btn btn-secondary" routerLink="/login"> To Login</button>
 
 <div class="d-flex justify-content-center align-items-center m-2">
-  <button
-    routerLink="/create-contrato"
-    class="btn btn-primary m-2"><span class="pi pi-plus"></span> Add
-  </button>
+<!--  <button-->
+<!--    routerLink="/create-contrato"-->
+<!--    class="btn btn-primary m-2"><span class="pi pi-plus"></span> Add-->
+<!--  </button>-->
   <button
     (click)="editContrato()"
     [disabled]="!isContractSelected"
@@ -38,7 +38,8 @@
       <tr [pSelectableRow]="contrato">
         <td>{{ contrato.id }}</td>
         <td>{{ contrato.name }}</td>
-        <td>{{ contrato.creationDate | date:'medium' }}</td>        <td>{{ contrato.contractingEntity.name }}</td>
+        <td>{{ contrato.creationDate | date:'medium' }}</td>
+        <td>{{ contrato.contractingEntity.name }}</td>
         <td>{{ contrato.authorityEntity.name }}</td>
       </tr>
     </ng-template>

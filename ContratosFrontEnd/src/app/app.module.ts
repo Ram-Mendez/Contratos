@@ -21,13 +21,15 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {ChipsModule} from "primeng/chips";
 import {GestionesComponent} from "./headerAndFooter/header/components/gestiones/gestiones.component";
 import {TreeModule} from "primeng/tree";
+import { AboutUsComponent } from './headerAndFooter/header/components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ContactPageComponent,
-    GestionesComponent
+    GestionesComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

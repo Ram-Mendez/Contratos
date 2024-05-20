@@ -1,55 +1,52 @@
 import {Component, OnInit} from '@angular/core';
-import {ContratoService} from "../../services/contrato.service";
+import {EntidadContratanteService} from "../../service/entidad-contratante.service";
+import {Contratante} from "../../service/contratante";
 import {ConfirmationService, MessageService} from "primeng/api";
-import {Contrato} from "../../services/contrato";
-import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-contratos',
-  templateUrl: './contratos.component.html',
-  styleUrl: './contratos.component.css'
+  templateUrl: './entidad-contratante.component.html',
+  styleUrl: './entidad-contratante.component.css'
 })
-export class ContratosComponent implements OnInit {
-  contratos: Contrato[] = [];
-  contrato!: Contrato;
-  id: any;
+export class EntidadContratanteComponent implements OnInit {
+  contratantes: Contratante[] = [];
+  id : any
   isContractSelected: boolean = false;
-  name : any;
 
-  constructor(private contratosService: ContratoService,
+
+  constructor(private contratanteService: EntidadContratanteService,
               private messageService: MessageService,
-              private router: Router,
-              private confirmationService:  ConfirmationService) {
+              private confirmationService: ConfirmationService) {
   }
 
   ngOnInit() {
-    this.getContratos()
+
   }
 
-  getContratos() {
-    this.contratosService.getContratos().subscribe(
+  getEntidadesContratantes() {
+    this.contratanteService.getEntidadesContratantes().subscribe(
       data => {
-        console.log(data);
-        this.contratos = data;
+        this.contratantes = data;
+                                                               //filtrar por nombres unicos.
+
+        console.log(this.contratantes);
       }
     );
   }
+  createContratante() {
 
-  editContrato() {
-    this.contratosService.getContratoById(this.id).subscribe(
-      () => {
-        this.router.navigate(['/contrato', this.id]);
-      }
-    );
   }
 
-  deleteContrato() {
+  editContratante() {
+
+  }
+
+  deleteContratante() {
     this.confirmationService.confirm({
       message: 'Are you sure you want to delete this contract? This action is permanent.',
       header: 'Delete Contract',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.contratosService.deleteContrato(this.id).subscribe(
+        this.contratanteService.deleteEntidadContratante(this.id).subscribe(
           () => {
             this.messageService.add({
               severity: 'success',
@@ -57,7 +54,7 @@ export class ContratosComponent implements OnInit {
               detail: 'Contract deleted successfully.'
             })
             console.log('Contrato eliminado')
-            this.getContratos();
+            this.getEntidadesContratantes();
           }
         );
       },
@@ -65,7 +62,6 @@ export class ContratosComponent implements OnInit {
         // Any action you want to do on reject
       },
     });
-
 
   }
 
@@ -78,7 +74,4 @@ export class ContratosComponent implements OnInit {
   onRowUnselect(event: any) {
     this.isContractSelected = false;
   }
-
-
 }
-
