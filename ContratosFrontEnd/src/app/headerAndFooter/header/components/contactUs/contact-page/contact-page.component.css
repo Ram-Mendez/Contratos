@@ -12,7 +12,6 @@ html, body {
   align-items: flex-start;
   justify-content: center;
   height: 90vh; /* Full viewport height */
-  background-color: #e6f7ff; /* Light blue background */
   padding: 1rem; /* Reduced padding */
   box-sizing: border-box;
 }
@@ -59,15 +58,9 @@ html, body {
   left: 0.5rem; /* Adjusted label position */
 }
 
-button {
-  width: 100%;
-  background-color: #00aaff;
-  border: none;
-  padding: 0.5rem 1rem; /* Reduced padding */
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
+.button-container {
+  display: flex;
+  justify-content: center;
 }
 
 button:hover {

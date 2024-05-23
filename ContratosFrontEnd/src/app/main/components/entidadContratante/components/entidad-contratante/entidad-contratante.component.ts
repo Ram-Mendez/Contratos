@@ -1,77 +1,65 @@
-import {Component, OnInit} from '@angular/core';
-import {EntidadContratanteService} from "../../service/entidad-contratante.service";
-import {Contratante} from "../../service/contratante";
-import {ConfirmationService, MessageService} from "primeng/api";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+import { MessageService } from "primeng/api";
+import { EntidadContratanteService } from "../../service/entidad-contratante.service";
+import { Contratante } from "../../service/contratante";
 
 @Component({
   templateUrl: './entidad-contratante.component.html',
-  styleUrl: './entidad-contratante.component.css'
+  styleUrls: ['./entidad-contratante.component.css']
 })
-export class EntidadContratanteComponent implements OnInit {
-  contratantes: Contratante[] = [];
-  id : any
-  isContractSelected: boolean = false;
+export class EntidadContratanteComponent implements OnInit, OnDestroy {
 
+  contratante!: Contratante;
+  id: any;
 
-  constructor(private contratanteService: EntidadContratanteService,
-              private messageService: MessageService,
-              private confirmationService: ConfirmationService) {
+  contratanteForm = this.fb.group({
+    name: ['', [Validators.required, Validators.nullValidator]],
+  });
+
+  constructor(private contratanteService: EntidadContratanteService, private route: ActivatedRoute,
+              private fb: FormBuilder, private router: Router, private messageService: MessageService) {
   }
 
   ngOnInit() {
-
-  }
-
-  getEntidadesContratantes() {
-    this.contratanteService.getEntidadesContratantes().subscribe(
-      data => {
-        this.contratantes = data;
-                                                               //filtrar por nombres unicos.
-
-        console.log(this.contratantes);
-      }
-    );
-  }
-  createContratante() {
-
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.contratanteService.getEntidadContratanteById(this.id).subscribe(contratante => {
+        console.log(contratante);
+        this.contratante = contratante;
+        if (this.contratante) {
+          this.contratanteForm.patchValue({
+            name: this.contratante.name,
+          });
+        }
+      });
+    });
   }
 
   editContratante() {
+    const updatedContratante: any = {
+      ...this.contratanteForm.value,
+      id: this.id
+    };
 
+    this.contratanteService.editEntidadContratante(this.id, updatedContratante).subscribe(
+      (response) => {
+        console.log({response});
+        console.log("Contratante actualizado.");
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Saving...Updating Contractor',
+          detail: 'Contractor updated successfully.'
+        });
+        setTimeout(() => {
+          this.router.navigate(['/gestiones/contractors']);
+        }, 1500);
+      }
+    );
   }
 
-  deleteContratante() {
-    this.confirmationService.confirm({
-      message: 'Are you sure you want to delete this contract? This action is permanent.',
-      header: 'Delete Contract',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.contratanteService.deleteEntidadContratante(this.id).subscribe(
-          () => {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Deleting Contract...',
-              detail: 'Contract deleted successfully.'
-            })
-            console.log('Contrato eliminado')
-            this.getEntidadesContratantes();
-          }
-        );
-      },
-      reject: () => {
-        // Any action you want to do on reject
-      },
-    });
-
-  }
-
-  onRowSelect(event: any) {
-    console.log(event);
-    this.isContractSelected = true;
-    this.id = event.data.id;
-  }
-
-  onRowUnselect(event: any) {
-    this.isContractSelected = false;
+  ngOnDestroy() {
+    // Add any necessary cleanup code here
   }
 }

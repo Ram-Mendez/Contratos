@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center align-items-center ">
+  <p-button
+    (click)="editAutoridad()"
+    [disabled]="!isAutoridadSelected"
+    severity="info"
+    class="m-2"> Edit &nbsp; <span class="pi pi-pencil"></span>
+  </p-button>
+  <p-button
+    (click)="deleteEntidadAutoridad()"
+    [disabled]="!isAutoridadSelected"
+    severity="danger"
+  > Delete &nbsp; <span class="pi pi-trash"> </span>
+  </p-button>
+</div>
+
+<div class="card">
+  <p-toast position="top-center"></p-toast>
+  <p-table
+    [value]="autoridades"
+    selectionMode="single"
+    (onRowSelect)="onRowSelect($event)"
+    (onRowUnselect)="onRowUnselect($event)">
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="id"> Id <p-sortIcon field="id"></p-sortIcon></th>
+        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+        <!-- Añade aquí las columnas adicionales que necesites -->
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-autoridad>
+      <tr [pSelectableRow]="autoridad">
+        <td>{{ autoridad.id }}</td>
+        <td>{{ autoridad.name }}</td>
+        <!-- Añade aquí las celdas adicionales que necesites -->
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-confirmDialog></p-confirmDialog>

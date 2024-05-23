@@ -1,5 +1,5 @@
-import {Contratante} from "../components/entidadContratante/service/contratante";
-import {Autoridad} from "../components/entidadAutoridad/service/autoridad";
+import {Contratante} from "../../entidadContratante/service/contratante";
+import {Autoridad} from "../../entidadAutoridad/service/autoridad";
 
 export class Contrato {
   constructor(id: number, nombre: string, fechaCreacion: Date, entidadContratante: Contratante, entidadAutoridad: Autoridad) {

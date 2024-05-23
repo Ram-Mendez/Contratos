@@ -12,7 +12,6 @@ html, body {
   align-items: flex-start;
   justify-content: center;
   height: 90vh; /* Full viewport height */
-  background-color: #e6f7ff; /* Light blue background */
   padding: 1rem; /* Reduced padding */
   box-sizing: border-box;
 }

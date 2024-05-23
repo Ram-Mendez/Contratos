@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ContratoService} from "../../services/contrato.service";
+import {ContratoService} from "../service/contrato.service";
 import {ConfirmationService, MessageService} from "primeng/api";
-import {Contrato} from "../../services/contrato";
+import {Contrato} from "../service/contrato";
 import {Router} from "@angular/router";
 
 @Component({
@@ -38,7 +38,7 @@ export class ContratosComponent implements OnInit {
   editContrato() {
     this.contratosService.getContratoById(this.id).subscribe(
       () => {
-        this.router.navigate(['/contrato', this.id]);
+        this.router.navigate(['/gestiones/contrato', this.id]);
       }
     );
   }

@@ -15,5 +15,18 @@ export class EntidadAutoridadService {
   getEntidadesAutoridades(): Observable<Autoridad[]> {
     return this.http.get<Autoridad[]>(this.url);
   }
+  getEntidadAutoridadById(id: number): Observable<Autoridad> {
+    return this.http.get<Autoridad>(this.url + '/' + id);
+  }
+  createEntidadAutoridad(autoridad: Autoridad): Observable<Autoridad> {
+    return this.http.post<Autoridad>(this.url, autoridad);
+  }
+  editEntidadAutoridad(id: number, autoridad: Autoridad): Observable<Autoridad> {
+    return this.http.put<Autoridad>(this.url + '/' + id, autoridad);
+
+  }
+  deleteEntidadAutoridad(id: number): Observable<Autoridad> {
+    return this.http.delete<Autoridad>(this.url + '/' + id);
+  }
 
 }

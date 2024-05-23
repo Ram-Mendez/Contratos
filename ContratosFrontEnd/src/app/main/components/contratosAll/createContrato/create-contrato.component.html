@@ -1,13 +1,9 @@
 <p-toast position="top-center"></p-toast>
 
-<button pButton type="button" label="Go Back" routerLink="/main"></button>
 
 <div class="container">
   <div class="row">
-    <div class="col-3">
-      <!-- Columna izquierda vacía -->
-    </div>
-    <div class="col-6">
+    <div class="col m-4">
       <!-- Formulario en la columna del medio -->
       <form [formGroup]="createContractForm" (ngSubmit)="createContract()" class="text-center">
         <label for="name"><strong>Nombre del contrato</strong></label>
@@ -20,18 +16,23 @@
         </div>
         <label for="contractingEntity"><strong>Entidad contratante</strong></label>
         <div class="p-field">
-          <input pInputText id="contractingEntity" type="text" formControlName="contractingEntity" class="form-control text-center">
+          <select pInputText id="contractingEntity" formControlName="contractingEntity" class="form-control text-center">
+            <option value="" disabled selected hidden>Selecciona entidad contratante</option>
+            <option *ngFor="let contratante of contratantes">{{ contratante.id }}</option>
+          </select>
         </div>
         <label for="authorityEntity"><strong>Entidad autorizadora</strong></label>
         <div class="p-field">
-          <input pInputText id="authorityEntity" type="text" formControlName="authorityEntity" class="form-control text-center">
+          <select pInputText id="authorityEntity" type="text" formControlName="authorityEntity" class="form-control text-center">
+            <option value="" disabled selected hidden>Selecciona entidad autoridad</option>
+            <option *ngFor="let autoridad of autoridades">{{ autoridad.id }}</option>
+          </select>
           <br>
-          <button pButton type="submit" label="Save" [disabled]="createContractForm.invalid" class="btn btn-primary m-2"></button>
+          <p-button
+            severity="info"
+            type="submit"  [disabled]="createContractForm.invalid" > Save &nbsp; <span class="pi pi-save"></span></p-button>
         </div>
       </form>
-    </div>
-    <div class="col-3">
-      <!-- Columna derecha vacía -->
     </div>
   </div>
 </div>

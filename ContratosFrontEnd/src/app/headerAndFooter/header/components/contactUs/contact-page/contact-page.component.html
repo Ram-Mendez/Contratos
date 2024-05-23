@@ -28,11 +28,16 @@
           <label for="message"><i class="pi pi-comment"></i> Message</label>
         </span>
       </div>
-      <button
-        (click)="SendMessage()"
-        pButton type="button" label="Send Message"></button>
+      <div class="button-container">
+        <p-button
+          (click)="SendMessage()"
+          type="button"> Send Message &nbsp; <span class="pi pi-send"></span>
+        </p-button>
+      </div>
     </div>
     <img src="./assets/logo.png" alt="" class="logo">
   </div>
 </div>
 </form>
+
+<p-toast position="top-center"></p-toast>

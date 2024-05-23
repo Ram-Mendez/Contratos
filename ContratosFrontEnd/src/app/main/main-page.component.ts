@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ContratoService} from "./services/contrato.service";
+import {ContratoService} from "./components/contratosAll/service/contrato.service";
 
 @Component({
   selector: 'app-main-page',

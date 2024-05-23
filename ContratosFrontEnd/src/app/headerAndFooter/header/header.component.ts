@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
       {
         label: 'Home',
         icon: 'pi pi-home',
-        route: '/main'
+        route: '/home'
       },
       {
         label: 'Configuration',
@@ -36,11 +36,11 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'About Us',
-        icon: 'pi pi-home',
+        icon: 'pi pi-users',
         route: '/about-page'
       },
       {
-        label: 'Contact Us',
+        label: 'Support',
         icon: 'pi pi-envelope',
         route: '/contact-page'
       }

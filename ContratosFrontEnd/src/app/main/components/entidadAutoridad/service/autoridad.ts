@@ -1,9 +1,9 @@
 export class Autoridad {
   id: number;
-  nombre: string;
+  name: string;
 
-  constructor(id: number, nombre: string) {
+  constructor(id: number, name: string) {
     this.id = id;
-    this.nombre = nombre;
+    this.name = name;
   }
 }

@@ -6,11 +6,11 @@
     <span class="p-float-label input-margin">
       <input
         id="email" type="text" pInputText formControlName="email" name="email"/>
-      <label for="email">Email</label>
+      <label for="email"> <i class="pi pi-envelope"></i> Email</label>
     </span>
     <span class="p-float-label input-margin">
       <input id="password" type="password" pInputText formControlName="password" name="password"/>
-      <label for="password">Password</label>
+      <label for="password"><i class="pi pi-key"></i> Password</label>
     </span>
     <a pButton routerLink="/register" label="Don't have an account?" class="p-button-text"></a>
     <button pButton type="submit" [disabled]="loginForm.invalid" label="LOGIN" class="p-button-raised p-button-primary button-margin"></button>

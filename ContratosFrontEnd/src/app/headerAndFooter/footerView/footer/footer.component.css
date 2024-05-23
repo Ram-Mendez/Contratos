@@ -1,0 +1,22 @@
+.footer {
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: lightblue;
+  padding: 10px 0;
+  border-top: 1px solid #e7e7e7;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Ajusta este valor según tus necesidades */
+  margin: auto; /* Centra el contenedor */
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

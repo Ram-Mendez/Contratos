@@ -14,23 +14,23 @@ export class GestionesComponent {
     {
       label: 'Contratos', selectable: false,
       children: [
-        {label: 'Crear Contrato', data: {path: 'gestiones/crear-contrato'}},
-        {label: 'Editar Contratos', data: {path: 'gestiones/contratos'}},
+        {label: 'Crear Contrato', data: {path: 'gestiones/create-contract'}},
+        {label: 'Editar Contratos', data: {path: 'gestiones/contracts'}},
       ]
     },
 
     {
       label: 'Entidad Contratante', selectable: false,
       children: [
-        {label: 'Crear Entidad', data: {}},
+        {label: 'Crear Entidad', data: {path: 'gestiones/create-contractor'}},
         {label: 'Listar Entidad', data: {path: 'gestiones/contractors'}},
       ]
     },
     {
       label: 'Autoridades', selectable: false,
       children: [
-        {label: 'Crear Autoridad', data: {}},
-        {label: 'Listar Autoridades', data: {}},
+        {label: 'Crear Autoridad', data: {path: 'gestiones/create-authority'}},
+        {label: 'Listar Autoridades', data: {path: 'gestiones/authorities'}},
       ]
     },
   ];

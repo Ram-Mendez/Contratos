@@ -33,7 +33,7 @@ export class LoginComponent {
             detail: 'You have successfully logged in.'
           });
           setTimeout (() => {
-            this.router.navigate(['/main']);
+            this.router.navigate(['/home']);
           }, 1500);
         } else {
           this.messageService.add({

@@ -1,20 +1,17 @@
-<button class="btn btn-secondary" routerLink="/login"> To Login</button>
 
-<div class="d-flex justify-content-center align-items-center m-2">
-<!--  <button-->
-<!--    routerLink="/create-contrato"-->
-<!--    class="btn btn-primary m-2"><span class="pi pi-plus"></span> Add-->
-<!--  </button>-->
-  <button
+<div class="d-flex justify-content-center align-items-center ">
+  <p-button
     (click)="editContrato()"
     [disabled]="!isContractSelected"
-    class="btn btn-info m-2"><span class="pi pi-pencil"></span> Edit
-  </button>
-  <button
+    severity="info"
+    class="m-2"> Edit &nbsp; <span class="pi pi-pencil"></span>
+  </p-button>
+  <p-button
     (click)="deleteContrato()"
     [disabled]="!isContractSelected"
-    class="btn btn-danger m-2"><span class="pi pi-trash"></span> Delete
-  </button>
+    severity="danger"
+    > Delete &nbsp; <span class="pi pi-trash"> </span>
+  </p-button>
 </div>
 
 <div class="card">

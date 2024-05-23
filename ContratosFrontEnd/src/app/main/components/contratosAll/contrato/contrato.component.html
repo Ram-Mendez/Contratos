@@ -1,0 +1,40 @@
+<p-toast position="top-center"></p-toast>
+
+<div class="container">
+  <div class="row">
+    <div class="col m-4">
+      <!-- Formulario en la columna del medio -->
+      <form [formGroup]="editContractForm" (ngSubmit)="editContract()" class="text-center">
+        <label for="name"><strong>Nombre del contrato</strong></label>
+        <div class="p-field">
+          <input pInputText id="name" type="text" formControlName="name" class="form-control text-center">
+        </div>
+        <label for="creationDate"><strong>Fecha de creación</strong></label>
+        <div class="p-field">
+          <input pInputText id="creationDate" type="date" formControlName="creationDate"
+                 class="form-control text-center">
+        </div>
+        <label><strong>Entidad contratante</strong></label>
+        <select
+          formControlName="contractingEntity"
+          class="form-control text-center">
+          <option *ngFor="let contratante of contratantes" [value]="contratante.id">
+            {{ contratante.name }}
+          </option>
+        </select>
+        <label><strong>Entidad autorizadora</strong></label>
+        <select
+          formControlName="authorityEntity"
+          class="form-control text-center">
+          <option *ngFor="let autoridad of autoridades" [value]="autoridad.id">
+            {{ autoridad.name }}
+          </option>
+        </select>
+          <br>
+          <p-button
+            severity="info"
+            type="submit" [disabled]="editContractForm.invalid"> Save &nbsp; <span class="pi pi-save"></span></p-button>
+      </form>
+    </div>
+  </div>
+</div>

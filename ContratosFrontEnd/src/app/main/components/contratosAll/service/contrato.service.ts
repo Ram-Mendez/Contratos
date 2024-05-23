@@ -25,7 +25,7 @@ export class ContratoService {
     return this.http.post<Contrato>(this.urlContratos, contrato);
   }
 
-  updateContrato(id: number, contrato: Contrato): Observable<Contrato> {
+  editContrato(id: number, contrato: Contrato): Observable<Contrato> {
     return this.http.put<Contrato>(this.urlContratos + '/' + id, contrato);
 
   }

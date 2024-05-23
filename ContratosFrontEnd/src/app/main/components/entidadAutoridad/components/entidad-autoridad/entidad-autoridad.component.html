@@ -1,1 +1,18 @@
-<p>entidad-autoridad works!</p>
+<p-toast position="top-center"></p-toast>
+
+<div class="container">
+  <div class="row">
+    <div class="col m-4">
+      <form [formGroup]="autoridadForm" (ngSubmit)="editAutoridad()" class="text-center">
+        <label for="name"><strong>Nombre de la autoridad</strong></label>
+        <div class="p-field">
+          <input pInputText id="name" type="text" formControlName="name" class="form-control text-center">
+        </div>
+        <br>
+        <p-button
+          severity="info"
+          type="submit" [disabled]="autoridadForm.invalid"> Save &nbsp; <span class="pi pi-save"></span></p-button>
+      </form>
+    </div>
+  </div>
+</div>

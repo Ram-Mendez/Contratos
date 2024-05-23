@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {ContactUsService} from "../service/contact-us.service";
+import {MessageService} from "primeng/api";
 
 @Component({
   templateUrl: './contact-page.component.html',
@@ -8,7 +9,8 @@ import {ContactUsService} from "../service/contact-us.service";
 })
 export class ContactPageComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private contactUsService : ContactUsService) {
+  constructor(private fb: FormBuilder, private contactUsService : ContactUsService,
+              private messaeService: MessageService) {
   }
 
   contactForm = this.fb.group({
@@ -22,6 +24,7 @@ export class ContactPageComponent implements OnInit {
 
   SendMessage() {
     this.contactUsService.sendContactForm(this.contactForm.value).subscribe( () => {
+      this.messaeService.add({severity: 'success', summary: 'Success', detail: 'Message sent successfully'});
       console.log('Message sent');
     })
   }

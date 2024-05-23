@@ -17,12 +17,18 @@ export class EntidadContratanteService {
     return this.http.get<Contratante[]>(this.url);
   }
 
+  getEntidadContratanteById(id: number): Observable<Contratante> {
+    return this.http.get<Contratante>(this.url + '/' + id);
+  }
+
   createEntidadContratante(contratante: Contratante): Observable<Contratante> {
     return this.http.post<Contratante>(this.url, contratante);
 
   }
-  updateEntidadContratante(contratante: Contratante): Observable<Contratante> {
-    return this.http.put<Contratante>(this.url, contratante);
+
+  editEntidadContratante(id: number, contratante: Contratante): Observable<Contratante> {
+    return this.http.put<Contratante>(this.url + '/' + id, contratante);
+
   }
 
   deleteEntidadContratante(id: number): Observable<any> {
