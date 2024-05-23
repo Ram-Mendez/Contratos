@@ -24,7 +24,7 @@ html, body {
   justify-content: flex-start;
   width: 100%;
   max-width: 800px; /* Reduced max-width */
-  background-color: lightblue;
+  background-color: #e0f7fa;
   border-radius: 8px;
   padding: 1rem; /* Reduced padding */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

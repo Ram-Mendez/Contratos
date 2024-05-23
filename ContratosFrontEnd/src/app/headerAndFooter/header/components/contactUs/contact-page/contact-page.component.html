@@ -16,7 +16,7 @@
         <span class="p-float-label">
           <input
             formControlName="email"
-            id="email" type="text" class="mb-2" pInputText />
+            id="email" type="text" class="mb-2 form-control-lg" pInputText />
           <label for="email"><i class="pi pi-envelope"></i> Email</label>
         </span>
       </div>
@@ -30,6 +30,7 @@
       </div>
       <div class="button-container">
         <p-button
+          [disabled]="contactForm.invalid"
           (click)="SendMessage()"
           type="button"> Send Message &nbsp; <span class="pi pi-send"></span>
         </p-button>

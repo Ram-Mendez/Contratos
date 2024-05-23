@@ -1,55 +1,107 @@
-/* Ensure the page and body take up full height */
+/* styles.css or global CSS file */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scrolling */
 }
 
-/* Main container for the contact page */
-.contact-page {
+body {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-page {
+  flex: 1;
+  display: flex;
   justify-content: center;
-  height: 90vh; /* Full viewport height */
-  padding: 1rem; /* Reduced padding */
+  align-items: center;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-/* Container for the form and image */
 .contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  max-width: 800px;
   width: 100%;
-  max-width: 800px; /* Reduced max-width */
-  background-color: lightblue;
+  background-color: #e0f7fa;
+  padding: 20px;
   border-radius: 8px;
-  padding: 1rem; /* Reduced padding */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+.text-center {
+  text-align: center;
+}
 
+.logo-container {
+  margin-top: 20px;
+}
 
+.logo {
+  max-width: 100px;
+  height: auto;
+}
 
-/* Image styling */
-.contact-image {
+/* Footer styling to ensure it stays at the bottom */
+footer {
+  background-color: #e0f7fa;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* styles.css or global CSS file */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-page {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: 1rem; /* Added margin-top */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.contact-image img {
+.contact-container {
+  max-width: 800px;
   width: 100%;
-  max-width: 200px; /* Reduced max-width of image */
+  background-color: #e0f7fa;
+  padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 4%;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.logo-container {
+  margin-top: 20px;
+}
 
 .logo {
-  width: 80px;  /* Ajusta el ancho como desees */
-  height: auto; /* Esto mantendrá la relación de aspecto de la imagen */
+  max-width: 100px;
+  height: auto;
+}
+
+/* Footer styling to ensure it stays at the bottom */
+footer {
+  background-color: #e0f7fa;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }

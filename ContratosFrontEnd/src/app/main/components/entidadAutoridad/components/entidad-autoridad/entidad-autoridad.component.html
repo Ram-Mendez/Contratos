@@ -4,14 +4,13 @@
   <div class="row">
     <div class="col m-4">
       <form [formGroup]="autoridadForm" (ngSubmit)="editAutoridad()" class="text-center">
-        <label for="name"><strong>Nombre de la autoridad</strong></label>
-        <div class="p-field">
-          <input pInputText id="name" type="text" formControlName="name" class="form-control text-center">
+        <div class="form-group">
+          <label for="name"><strong>Nombre de la autoridad</strong></label>
+          <input id="name" type="text" formControlName="name" class="form-control text-center">
         </div>
-        <br>
-        <p-button
-          severity="info"
-          type="submit" [disabled]="autoridadForm.invalid"> Save &nbsp; <span class="pi pi-save"></span></p-button>
+        <button type="submit" class="btn btn-info" [disabled]="autoridadForm.invalid">
+          Save &nbsp; <i class="pi pi-save"></i>
+        </button>
       </form>
     </div>
   </div>

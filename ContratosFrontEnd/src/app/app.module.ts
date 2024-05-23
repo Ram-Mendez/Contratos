@@ -22,6 +22,7 @@ import {ChipsModule} from "primeng/chips";
 import {GestionesComponent} from "./headerAndFooter/header/components/gestiones/gestiones.component";
 import {TreeModule} from "primeng/tree";
 import { AboutUsComponent } from './headerAndFooter/header/components/about-us/about-us.component';
+import { SearchBarComponent } from './headerAndFooter/header/components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AboutUsComponent } from './headerAndFooter/header/components/about-us/a
     HeaderComponent,
     ContactPageComponent,
     GestionesComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,7 @@ import { AboutUsComponent } from './headerAndFooter/header/components/about-us/a
     TreeModule,
 
   ],
-  providers: [MessageService, ConfirmationService],
+  providers: [MessageService, ConfirmationService,],
     exports: [
     ],
   bootstrap: [AppComponent]

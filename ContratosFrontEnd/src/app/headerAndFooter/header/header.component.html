@@ -1,13 +1,21 @@
 <p-menubar [model]="items">
   <ng-template pTemplate="start">
-    <img src="./assets/logo.png" alt="" class="logo"></ng-template>
+    <img src="./assets/logo.png" alt="" class="logo">
+  </ng-template>
   <ng-template pTemplate="item" let-item>
     <a [routerLink]="item.route" class="p-menuitem-link">
       {{ item.label }} &nbsp;
-      <i [class]="item.icon"></i> </a>
+      <i [class]="item.icon" style="font-size: 2rem"></i>
+    </a>
   </ng-template>
   <ng-template pTemplate="end">
-    <div class="flex-container">
+    <div class="flex-container" style="display: flex; align-items: center;">
+      <ng-container *ngIf="loginService.isUserLoggedIn">
+        <app-search-bar></app-search-bar>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      </ng-container>
       <strong>{{ loginService.email }} &nbsp; </strong>
       <p-button *ngIf="loginService.isUserLoggedIn"
                 (click)="logOut()"

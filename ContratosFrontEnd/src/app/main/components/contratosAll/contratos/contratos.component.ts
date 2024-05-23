@@ -1,29 +1,28 @@
-import {Component, OnInit} from '@angular/core';
-import {ContratoService} from "../service/contrato.service";
-import {ConfirmationService, MessageService} from "primeng/api";
-import {Contrato} from "../service/contrato";
-import {Router} from "@angular/router";
+import { Component, OnInit, Input } from '@angular/core';
+import { ContratoService } from "../service/contrato.service";
+import { ConfirmationService, MessageService } from "primeng/api";
+import { Contrato } from "../service/contrato";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-contratos',
   templateUrl: './contratos.component.html',
-  styleUrl: './contratos.component.css'
+  styleUrls: ['./contratos.component.css']
 })
 export class ContratosComponent implements OnInit {
-  contratos: Contrato[] = [];
+  @Input() contratos: Contrato[] = [];
   contrato!: Contrato;
   id: any;
   isContractSelected: boolean = false;
-  name : any;
+  name: any;
 
   constructor(private contratosService: ContratoService,
               private messageService: MessageService,
               private router: Router,
-              private confirmationService:  ConfirmationService) {
-  }
+              private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
-    this.getContratos()
+    this.getContratos();
   }
 
   getContratos() {
@@ -55,8 +54,8 @@ export class ContratosComponent implements OnInit {
               severity: 'success',
               summary: 'Deleting Contract...',
               detail: 'Contract deleted successfully.'
-            })
-            console.log('Contrato eliminado')
+            });
+            console.log('Contrato eliminado');
             this.getContratos();
           }
         );
@@ -65,8 +64,6 @@ export class ContratosComponent implements OnInit {
         // Any action you want to do on reject
       },
     });
-
-
   }
 
   onRowSelect(event: any) {
@@ -78,7 +75,4 @@ export class ContratosComponent implements OnInit {
   onRowUnselect(event: any) {
     this.isContractSelected = false;
   }
-
-
 }
-

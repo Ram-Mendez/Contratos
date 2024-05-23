@@ -12,7 +12,7 @@ export class GestionesComponent {
 
   data: TreeNode[] = [
     {
-      label: 'Contratos', selectable: false,
+      label: 'Gestiones', selectable: false,
       children: [
         {label: 'Crear Contrato', data: {path: 'gestiones/create-contract'}},
         {label: 'Editar Contratos', data: {path: 'gestiones/contracts'}},
@@ -20,10 +20,10 @@ export class GestionesComponent {
     },
 
     {
-      label: 'Entidad Contratante', selectable: false,
+      label: 'Contratantes', selectable: false,
       children: [
         {label: 'Crear Entidad', data: {path: 'gestiones/create-contractor'}},
-        {label: 'Listar Entidad', data: {path: 'gestiones/contractors'}},
+        {label: 'Listar Entidades', data: {path: 'gestiones/contractors'}},
       ]
     },
     {

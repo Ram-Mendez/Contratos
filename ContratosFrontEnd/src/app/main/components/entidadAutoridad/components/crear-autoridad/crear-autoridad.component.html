@@ -5,14 +5,13 @@
     <div class="col m-4">
       <!-- Formulario en la columna del medio -->
       <form [formGroup]="autoridadForm" (ngSubmit)="crearAutoridad()" class="text-center">
-        <label for="name"><strong>Name</strong></label>
-        <div class="p-field">
-          <input pInputText id="name" type="text" formControlName="name" class="form-control text-center">
+        <div class="form-group">
+          <label for="name"><strong>Name</strong></label>
+          <input id="name" type="text" formControlName="name" class="form-control text-center">
         </div>
-        <br>
-        <p-button
-          severity="info"
-          type="submit" [disabled]="autoridadForm.invalid"> Save &nbsp; <span class="pi pi-save"></span></p-button>
+        <button type="submit" class="btn btn-info" [disabled]="autoridadForm.invalid">
+          Create &nbsp; <i class="pi pi-save"></i>
+        </button>
       </form>
     </div>
   </div>

@@ -3,3 +3,41 @@
   height: 50px;
 }
 
+/* Styles for the header and its elements */
+.header-end-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+
+.logo {
+  width: 80px;  /* Ajusta el ancho como desees */
+  height: auto; /* Esto mantendrá la relación de aspecto de la imagen */
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.search-bar {
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info strong {
+  margin-right: 1rem;
+}
+
+.logout-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
