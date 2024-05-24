@@ -56,10 +56,20 @@ export class EntidadesContratantesComponent implements OnInit {
             this.messageService.add({
               severity: 'success',
               summary: 'Deleting Contract...',
-              detail: 'Contract deleted successfully.'
-            })
-            console.log('Contrato eliminado')
+              detail: 'Contract deleted successfully.',
+              icon: 'pi pi-spin pi-spinner'
+            });
+            console.log('Contrato eliminado');
             this.getEntidadesContratantes();
+          },
+          error => {
+            console.log(error, 'No se ha podido eliminar el contrato');
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Failed to delete contract.',
+              icon: 'pi pi-exclamation-triangle'
+            });
           }
         );
       },
@@ -67,8 +77,8 @@ export class EntidadesContratantesComponent implements OnInit {
         // Any action you want to do on reject
       },
     });
-
   }
+
 
   onRowSelect(event: any) {
     console.log(event);

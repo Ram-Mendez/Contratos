@@ -22,20 +22,28 @@ export class CrearAutoridadComponent {
   crearAutoridad() {
     this.autoridadService.createEntidadAutoridad(this.autoridadForm.value as Autoridad).subscribe(
       (response) => {
-        console.log({response});
+        console.log({ response });
         console.log("Entidad autoridad creada.");
         this.messageService.add({
           severity: 'success',
           summary: 'Saving...Creating Authority Entity',
-          detail: 'Authority entity created successfully.'
+          detail: 'Authority entity created successfully.',
+          icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
           this.router.navigate(['/gestiones/authorities']);
-        }, 1500)
+        }, 1500);
       },
       error => {
         console.log(error, 'No se ha podido crear la entidad autoridad');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to create authority entity.',
+          icon: 'pi pi-exclamation-triangle'
+        });
       }
     );
   }
+
 }

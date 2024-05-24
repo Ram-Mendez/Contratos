@@ -30,20 +30,23 @@ export class LoginComponent {
           this.messageService.add({
             severity: 'success',
             summary: 'Login Successful',
-            detail: 'You have successfully logged in.'
+            detail: 'You have successfully logged in.',
+            icon: 'pi pi-spin pi-spinner'
           });
-          setTimeout (() => {
+          setTimeout(() => {
             this.router.navigate(['/home']);
           }, 1500);
         } else {
           this.messageService.add({
             severity: 'error',
             summary: 'Something went wrong',
-            detail: 'Check email or password'
+            detail: 'Check email or password',
+            icon: 'pi-exclamation-triangle'
           });
         }
       }
     );
   }
+
 
 }

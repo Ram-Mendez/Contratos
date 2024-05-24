@@ -56,10 +56,20 @@ export class EntidadesAutoridadComponent implements OnInit {
             this.messageService.add({
               severity: 'success',
               summary: 'Deleting Authority Entity...',
-              detail: 'Authority entity deleted successfully.'
-            })
-            console.log('Entidad autoridad eliminada')
+              detail: 'Authority entity deleted successfully.',
+              icon: 'pi pi-spin pi-spinner'
+            });
+            console.log('Entidad autoridad eliminada');
             this.getEntidadesAutoridades();
+          },
+          error => {
+            console.log(error, 'No se ha podido eliminar la entidad autoridad');
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Failed to delete authority entity.',
+              icon: 'pi pi-exclamation-triangle'
+            });
           }
         );
       },
@@ -68,6 +78,7 @@ export class EntidadesAutoridadComponent implements OnInit {
       },
     });
   }
+
 
   onRowSelect(event: any) {
     console.log(event);

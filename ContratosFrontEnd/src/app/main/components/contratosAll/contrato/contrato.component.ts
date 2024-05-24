@@ -6,13 +6,12 @@ import { FormBuilder, Validators } from "@angular/forms";
 import { formatDate } from "@angular/common";
 import { EntidadContratanteService } from "../../entidadContratante/service/entidad-contratante.service";
 import { EntidadAutoridadService } from "../../entidadAutoridad/service/entidad-autoridad.service";
-import {Contrato} from "../service/contrato";
-
+import { Contrato } from "../service/contrato";
 
 @Component({
   selector: 'app-contrato',
   templateUrl: './contrato.component.html',
-  styleUrl: './contrato.component.css'
+  styleUrls: ['./contrato.component.css']
 })
 export class ContratoComponent implements OnInit, OnDestroy {
 
@@ -46,9 +45,9 @@ export class ContratoComponent implements OnInit, OnDestroy {
           creationDate: formatDate(this.contrato.creationDate, 'yyyy-MM-dd', 'en'),
           contractingEntity: this.contrato.contractingEntity.id,
           authorityEntity: this.contrato.authorityEntity.id
-        })
-      })
-    })
+        });
+      });
+    });
     this.contratanteService.getEntidadesContratantes().subscribe(
       contratantes => {
         this.contratantes = contratantes;
@@ -59,30 +58,45 @@ export class ContratoComponent implements OnInit, OnDestroy {
         this.autoridades = autoridades;
       }
     );
-
-
   }
 
   editContract() {
-    this.contratoService.editContrato(this.contrato.id, this.editContractForm.value as Contrato).subscribe(
-      (response) => {
-        console.log({response});
-        console.log("Contrato actualizado.");
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Saving...Updating Contract',
-          detail: 'Contract updated successfully.'
-        });
-        setTimeout(() => {
-          this.router.navigate(['/gestiones/contracts']);
-        }, 1500)
-      }
-    );
-
+    if (this.editContractForm.valid) {
+      this.contratoService.editContrato(this.contrato.id, this.editContractForm.value as Contrato).subscribe(
+        (response) => {
+          console.log({ response });
+          console.log("Contrato actualizado.");
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Saving...Updating Contract',
+            detail: 'Contract updated successfully.',
+            icon: 'pi pi-spin pi-spinner'
+          });
+          setTimeout(() => {
+            this.router.navigate(['/gestiones/contracts']);
+          }, 1500);
+        },
+        (error) => {
+          console.error('Error updating contract', error);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Failed to update contract.',
+            icon: 'pi pi-exclamation-triangle'
+          });
+        }
+      );
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Validation Error',
+        detail: 'Please fill out all required fields.',
+        icon: 'pi pi-exclamation-triangle'
+      });
+    }
   }
 
   ngOnDestroy() {
-
+    // Clean up any subscriptions or resources
   }
-
 }

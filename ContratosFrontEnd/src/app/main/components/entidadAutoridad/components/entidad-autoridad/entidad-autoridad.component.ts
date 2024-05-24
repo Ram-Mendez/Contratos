@@ -49,20 +49,30 @@ export class EntidadAutoridadComponent implements OnInit, OnDestroy {
 
     this.autoridadService.editEntidadAutoridad(this.id, updatedAutoridad).subscribe(
       (response) => {
-        console.log({response});
+        console.log({ response });
         console.log("Autoridad actualizada.");
         this.messageService.add({
           severity: 'success',
           summary: 'Saving...Updating Authority',
-          detail: 'Authority updated successfully.'
+          detail: 'Authority updated successfully.',
+          icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
           this.router.navigate(['/gestiones/authorities']);
         }, 1500);
+      },
+      error => {
+        console.log(error, 'No se ha podido actualizar la autoridad');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to update authority.',
+          icon: 'pi pi-exclamation-triangle'
+        });
       }
     );
   }
 
-  ngOnDestroy() {
+    ngOnDestroy() {
   }
 }

@@ -25,20 +25,28 @@ export class CrearContratanteComponent {
   crearContratante() {
     this.contratanteService.createEntidadContratante(this.contratanteForm.value as Contratante).subscribe(
       (response) => {
-        console.log({response});
+        console.log({ response });
         console.log("Entidad contratante creada.");
         this.messageService.add({
           severity: 'success',
           summary: 'Saving...Creating Contracting Entity',
-          detail: 'Contracting entity created successfully.'
+          detail: 'Contracting entity created successfully.',
+          icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
           this.router.navigate(['/gestiones/contractors']);
-        }, 1500)
+        }, 1500);
       },
       error => {
         console.log(error, 'No se ha podido crear la entidad contratante');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to create contracting entity.',
+          icon: 'pi pi-exclamation-triangle'
+        });
       }
     );
   }
+
 }

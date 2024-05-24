@@ -45,19 +45,30 @@ export class EntidadContratanteComponent implements OnInit, OnDestroy {
 
     this.contratanteService.editEntidadContratante(this.id, updatedContratante).subscribe(
       (response) => {
-        console.log({response});
+        console.log({ response });
         console.log("Contratante actualizado.");
         this.messageService.add({
           severity: 'success',
           summary: 'Saving...Updating Contractor',
-          detail: 'Contractor updated successfully.'
+          detail: 'Contractor updated successfully.',
+          icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
           this.router.navigate(['/gestiones/contractors']);
         }, 1500);
+      },
+      error => {
+        console.log(error, 'No se ha podido actualizar el contratante');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to update contractor.',
+          icon: 'pi pi-exclamation-triangle'
+        });
       }
     );
   }
+
 
   ngOnDestroy() {
     // Add any necessary cleanup code here

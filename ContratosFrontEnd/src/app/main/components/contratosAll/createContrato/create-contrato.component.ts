@@ -9,7 +9,7 @@ import {EntidadAutoridadService} from "../../entidadAutoridad/service/entidad-au
 
 @Component({
   templateUrl: './create-contrato.component.html',
-  styleUrl: './create-contrato.component.css'
+  styleUrls: ['./create-contrato.component.css']
 })
 export class CreateContratoComponent implements OnInit {
   contratantes: any;
@@ -36,24 +36,42 @@ export class CreateContratoComponent implements OnInit {
     });
     this.autoridadService.getEntidadesAutoridades().subscribe(autoridades => {
       this.autoridades = autoridades;
-    })
-
+    });
   }
 
   createContract() {
-    this.contratoService.createContrato(this.createContractForm.value as Contrato).subscribe(
-      (response) => {
-        console.log({response});
-        console.log("Contrato creado.");
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Saving...Creating Contract',
-          detail: 'Contract created successfully.'
-        });
-        setTimeout(() => {
-          this.router.navigate(['/gestiones/contracts']);
-        }, 1500)
-      }
-    );
+    if (this.createContractForm.valid) {
+      this.contratoService.createContrato(this.createContractForm.value as Contrato).subscribe(
+        (response) => {
+          console.log({response});
+          console.log("Contrato creado.");
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Saving...Creating Contract',
+            detail: 'Contract created successfully.',
+            icon: 'pi pi-spin pi-spinner'
+          });
+          setTimeout(() => {
+            this.router.navigate(['/gestiones/contracts']);
+          }, 1500);
+        },
+        (error) => {
+          console.error('Error creating contract', error);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Failed to create contract.',
+            icon: 'pi pi-exclamation-triangle'
+          });
+        }
+      );
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Validation Error',
+        detail: 'Please fill out all required fields.',
+        icon: 'pi pi-exclamation-triangle'
+      });
+    }
   }
 }
