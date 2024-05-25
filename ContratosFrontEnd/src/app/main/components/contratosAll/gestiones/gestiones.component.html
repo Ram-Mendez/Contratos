@@ -1,7 +1,7 @@
 <div class="container-fluid p-3 full-height">
   <div class="row full-height">
     <div class="col-3 box full-height">
-      <p-tree [value]="data" selectionMode="single">
+      <p-tree [value]="data" selectionMode="single" [propagateSelectionDown]="true" [propagateSelectionUp]="true">
         <ng-template let-node pTemplate="default">
           <div
             routerLinkActive="ui-state-highlight" pRipple class="relative-children row"
@@ -17,9 +17,23 @@
         </ng-template>
       </p-tree>
     </div>
-    <div class="col-1" style="width: 10px">
-    </div>
+    <div class="col-1" style="width: 10px"></div>
     <div class="col box full-height">
+      <div *ngIf="contrato">
+        <h1>Gestión del Contrato: {{ contrato.name }}</h1>
+        <p>
+          <span class="badge badge-custom">Fecha de creación: {{ contrato.creationDate | date }}</span>
+        </p>
+        <p>
+          <span class="badge badge-custom">Entidad contratante: {{ contrato.contractingEntity.name }}</span>
+        </p>
+        <p>
+          <span class="badge badge-custom">Entidad autorizadora: {{ contrato.authorityEntity.name }}</span>
+        </p>
+      </div>
+      <div *ngIf="!contrato">
+        <p>Cargando datos del contrato...</p>
+      </div>
       <router-outlet></router-outlet>
     </div>
   </div>

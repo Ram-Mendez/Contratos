@@ -49,3 +49,16 @@
 .relative-children {
   align-items: center;
 }
+
+/* gestiones.component.css */
+
+/* Añade esta clase para el badge personalizado */
+.badge-custom {
+  background-color: #DCDDFE; /* Color del header */
+  color: black; /* Color del texto */
+  padding: 0.5em 1em;
+  border-radius: 0.25rem;
+  font-size: 1em;
+  display: inline-block;
+  margin: 0.5em 0;
+}

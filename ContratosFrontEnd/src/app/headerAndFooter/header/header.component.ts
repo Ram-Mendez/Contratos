@@ -22,6 +22,11 @@ export class HeaderComponent implements OnInit {
 
     this.items = [
       {
+        label: 'Login',
+        icon: 'pi pi-sign-in',
+        route: '/login'
+      },
+      {
         label: '',
         icon: 'pi pi-home',
         route: '/home'
@@ -36,7 +41,7 @@ export class HeaderComponent implements OnInit {
         icon: 'pi pi-spin pi-cog',
         items: [
           {
-            label: 'Gestiones',
+            label: '',
             icon: 'pi pi-server',
             route : '/gestiones'
           },

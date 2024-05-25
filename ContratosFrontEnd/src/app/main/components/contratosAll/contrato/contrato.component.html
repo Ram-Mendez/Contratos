@@ -4,39 +4,54 @@
   <div class="row">
     <div class="col m-4">
       <!-- Formulario en la columna del medio -->
-      <form [formGroup]="editContractForm" (ngSubmit)="editContract()" class="text-center">
+      <form [formGroup]="editContractForm" (ngSubmit)="editContract()" class="">
+
         <div class="form-group">
-          <label for="name"><strong>Nombre del contrato</strong></label>
-          <input id="name" type="text" formControlName="name" class="form-control text-center">
+          <p-floatLabel>
+            <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
+            <label for="name"><strong>Nombre del contrato</strong></label>
+          </p-floatLabel>
         </div>
-        <div class="form-group">
-          <label for="creationDate"><strong>Fecha de creación</strong></label>
-          <input id="creationDate" type="date" formControlName="creationDate" class="form-control text-center">
+
+        <div class="form-group mt-5">
+          <p-floatLabel>
+            <input id="creationDate" pInputText type="date" formControlName="creationDate"
+                   class="form-control text-center">
+            <label for="creationDate"><strong>Fecha de creación</strong></label>
+          </p-floatLabel>
         </div>
-        <div class="form-group">
-          <label for="contractingEntity"><strong>Entidad contratante</strong></label>
-          <div class="custom-select-wrapper">
-            <select id="contractingEntity" formControlName="contractingEntity" class="form-control custom-select text-center">
-              <option *ngFor="let contratante of contratantes" [value]="contratante.id">
-                {{ contratante.name }}
-              </option>
+
+        <div class="form-group mt-5">
+          <p-floatLabel>
+            <select id="contractingEntity" formControlName="contractingEntity"
+                    class="form-control custom-select text-center">
+              <option value="" disabled selected hidden>Selecciona entidad contratante</option>
+              <option *ngFor="let contratante of contratantes" [value]="contratante.id">{{ contratante.name }}</option>
             </select>
-          </div>
+            <label for="contractingEntity"><strong>Entidad contratante</strong></label>
+          </p-floatLabel>
         </div>
-        <div class="form-group">
-          <label for="authorityEntity"><strong>Entidad autorizadora</strong></label>
-          <div class="custom-select-wrapper">
-            <select id="authorityEntity" formControlName="authorityEntity" class="form-control custom-select text-center">
-              <option *ngFor="let autoridad of autoridades" [value]="autoridad.id">
-                {{ autoridad.name }}
-              </option>
+
+        <div class="form-group mt-5">
+          <p-floatLabel>
+            <select id="authorityEntity" formControlName="authorityEntity"
+                    class="form-control custom-select text-center">
+              <option value="" disabled selected hidden>Selecciona entidad autoridad</option>
+              <option *ngFor="let autoridad of autoridades" [value]="autoridad.id">{{ autoridad.name }}</option>
             </select>
-          </div>
+            <label for="authorityEntity"><strong>Entidad autorizadora</strong></label>
+          </p-floatLabel>
         </div>
-        <button type="submit" class="btn btn-info" [disabled]="editContractForm.invalid">
-          Save &nbsp; <i class="pi pi-save"></i>
-        </button>
+
+        <div class="mt-5 text-right-custom">
+          <p-button
+            severity="success"
+            type="submit" [disabled]="editContractForm.invalid"> <i class="pi pi-save"></i> &nbsp;
+            Guardar cambios
+          </p-button>
+        </div>
       </form>
     </div>
   </div>
 </div>
+

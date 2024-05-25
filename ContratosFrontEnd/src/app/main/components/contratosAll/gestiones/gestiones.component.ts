@@ -1,37 +1,40 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {TreeNode} from "primeng/api";
-import {ContratoService} from "../service/contrato.service";
-import {error} from "@angular/compiler-cli/src/transformers/util";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { TreeNode } from "primeng/api";
+import { ContratoService } from "../service/contrato.service";
 
 @Component({
   templateUrl: './gestiones.component.html',
   styleUrls: ['./gestiones.component.css']
 })
 export class GestionesComponent implements OnInit {
-  constructor(private router: Router, private route: ActivatedRoute, private contratoService: ContratoService) {
-  }
+  contrato: any;
+
+  constructor(private router: Router, private route: ActivatedRoute, private contratoService: ContratoService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      console.log("xxxxxxxxxxxx",  id);
-      this.contratoService.getContratoById(id).subscribe(contrato => {
-        }, error => {
-      this.router.navigate(['/contratos'])
-      }
+      console.log("ID del contrato:", id);
+      this.contratoService.getContratoById(id).subscribe(
+        contrato => {
+          this.contrato = contrato;
+          console.log("Datos del contrato:", contrato);
+        },
+        error => {
+          console.error("Error al obtener el contrato:", error);
+          this.router.navigate(['/contratos']);
+        }
       );
     });
   }
 
-
   data: TreeNode[] = [
     {
-      label: 'Gestiones', selectable: false,
+      label: 'Gestiones', selectable: false, expanded: true,
       children: [
-        {label: 'Editar Contratos', data: {path: 'editar-contrato', icon: 'pi pi-pencil'}},
+        { label: 'Editar Contratos', data: { path: '', icon: 'pi pi-pencil' }, expanded: true },
       ]
     },
-  ]
-
+  ];
 }

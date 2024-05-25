@@ -22,7 +22,6 @@ import {ChipsModule} from "primeng/chips";
 import {GestionesComponent} from "./main/components/contratosAll/gestiones/gestiones.component";
 import {TreeModule} from "primeng/tree";
 import { AboutUsComponent } from './headerAndFooter/header/components/about-us/about-us.component';
-import { SearchBarComponent } from './headerAndFooter/header/components/search-bar/search-bar.component';
 import {RippleModule} from "primeng/ripple";
 
 @NgModule({
@@ -32,7 +31,6 @@ import {RippleModule} from "primeng/ripple";
     ContactPageComponent,
     GestionesComponent,
     AboutUsComponent,
-    SearchBarComponent
   ],
     imports: [
         BrowserModule,

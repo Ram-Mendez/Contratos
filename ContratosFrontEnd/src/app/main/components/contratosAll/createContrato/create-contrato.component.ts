@@ -12,6 +12,7 @@ import {EntidadAutoridadService} from "../../entidadAutoridad/service/entidad-au
   styleUrls: ['./create-contrato.component.css']
 })
 export class CreateContratoComponent implements OnInit {
+  contrato : any;
   contratantes: any;
   autoridades: any;
 
