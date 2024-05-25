@@ -1,27 +1,26 @@
 <p-menubar [model]="items">
   <ng-template pTemplate="start">
-    <img src="./assets/logo.png" alt="" class="logo">
+    <img src="./assets/logo.png" alt="Logo" class="logo" style="height: 40px;">
   </ng-template>
   <ng-template pTemplate="item" let-item>
     <a [routerLink]="item.route" class="p-menuitem-link">
       {{ item.label }} &nbsp;
-      <i [class]="item.icon" style="font-size: 2rem"></i>
+      <i [class]="item.icon" style="font-size: 1.5rem;"></i>
     </a>
   </ng-template>
   <ng-template pTemplate="end">
     <div class="flex-container" style="display: flex; align-items: center;">
       <ng-container *ngIf="loginService.isUserLoggedIn">
         <app-search-bar></app-search-bar>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <div style="flex-grow: 1;"></div>
       </ng-container>
-      <strong>{{ loginService.email }} &nbsp; </strong>
+      <strong>{{ loginService.email }} &nbsp;</strong>
       <p-button *ngIf="loginService.isUserLoggedIn"
                 (click)="logOut()"
                 routerLink="/"
-                severity="warning">
-        <i class="pi pi-sign-out"> </i>&nbsp; LOGOUT
+                severity="warning"
+                class="p-button-text p-button-warning">
+        <i class="pi pi-sign-out"></i> LOGOUT
       </p-button>
     </div>
   </ng-template>

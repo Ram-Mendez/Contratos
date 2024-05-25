@@ -1,0 +1,26 @@
+<div class="container-fluid p-3 full-height">
+  <div class="row full-height">
+    <div class="col-3 box full-height">
+      <p-tree [value]="data" selectionMode="single">
+        <ng-template let-node pTemplate="default">
+          <div
+            routerLinkActive="ui-state-highlight" pRipple class="relative-children row"
+            [routerLink]="node?.data?.path ? node.data.path : null"
+            [ngClass]="{'clickable': node?.data?.path}">
+            <div class="col-2">
+              <i *ngIf="node.data?.icon" class="{{node.data.icon}}" style="font-size: 1.2rem"></i>
+            </div>
+            <div class="col-10">
+              <span class="p-treenode-label ellipsis">{{node['label']}}</span>
+            </div>
+          </div>
+        </ng-template>
+      </p-tree>
+    </div>
+    <div class="col-1" style="width: 10px">
+    </div>
+    <div class="col box full-height">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

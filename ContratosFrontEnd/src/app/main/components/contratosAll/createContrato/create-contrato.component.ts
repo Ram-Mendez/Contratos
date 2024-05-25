@@ -52,7 +52,7 @@ export class CreateContratoComponent implements OnInit {
             icon: 'pi pi-spin pi-spinner'
           });
           setTimeout(() => {
-            this.router.navigate(['/gestiones/contracts']);
+            this.router.navigate(['contratos']);
           }, 1500);
         },
         (error) => {

@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: lightblue;/* Cambia esto a tu color deseado */
+  background-color: #DCDDFE;/* Cambia esto a tu color deseado */
   color: black;
 
   text-align: center;
@@ -19,7 +19,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: lightblue; /* Custom background color */
+  background-color: #DCDDFE; /* Custom background color */
   color: black;
   display: flex;
   align-items: center;
@@ -66,3 +66,33 @@
   background-color: #d32f2f; /* Hover effect for logout button */
 }
 
+.box {
+  background-color: var(--surface-e);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+/* Remove borders from p-tree */
+.p-tree {
+  border: none !important;
+}
+
+.p-tree-container,
+.p-tree ul,
+.p-tree li,
+.p-tree .p-tree-children,
+.p-tree .p-tree-toggler,
+.p-tree .p-treenode-content {
+  border: none !important;
+  outline: none !important;
+}
+
+.p-tree .p-treenode {
+  border: none !important;
+}
+
+.p-tree .p-treenode-content {
+  border-bottom: none !important;
+}

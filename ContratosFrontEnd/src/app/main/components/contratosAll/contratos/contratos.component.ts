@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ContratoService } from "../service/contrato.service";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { Contrato } from "../service/contrato";
-import { Router } from "@angular/router";
+import {Component, OnInit, Input} from '@angular/core';
+import {ContratoService} from "../service/contrato.service";
+import {ConfirmationService, MessageService} from "primeng/api";
+import {Contrato} from "../service/contrato";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-contratos',
@@ -19,7 +19,8 @@ export class ContratosComponent implements OnInit {
   constructor(private contratosService: ContratoService,
               private messageService: MessageService,
               private router: Router,
-              private confirmationService: ConfirmationService) { }
+              private confirmationService: ConfirmationService) {
+  }
 
   ngOnInit() {
     this.getContratos();
@@ -34,10 +35,14 @@ export class ContratosComponent implements OnInit {
     );
   }
 
+  crearContrato() {
+    this.router.navigate(['/create-contract']);
+  }
+
   editContrato() {
     this.contratosService.getContratoById(this.id).subscribe(
       () => {
-        this.router.navigate(['/gestiones/contrato', this.id]);
+        this.router.navigate(['/gestiones/', this.id]);
       }
     );
   }

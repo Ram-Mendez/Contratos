@@ -39,7 +39,7 @@ export class MainPageComponent implements OnInit {
   }
 
   viewDetails() {
-    this.router.navigate(['/gestiones/contracts']);
+    this.router.navigate(['/gestiones' , this.id]);
 
   }
 }

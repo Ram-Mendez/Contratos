@@ -19,10 +19,11 @@ import {NgOptimizedImage} from "@angular/common";
 import {ButtonModule} from "primeng/button";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {ChipsModule} from "primeng/chips";
-import {GestionesComponent} from "./headerAndFooter/header/components/gestiones/gestiones.component";
+import {GestionesComponent} from "./main/components/contratosAll/gestiones/gestiones.component";
 import {TreeModule} from "primeng/tree";
 import { AboutUsComponent } from './headerAndFooter/header/components/about-us/about-us.component';
 import { SearchBarComponent } from './headerAndFooter/header/components/search-bar/search-bar.component';
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
   declarations: [
@@ -33,25 +34,26 @@ import { SearchBarComponent } from './headerAndFooter/header/components/search-b
     AboutUsComponent,
     SearchBarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule,
-    LoginModule,
-    ToastModule,
-    BrowserAnimationsModule,
-    MenubarModule,
-    MainModule,
-    NgOptimizedImage,
-    ButtonModule,
-    InputTextareaModule,
-    ReactiveFormsModule,
-    ChipsModule,
-    TreeModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        RouterModule,
+        LoginModule,
+        ToastModule,
+        BrowserAnimationsModule,
+        MenubarModule,
+        MainModule,
+        NgOptimizedImage,
+        ButtonModule,
+        InputTextareaModule,
+        ReactiveFormsModule,
+        ChipsModule,
+        TreeModule,
+        RippleModule,
 
-  ],
+    ],
   providers: [MessageService, ConfirmationService,],
     exports: [
     ],

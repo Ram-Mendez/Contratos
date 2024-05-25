@@ -34,7 +34,7 @@ export class ContratoComponent implements OnInit, OnDestroy {
   });
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.route.parent?.params.subscribe(params => {
       const id = params['id'];
       this.contratoService.getContratoById(id).subscribe(contrato => {
         console.log(contrato);
