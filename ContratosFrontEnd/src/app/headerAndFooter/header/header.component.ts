@@ -22,14 +22,14 @@ export class HeaderComponent implements OnInit {
 
     this.items = [
       {
-        label: 'Login',
-        icon: 'pi pi-sign-in',
-        route: '/login'
-      },
-      {
         label: '',
         icon: 'pi pi-home',
         route: '/home'
+      },
+      {
+        label: 'Login',
+        icon: 'pi pi-sign-in',
+        route: '/login'
       },
       {
         label: 'About Us',

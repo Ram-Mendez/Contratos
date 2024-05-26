@@ -1,10 +1,16 @@
 <div class="container">
-  <div class="row">
-    <div class="col m-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12 mt-3">
+
+      <!-- Cabecera estilizada -->
+      <div class="header text-center mb-4 p-2 rounded shadow-sm">
+        <h2 class="display-4">Crear Nuevo Contrato</h2>
+        <p class="lead">Complete los siguientes campos para registrar un nuevo contrato.</p>
+        <hr class="my-4" style="border-top: 2px solid #ccc;">
+      </div>
+
       <!-- Formulario en la columna del medio -->
-
-      <form [formGroup]="createContractForm" (ngSubmit)="createContract()" class="">
-
+      <form [formGroup]="createContractForm" (ngSubmit)="createContract()" class="p-4 border rounded shadow-sm bg-white">
         <div class="form-group">
           <p-floatLabel>
             <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
@@ -12,18 +18,16 @@
           </p-floatLabel>
         </div>
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
           <p-floatLabel>
-            <input id="creationDate" pInputText type="date" formControlName="creationDate"
-                   class="form-control text-center">
+            <input id="creationDate" pInputText type="date" formControlName="creationDate" class="form-control text-center">
             <label for="creationDate"><strong>Fecha de creación</strong></label>
           </p-floatLabel>
         </div>
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
           <p-floatLabel>
-            <select id="contractingEntity" formControlName="contractingEntity"
-                    class="form-control custom-select text-center">
+            <select id="contractingEntity" formControlName="contractingEntity" class="form-control custom-select text-center">
               <option value="" disabled selected hidden>Selecciona entidad contratante</option>
               <option *ngFor="let contratante of contratantes" [value]="contratante.id">{{ contratante.name }}</option>
             </select>
@@ -31,10 +35,9 @@
           </p-floatLabel>
         </div>
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
           <p-floatLabel>
-            <select id="authorityEntity" formControlName="authorityEntity"
-                    class="form-control custom-select text-center">
+            <select id="authorityEntity" formControlName="authorityEntity" class="form-control custom-select text-center">
               <option value="" disabled selected hidden>Selecciona entidad autoridad</option>
               <option *ngFor="let autoridad of autoridades" [value]="autoridad.id">{{ autoridad.name }}</option>
             </select>
@@ -42,10 +45,8 @@
           </p-floatLabel>
         </div>
 
-        <div class="mt-5 text-right-custom">
-          <p-button
-            severity="success"
-            type="submit" [disabled]="createContractForm.invalid">
+        <div class="mt-5 text-center">
+          <p-button severity="success" type="submit" [disabled]="createContractForm.invalid">
             Crear &nbsp; <i class="pi pi-save"></i>
           </p-button>
         </div>

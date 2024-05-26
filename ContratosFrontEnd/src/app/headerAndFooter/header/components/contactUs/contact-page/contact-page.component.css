@@ -1,3 +1,6 @@
+
+
+
 /* Ensure the page and body take up full height */
 html, body {
   height: 100%;
@@ -12,8 +15,9 @@ html, body {
   align-items: flex-start;
   justify-content: center;
   height: 90vh; /* Full viewport height */
-  padding: 1rem; /* Reduced padding */
+  padding: 2rem;
   box-sizing: border-box;
+  background-color: #f5f5f5;
 }
 
 /* Container for the form and image */
@@ -26,8 +30,9 @@ html, body {
   max-width: 800px; /* Reduced max-width */
   background-color: #DCDDFE;
   border-radius: 8px;
-  padding: 1rem; /* Reduced padding */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 /* Form styling */
@@ -37,13 +42,16 @@ html, body {
   margin-bottom: 1rem; /* Reduced margin-bottom */
 }
 
+.introductory-message {
+  margin-bottom: 1rem; /* Adjust margin-bottom as needed */
+}
+
 .contact-form h2 {
-  text-align: center;
   margin-bottom: 1rem; /* Reduced margin-bottom */
 }
 
 .p-field {
-  margin-bottom: 1rem; /* Reduced margin-bottom */
+  margin-bottom: 1.5rem; /* Reduced margin-bottom */
 }
 
 .p-float-label input,
@@ -61,6 +69,7 @@ html, body {
 .button-container {
   display: flex;
   justify-content: center;
+  margin-top: 1.5rem;
 }
 
 button:hover {
@@ -82,8 +91,11 @@ button:hover {
   border-radius: 8px;
 }
 
-
 .logo {
-  width: 80px;  /* Ajusta el ancho como desees */
-  height: auto; /* Esto mantendrá la relación de aspecto de la imagen */
+  width: 80px;  /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio of the image */
+  margin-top: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

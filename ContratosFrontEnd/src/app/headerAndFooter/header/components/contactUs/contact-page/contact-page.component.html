@@ -1,44 +1,59 @@
-<form [formGroup]="contactForm" >
-<div class="contact-page">
+<form [formGroup]="contactForm">
+  <div class="contact-page">
+    <div class="contact-container">
+      <div class="contact-form">
 
-  <div class="contact-container">
-    <div class="contact-form">
-      <h2>Contact us</h2>
-      <div class="p-field">
-        <span class="p-float-label">
-          <input id="name"
-                 formControlName="name"
-                 type="text" pInputText class="mb-2" />
-          <label for="name"><i class="pi pi-user"></i> Name</label>
-        </span>
+        <!-- Introductory message -->
+        <div class="introductory-message">
+          <h2>Contact us</h2>
+          <p>Estamos aquí para ayudarte. Por favor, completa el formulario a continuación para ponerte en contacto con nosotros.</p>
+        </div>
+
+
+        <!-- Campo de Nombre -->
+        <div class="p-field">
+          <span class="p-float-label">
+            <input id="name"
+                   formControlName="name"
+                   type="text" pInputText class="mb-2" />
+            <label for="name"><i class="pi pi-user"></i> Name</label>
+          </span>
+        </div>
+
+        <!-- Campo de Email -->
+        <div class="p-field">
+          <span class="p-float-label">
+            <input
+              formControlName="email"
+              id="email" type="text" class="mb-2" pInputText />
+            <label for="email"><i class="pi pi-envelope"></i> Email</label>
+          </span>
+        </div>
+
+        <!-- Campo de Mensaje -->
+        <div class="p-field">
+          <span class="p-float-label">
+            <textarea
+              formControlName="message"
+              id="message" pInputTextarea></textarea>
+            <label for="message"><i class="pi pi-comment"></i> Message</label>
+          </span>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <div class="button-container">
+          <p-button
+            [disabled]="contactForm.invalid"
+            (click)="SendMessage()"
+            type="button"> Send Message &nbsp; <span class="pi pi-send"></span>
+          </p-button>
+        </div>
       </div>
-      <div class="p-field">
-        <span class="p-float-label">
-          <input
-            formControlName="email"
-            id="email" type="text" class="mb-2 form-control-lg" pInputText />
-          <label for="email"><i class="pi pi-envelope"></i> Email</label>
-        </span>
-      </div>
-      <div class="p-field">
-        <span class="p-float-label">
-          <textarea
-            formControlName="message"
-            id="message" pInputTextarea></textarea>
-          <label for="message"><i class="pi pi-comment"></i> Message</label>
-        </span>
-      </div>
-      <div class="button-container">
-        <p-button
-          [disabled]="contactForm.invalid"
-          (click)="SendMessage()"
-          type="button"> Send Message &nbsp; <span class="pi pi-send"></span>
-        </p-button>
-      </div>
+
+      <!-- Logo -->
+      <img src="./assets/logo.png" alt="Company Logo" class="logo">
     </div>
-    <img src="./assets/logo.png" alt="" class="logo">
   </div>
-</div>
 </form>
 
 <p-toast position="top-center"></p-toast>

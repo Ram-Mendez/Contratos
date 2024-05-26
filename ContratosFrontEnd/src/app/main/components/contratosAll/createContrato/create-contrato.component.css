@@ -1,3 +1,20 @@
 .text-right-custom {
   text-align: right;
 }
+.header {
+  background: #DCDDFE; /* Usa el color light indigo */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-control {
+  text-align: center;
+}
+
+.p-button {
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+}
