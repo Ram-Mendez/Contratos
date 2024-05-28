@@ -29,8 +29,7 @@ export class LoginComponent {
           this.loginService.setEmail(this.loginForm.value.email as string);
           this.messageService.add({
             severity: 'success',
-            summary: 'Login Successful',
-            detail: 'You have successfully logged in.',
+            summary: 'Login ',
             icon: 'pi pi-spin pi-spinner'
           });
           setTimeout(() => {

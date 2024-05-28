@@ -1,40 +1,53 @@
-<div class="d-flex justify-content-center align-items-center ">
-  <p-button
-    (click)="editAutoridad()"
-    [disabled]="!isAutoridadSelected"
-    severity="info"
-    class="m-2"> Edit &nbsp; <span class="pi pi-pencil"></span>
-  </p-button>
-  <p-button
-    (click)="deleteEntidadAutoridad()"
-    [disabled]="!isAutoridadSelected"
-    severity="danger"
-  > Delete &nbsp; <span class="pi pi-trash"> </span>
-  </p-button>
-</div>
+<div class="container-fluid">
+  <div class="button-container d-flex justify-content-center align-items-center mb-2">
+    <p-button
+      (click)="editAutoridad()"
+      [disabled]="!isAutoridadSelected"
+      severity="success"
+      class="m-2">
+      Edit &nbsp; <span class="pi pi-pencil"></span>
+    </p-button>
+    <p-button
+      (click)="deleteEntidadAutoridad()"
+      [disabled]="!isAutoridadSelected"
+      severity="danger"
+      class="m-2">
+      Delete &nbsp; <span class="pi pi-trash"></span>
+    </p-button>
+  </div>
 
-<div class="card">
-  <p-toast position="top-center"></p-toast>
-  <p-table
-    [value]="autoridades"
-    selectionMode="single"
-    (onRowSelect)="onRowSelect($event)"
-    (onRowUnselect)="onRowUnselect($event)">
-
-    <ng-template pTemplate="header">
-      <tr>
-        <th pSortableColumn="id"> Id <p-sortIcon field="id"></p-sortIcon></th>
-        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-        <!-- Añade aquí las columnas adicionales que necesites -->
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-autoridad>
-      <tr [pSelectableRow]="autoridad">
-        <td>{{ autoridad.id }}</td>
-        <td>{{ autoridad.name }}</td>
-        <!-- Añade aquí las celdas adicionales que necesites -->
-      </tr>
-    </ng-template>
-  </p-table>
+  <div class="card">
+    <p-toast position="top-center"></p-toast>
+    <p-table
+      [value]="autoridades"
+      selectionMode="single"
+      (onRowSelect)="onRowSelect($event)"
+      (onRowUnselect)="onRowUnselect($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+          <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+          <th pSortableColumn="cifDni">C.I.F / D.N.I <p-sortIcon field="cifDni"></p-sortIcon></th>
+          <th pSortableColumn="address">Address <p-sortIcon field="address"></p-sortIcon></th>
+          <th pSortableColumn="municipality">Municipality <p-sortIcon field="municipality"></p-sortIcon></th>
+          <th pSortableColumn="zipCode">Zip Code <p-sortIcon field="zipCode"></p-sortIcon></th>
+          <th pSortableColumn="country">Country <p-sortIcon field="country"></p-sortIcon></th>
+          <th pSortableColumn="phone">Phone Number <p-sortIcon field="phone"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-autoridad>
+        <tr [pSelectableRow]="autoridad">
+          <td>{{ autoridad.id }}</td>
+          <td>{{ autoridad.name }}</td>
+          <td>{{ autoridad.cifDni }}</td>
+          <td>{{ autoridad.address }}</td>
+          <td>{{ autoridad.municipality }}</td>
+          <td>{{ autoridad.zipCode }}</td>
+          <td>{{ autoridad.country }}</td>
+          <td>{{ autoridad.phone }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
 <p-confirmDialog></p-confirmDialog>

@@ -17,7 +17,13 @@ export class CrearAutoridadComponent {
   }
 
   autoridadForm = this.fb.group({
-    name: ['', [Validators.required, Validators.nullValidator]]
+    name: ['', [Validators.required, Validators.nullValidator]],
+    cifDni: ['', [Validators.required]],
+    address: ['', [Validators.required]],
+    municipality: ['', [Validators.required]],
+    zipCode: ['', [Validators.required]],
+    country: ['', [Validators.required]],
+    phone: ['', [Validators.required, ]]
   });
   crearAutoridad() {
     this.autoridadService.createEntidadAutoridad(this.autoridadForm.value as Autoridad).subscribe(
@@ -26,12 +32,11 @@ export class CrearAutoridadComponent {
         console.log("Entidad autoridad creada.");
         this.messageService.add({
           severity: 'success',
-          summary: 'Saving...Creating Authority Entity',
-          detail: 'Authority entity created successfully.',
+          summary: 'Creating Authority ',
           icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
-          this.router.navigate(['/gestiones/authorities']);
+          this.router.navigate(['/administration/list-authorities']);
         }, 1500);
       },
       error => {

@@ -39,6 +39,7 @@ import {
 } from './components/entidadAutoridad/components/entidad-autoridad/entidad-autoridad.component';
 import {FloatLabelModule} from "primeng/floatlabel";
 import {DropdownModule} from "primeng/dropdown";
+import {MultiSelectModule} from "primeng/multiselect";
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import {DropdownModule} from "primeng/dropdown";
     CalendarModule,
     PaginatorModule,
     FloatLabelModule,
-    DropdownModule
+    DropdownModule,
+    MultiSelectModule
 
 
   ],

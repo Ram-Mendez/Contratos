@@ -1,0 +1,81 @@
+<p-toast position="top-center"></p-toast>
+
+<div class="container-fluid">
+  <!-- Cabecera estilizada -->
+  <div class="header text-center mb-4 p-2 rounded shadow-sm">
+    <h2 class="display-4">Crear Nuevo Usuario</h2>
+    <p class="lead">Complete los siguientes campos para registrar un nuevo usuario.</p>
+    <hr class="my-4" style="border-top: 2px solid #ccc;">
+  </div>
+
+  <div class="row">
+    <div class="col m-4">
+      <!-- Formulario en la columna del medio -->
+      <form [formGroup]="createUserForm" (ngSubmit)="addUser()" class="text-center">
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="firstName"
+                   formControlName="name"
+                   pInputText type="text" class="form-control text-center">
+            <label for="firstName"><strong>Nombre</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="lastName"
+                   formControlName="lastName"
+                   pInputText type="text" class="form-control text-center">
+            <label for="lastName"><strong>Apellidos</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="dni"
+                   formControlName="dni"
+                   pInputText type="text" class="form-control text-center">
+            <label for="dni"><strong>DNI</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="email"
+                   formControlName="email"
+                   pInputText type="email" class="form-control text-center">
+            <label for="email"><strong>Email</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="phone"
+                   formControlName="phone"
+                   pInputText type="tel" class="form-control text-center">
+            <label for="phone"><strong>Teléfono</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <!-- MultiSelect de PrimeNG -->
+        <div class="form-group">
+          <p-floatLabel>
+            <p-multiSelect id="selectedRoles"
+                           [options]="roles"
+                           formControlName="roles"
+                           optionLabel="label"
+                           optionValue="value"
+                           display="chip"
+                           placeholder="Seleccionar roles"
+                           [style]="{'width':'100%'}"
+                           [panelStyle]="{'width':'100%'}">
+            </p-multiSelect>
+            <label><strong>Roles</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <p-button [disabled]="createUserForm.invalid" type="submit" severity="success" class="align-right">
+          Crear Usuario &nbsp; <i class="pi pi-save"> </i>
+        </p-button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<p-toast position="top-center"></p-toast>

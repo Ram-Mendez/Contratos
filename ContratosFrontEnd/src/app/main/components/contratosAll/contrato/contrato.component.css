@@ -1,14 +1,45 @@
-
-.container-height {
-  height: 80vh;
+.container-fluid {
+  width: 75%; /* Extend the width to 75% */
+  padding: 0;
+  float: left; /* Align the container to the left */
 }
-.container {
-  max-width: 600px;
+.row {
+  width: 100%;
+  margin: 0;
+}
+
+.header {
+  background: #DCDDFE;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: -20px;
+}
+
+.header .display-4 {
+  font-size: 2.5rem;
+}
+
+.header .lead {
+  font-size: 1.25rem;
+}
+
+.header hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid #ccc;
+}
+
+.p-button {
+  width: 100%;
+  max-width: 200px;
   margin: auto;
+  margin-bottom: 0; /* Elimina el margen inferior */
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 label {
@@ -40,7 +71,7 @@ select.form-control.custom-select {
 }
 
 .custom-select-wrapper::after {
-  content: '\25BC'; /* Down arrow */
+  content: '\25BC';
   position: absolute;
   top: 50%;
   right: 1rem;
@@ -53,4 +84,9 @@ button[type="submit"] {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
+}
+
+.text-right-custom {
+  text-align: right;
+  margin-bottom: 0; /* Elimina el margen inferior */
 }

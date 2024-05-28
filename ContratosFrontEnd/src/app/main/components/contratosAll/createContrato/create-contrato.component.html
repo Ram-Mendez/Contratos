@@ -1,10 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10 col-sm-12 mt-3">
-
       <!-- Cabecera estilizada -->
       <div class="header text-center mb-4 p-2 rounded shadow-sm">
-        <h2 class="display-4">Crear Nuevo Contrato</h2>
+        <h3 class="display-4">Crear Nuevo Contrato</h3>
         <p class="lead">Complete los siguientes campos para registrar un nuevo contrato.</p>
         <hr class="my-4" style="border-top: 2px solid #ccc;">
       </div>
@@ -45,9 +44,9 @@
           </p-floatLabel>
         </div>
 
-        <div class="mt-5 text-center">
+        <div class="mt-5 button-container">
           <p-button severity="success" type="submit" [disabled]="createContractForm.invalid">
-            Crear &nbsp; <i class="pi pi-save"></i>
+            Crear Contrato &nbsp; <i class="pi pi-save"></i>
           </p-button>
         </div>
       </form>
@@ -55,4 +54,4 @@
   </div>
 </div>
 
-<p-toast></p-toast>
+<p-toast position="top-center"></p-toast>

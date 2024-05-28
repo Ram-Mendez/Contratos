@@ -1,0 +1,68 @@
+<p-toast position="top-center"></p-toast>
+
+<div class="container-fluid">
+  <!-- Cabecera estilizada -->
+  <div class="header text-center mb-4 p-2 rounded shadow-sm">
+    <h2 class="display-4">Editar Usuario</h2>
+    <p class="lead">Complete los siguientes campos para actualizar el usuario.</p>
+    <hr class="my-4" style="border-top: 2px solid #ccc;">
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <!-- Formulario para editar usuario -->
+      <form [formGroup]="editUserForm" (ngSubmit)="updateUser()" class="p-4 border rounded shadow-sm bg-white">
+        <div class="form-group">
+          <p-floatLabel>
+            <input
+              formControlName="name"
+              id="username" pInputText type="text" class="form-control text-center" placeholder="Nombre">
+            <label for="username"><strong>Nombre</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <div class="form-group mt-4">
+          <p-floatLabel>
+            <input
+              formControlName="lastName"
+              id="lastName" pInputText type="text" class="form-control text-center" placeholder="Apellido">
+            <label for="lastName"><strong>Apellido</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <div class="form-group mt-4">
+          <p-floatLabel>
+            <input
+              formControlName="dni"
+              id="dni" pInputText type="text" class="form-control text-center" placeholder="DNI">
+            <label for="dni"><strong>DNI</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <div class="form-group mt-4">
+          <p-floatLabel>
+            <input
+              formControlName="email"
+              id="email" pInputText type="email" class="form-control text-center" placeholder="Correo Electrónico">
+            <label for="email"><strong>Correo Electrónico</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <div class="form-group mt-4">
+          <p-floatLabel>
+            <input
+              formControlName="phone"
+              id="phone" pInputText type="text" class="form-control text-center" placeholder="Teléfono">
+            <label for="phone"><strong>Teléfono</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="mt-5 text-right-custom">
+          <p-button severity="success" type="submit" [disabled]="editUserForm.invalid">
+            Guardar Cambios &nbsp; <i class="pi pi-save"></i>
+          </p-button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

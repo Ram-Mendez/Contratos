@@ -7,16 +7,31 @@
   padding: 10px 0;
   border-top: 1px solid #e7e7e7;
 }
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%; /* Ajusta este valor según tus necesidades */
-  margin: auto; /* Centra el contenedor */
 }
+
 .footer-content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  height: 30px; /* Ajusta este valor para reducir el tamaño del logo */
+}
+
+h6 {
+  margin: 0;
+  font-size: 14px; /* Ajusta este valor para reducir el tamaño del texto */
 }

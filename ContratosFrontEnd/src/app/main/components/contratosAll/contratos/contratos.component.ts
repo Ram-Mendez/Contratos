@@ -57,12 +57,14 @@ export class ContratosComponent implements OnInit {
           () => {
             this.messageService.add({
               severity: 'success',
-              summary: 'Deleting Contract...',
-              detail: 'Contract deleted successfully.',
+              summary: 'Deleting Contract',
               icon: 'pi pi-spin pi-spinner'
             });
-            console.log('Contrato eliminado');
-            this.getContratos();
+            setTimeout(
+              () => {
+                this.getContratos();
+              }, 1500
+            )
           },
           (error) => {
             console.error('Error deleting contract', error);

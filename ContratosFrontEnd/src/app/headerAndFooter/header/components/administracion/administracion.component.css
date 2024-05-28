@@ -5,32 +5,34 @@
   border-radius: 4px;
   box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 }
+
 .full-height {
   height: 82vh;
 }
 
-
 .relative-children:hover {
-  background-color: lightblue;
+  background-color: #DCDDFE;
 }
 
 .ui-state-highlight {
   background-color: transparent;
 }
 
-
 .ellipsis {
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 
 .clickable {
   cursor: pointer;
 }
+
 .p-tree .p-treenode-content {
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .p-tree .p-treenode-children {
@@ -38,19 +40,24 @@
 }
 
 .relative-children .col-2 {
-  margin-right: -5px; /* Ajusta según sea necesario */
-  padding-right: 0; /* Ajusta según sea necesario */
+  flex: 0 0 auto;
+  width: 25px; /* Reduce el ancho de la columna del icono */
+  padding-right: 0;
 }
 
-.relative-children .col-2 i {
-  margin-right: 0; /* Ajusta según sea necesario */
-  padding-right: 0; /* Ajusta según sea necesario */
-}
-.relative-children {
-  align-items: center;
+.relative-children .col-10 {
+  flex: 1 1 auto;
+  max-width: calc(100% - 25px); /* Ajusta el ancho de la columna del texto */
+  padding-left: 0; /* Elimina el padding entre el icono y el texto */
 }
 
-/* gestiones.component.css */
+.relative-children .p-treenode-label {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px; /* Aumenta el espacio entre el icono y el texto para los nodos secundarios */
+}
 
 /* Añade esta clase para el badge personalizado */
 .badge-custom {

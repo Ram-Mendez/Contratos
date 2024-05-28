@@ -1,0 +1,42 @@
+<p-toast position="top-center"></p-toast>
+
+<div class="container-fluid">
+  <!-- Cabecera estilizada -->
+  <div class="header text-center mb-4 p-2 rounded shadow-sm">
+    <h2 class="display-4">Editar Rol</h2>
+    <p class="lead">Complete los siguientes campos para actualizar el rol.</p>
+    <hr class="my-4" style="border-top: 2px solid #ccc;">
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <!-- Formulario para editar rol -->
+      <form [formGroup]="editRoleForm" (ngSubmit)="editRole()" class="p-4 border rounded shadow-sm bg-white">
+        <div class="form-group">
+          <p-floatLabel>
+            <input
+              formControlName="nombre"
+              id="rolName" pInputText type="text" class="form-control text-center" placeholder="Nombre del Rol">
+            <label for="rolName"><strong>Nombre del Rol</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <div class="form-group mt-4">
+          <p-floatLabel>
+            <input
+              formControlName="description"
+              id="description" pInputText type="text" class="form-control text-center" placeholder="Descripción">
+            <label for="description"><strong>Descripción</strong></label>
+          </p-floatLabel>
+        </div>
+
+        <div class="mt-5 text-right-custom">
+          <p-button severity="success" type="submit" [disabled]="editRoleForm.invalid">
+            Guardar Cambios &nbsp; <i class="pi pi-save"></i>
+          </p-button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,62 @@
 <p-toast position="top-center"></p-toast>
 
-<div class="container">
+<div class="container-fluid">
+  <!-- Cabecera estilizada -->
+  <div class="header text-center mb-4 p-2 rounded shadow-sm">
+    <h2 class="display-4">Editar Autoridad</h2>
+    <p class="lead">Complete  los siguientes campos para actualizar la autoridad.</p>
+    <hr class="my-4" style="border-top: 2px solid #ccc;">
+  </div>
+
   <div class="row">
     <div class="col m-4">
+      <!-- Formulario en la columna del medio -->
       <form [formGroup]="autoridadForm" (ngSubmit)="editAutoridad()" class="text-center">
         <div class="form-group">
-          <label for="name"><strong>Nombre de la autoridad</strong></label>
-          <input id="name" type="text" formControlName="name" class="form-control text-center">
+          <p-floatLabel>
+            <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
+            <label for="name"><strong>Nombre completo</strong></label>
+          </p-floatLabel>
         </div>
-        <button type="submit" class="btn btn-info" [disabled]="autoridadForm.invalid">
-          Save &nbsp; <i class="pi pi-save"></i>
-        </button>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="cifDni" pInputText type="text" formControlName="cifDni" class="form-control text-center">
+            <label for="cifDni"><strong>C.I.F / D.N.I</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="address" pInputText type="text" formControlName="address" class="form-control text-center">
+            <label for="address"><strong>Dirección de residencia</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="municipality" pInputText type="text" formControlName="municipality" class="form-control text-center">
+            <label for="municipality"><strong>Municipio</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="zipCode" pInputText type="text" formControlName="zipCode" class="form-control text-center">
+            <label for="zipCode"><strong>Código postal</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="country" pInputText type="text" formControlName="country" class="form-control text-center">
+            <label for="country"><strong>Pais</strong></label>
+          </p-floatLabel>
+        </div>
+        <div class="form-group">
+          <p-floatLabel>
+            <input id="phone" pInputText type="text" formControlName="phone" class="form-control text-center">
+            <label for="phone"><strong>Teléfono</strong></label>
+          </p-floatLabel>
+        </div>
+        <p-button type="submit" severity="success" class="btn-subir align-right" [disabled]="autoridadForm.invalid">
+          Guardar Cambios &nbsp; <i class="pi pi-save"></i>
+        </p-button>
       </form>
     </div>
   </div>

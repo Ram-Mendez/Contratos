@@ -19,21 +19,6 @@
     </div>
     <div class="col-1" style="width: 10px"></div>
     <div class="col box full-height">
-      <div *ngIf="contrato">
-        <h1>Gestión del Contrato: {{ contrato.name }}</h1>
-        <p>
-          <span class="badge badge-custom">Fecha de creación: {{ contrato.creationDate | date }}</span>
-        </p>
-        <p>
-          <span class="badge badge-custom">Entidad contratante: {{ contrato.contractingEntity.name }}</span>
-        </p>
-        <p>
-          <span class="badge badge-custom">Entidad autorizadora: {{ contrato.authorityEntity.name }}</span>
-        </p>
-      </div>
-      <div *ngIf="!contrato">
-        <p>Cargando datos del contrato...</p>
-      </div>
       <router-outlet></router-outlet>
     </div>
   </div>

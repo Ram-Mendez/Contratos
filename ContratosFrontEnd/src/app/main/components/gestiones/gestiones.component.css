@@ -1,0 +1,64 @@
+.box {
+  background-color: var(--surface-e);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+.full-height {
+  height: 82vh;
+}
+
+
+.relative-children:hover {
+  background-color: #DCDDFE;
+}
+
+.ui-state-highlight {
+  background-color: transparent;
+}
+
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.clickable {
+  cursor: pointer;
+}
+.p-tree .p-treenode-content {
+  margin: 0;
+  padding: 0;
+}
+
+.p-tree .p-treenode-children {
+  padding-left: 1rem; /* Ajusta según sea necesario */
+}
+
+.relative-children .col-2 {
+  margin-right: -5px; /* Ajusta según sea necesario */
+  padding-right: 0; /* Ajusta según sea necesario */
+}
+
+.relative-children .col-2 i {
+  margin-right: 0; /* Ajusta según sea necesario */
+  padding-right: 0; /* Ajusta según sea necesario */
+}
+.relative-children {
+  align-items: center;
+}
+
+/* gestiones.component.css */
+
+/* Añade esta clase para el badge personalizado */
+.badge-custom {
+  background-color: #DCDDFE; /* Color del header */
+  color: black; /* Color del texto */
+  padding: 0.5em 1em;
+  border-radius: 0.25rem;
+  font-size: 1em;
+  display: inline-block;
+  margin: 0.5em 0;
+}

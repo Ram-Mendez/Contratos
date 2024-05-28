@@ -34,7 +34,7 @@ export class ContratoComponent implements OnInit, OnDestroy {
   });
 
   ngOnInit() {
-    this.route.parent?.params.subscribe(params => {
+  this.unsubscribe =  this.route.parent?.params.subscribe(params => {
       const id = params['id'];
       this.contratoService.getContratoById(id).subscribe(contrato => {
         console.log(contrato);
@@ -68,13 +68,12 @@ export class ContratoComponent implements OnInit, OnDestroy {
           console.log("Contrato actualizado.");
           this.messageService.add({
             severity: 'success',
-            summary: 'Saving...Updating Contract',
-            detail: 'Contract updated successfully.',
+            summary: 'Saving',
             icon: 'pi pi-spin pi-spinner'
           });
           setTimeout(() => {
-            this.router.navigate(['/contratos']);
-          }, 1500);
+            this.router.navigate(['/home']);
+          }, 1500); // Delay before redirecting to /home
         },
         (error) => {
           console.error('Error updating contract', error);
@@ -97,6 +96,6 @@ export class ContratoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // Clean up any subscriptions or resources
+  this.unsubscribe.unsubscribe();
   }
 }

@@ -1,6 +1,7 @@
 .container-height {
   height: 80vh;
 }
+
 .container {
   max-width: 600px;
   margin: auto;
@@ -18,7 +19,8 @@ label {
 }
 
 input[type="text"],
-input[type="date"],
+input[type="email"],
+input[type="tel"],
 select.form-control {
   width: 100%;
   padding: 0.5rem;
@@ -76,8 +78,6 @@ button[type="submit"] {
 .btn-subir {
   background-color: #28a745;
   color: #fff;
-}
-.btn-subir {
   margin-top: -10px; /* Ajusta este valor según sea necesario */
 }
 .align-right {

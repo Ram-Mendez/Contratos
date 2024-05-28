@@ -48,8 +48,7 @@ export class CreateContratoComponent implements OnInit {
           console.log("Contrato creado.");
           this.messageService.add({
             severity: 'success',
-            summary: 'Saving...Creating Contract',
-            detail: 'Contract created successfully.',
+            summary: 'Creating Contract',
             icon: 'pi pi-spin pi-spinner'
           });
           setTimeout(() => {

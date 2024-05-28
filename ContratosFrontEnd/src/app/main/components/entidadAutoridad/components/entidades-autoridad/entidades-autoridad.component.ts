@@ -41,7 +41,7 @@ export class EntidadesAutoridadComponent implements OnInit {
 
   editAutoridad() {
     this.contratanteService.getEntidadContratanteById(this.id).subscribe( () => {
-      this.router.navigate(['/gestiones/authority', this.id])
+      this.router.navigate(['/administration/edit-authority', this.id])
     })
   }
 
@@ -55,8 +55,7 @@ export class EntidadesAutoridadComponent implements OnInit {
           () => {
             this.messageService.add({
               severity: 'success',
-              summary: 'Deleting Authority Entity...',
-              detail: 'Authority entity deleted successfully.',
+              summary: 'Deleting Authority...',
               icon: 'pi pi-spin pi-spinner'
             });
             console.log('Entidad autoridad eliminada');
