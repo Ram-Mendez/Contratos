@@ -37,9 +37,10 @@ export class AddUserComponent implements OnInit {
 
   addUser() {
     if (this.createUserForm.valid) {
+      console.log(this.createUserForm.value, "valor del form antes de la peticion http")
       this.addUserService.addUser(this.createUserForm.value).subscribe(
         res => {
-          console.log(res, "..................................");
+          console.log(res, "aqui se pierden los roles");
           this.messageService.add({
             severity: 'success', summary: 'Usuario Creado', detail: 'El usuario ha sido creado con éxito.'
           });
