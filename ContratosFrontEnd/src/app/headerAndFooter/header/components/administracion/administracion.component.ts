@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { TreeNode } from "primeng/api";
+import {Component} from '@angular/core';
+import {TreeNode} from "primeng/api";
 
 @Component({
   selector: 'app-administracion',
@@ -15,8 +15,8 @@ export class AdministracionComponent {
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
-        { label: 'Add Authority', data: { path: '/administration/create-authority', icon: 'pi pi-plus' }, expanded: true },
-        { label: 'List Authority', data: { path: '/administration/list-authorities', icon: 'pi pi-list' }, expanded: true },
+        {label: 'Add Authority', data: {path: '/administration/create-authority', icon: 'pi pi-plus'}, expanded: true},
+        {label: 'List Authority', data: {path: '/administration/list-authorities', icon: 'pi pi-list'}, expanded: true},
       ]
     },
     {
@@ -26,8 +26,8 @@ export class AdministracionComponent {
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
-        { label: 'Add User', data: { path: '/administration/create-user', icon: 'pi pi-user-plus' }, expanded: true },
-        { label: 'List Users', data: { path: '/administration/list-users', icon: 'pi pi-users' }, expanded: true },
+        {label: 'Add User', data: {path: '/administration/create-user', icon: 'pi pi-user-plus'}, expanded: true},
+        {label: 'List Users', data: {path: '/administration/list-users', icon: 'pi pi-users'}, expanded: true},
       ]
     },
     {
@@ -37,11 +37,22 @@ export class AdministracionComponent {
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
-        { label: 'Create Role', data: { path: '/administration/create-role', icon: 'pi pi-plus' }, expanded: true },
-        { label: 'List Roles', data: { path: '/administration/list-roles', icon: 'pi pi-list' }, expanded: true },
+        {label: 'Create Role', data: {path: '/administration/create-role', icon: 'pi pi-plus'}, expanded: true},
+        {label: 'List Roles', data: {path: '/administration/list-roles', icon: 'pi pi-list'}, expanded: true},
       ]
     },
-  ];
+    {
+      label: 'Entities',
+      selectable: false,
+      expanded: true,
+      expandedIcon: 'pi pi-folder-open',
+      collapsedIcon: 'pi pi-folder',
+      children: [
+        {label: 'Designate Administrator', data: {path: '/administration/create-role', icon: 'pi pi-user-edit'}, expanded: true},
+        {label: 'List Administrators', data: {path: '/administration/list-roles', icon: 'pi pi-list'}, expanded: true},
+      ]
+    }
 
+  ];
 }
 

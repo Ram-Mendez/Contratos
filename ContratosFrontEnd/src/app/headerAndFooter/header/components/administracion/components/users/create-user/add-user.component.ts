@@ -40,7 +40,6 @@ export class AddUserComponent implements OnInit {
       console.log(this.createUserForm.value, "valor del form antes de la peticion http")
       this.addUserService.addUser(this.createUserForm.value).subscribe(
         res => {
-          console.log(res, "aqui se pierden los roles");
           this.messageService.add({
             severity: 'success', summary: 'Usuario Creado', detail: 'El usuario ha sido creado con éxito.'
           });
@@ -62,6 +61,7 @@ export class AddUserComponent implements OnInit {
     this.rolesService.getRoles().subscribe(
       listaRoles => {
         this.roles = listaRoles.map(role => ({ label: role.nombre, value: role.id }));
+        console.log(this.roles, "rolessssssssssssss")
       },
       err => {
         console.log(err);

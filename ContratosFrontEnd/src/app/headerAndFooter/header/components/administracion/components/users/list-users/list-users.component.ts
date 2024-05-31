@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AddUserService } from '../services/add-user.service';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AddUserService} from '../services/add-user.service';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-users',
@@ -12,17 +12,21 @@ export class ListUsersComponent implements OnInit {
   users: any[] = [];
   isUserSelected: boolean = false;
   id: any;
-  selectedUser: any;
 
   constructor(
     private userService: AddUserService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private router: Router
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.getUsers();
+  }
+
+  mapRoles(listaRoles: any) {
+    return listaRoles.map((role: any) => role.nombre).join(', ');
   }
 
   getUsers() {
@@ -40,7 +44,6 @@ export class ListUsersComponent implements OnInit {
   editUser() {
     this.router.navigate(['/administration/edit-user', this.id]);
   }
-
 
 
   deleteUser() {

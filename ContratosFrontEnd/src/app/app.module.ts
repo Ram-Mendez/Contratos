@@ -34,6 +34,9 @@ import {FloatLabelModule} from "primeng/floatlabel";
 import {TableModule} from "primeng/table";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {MultiSelectModule} from "primeng/multiselect";
+import { CreateAdministratorComponent } from './headerAndFooter/header/components/administracion/components/administrator/create-administrator/create-administrator.component';
+import { EditAdministratorComponent } from './headerAndFooter/header/components/administracion/components/administrator/edit-administrator/edit-administrator.component';
+import { ListAdministratorsComponent } from './headerAndFooter/header/components/administracion/components/administrator/list-administrators/list-administrators.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,9 @@ import {MultiSelectModule} from "primeng/multiselect";
     CreateRolesRightsComponent,
     EditRolesRightsComponent,
     ListRolesRightsComponent,
+    CreateAdministratorComponent,
+    EditAdministratorComponent,
+    ListAdministratorsComponent,
   ],
   imports: [
     BrowserModule,
