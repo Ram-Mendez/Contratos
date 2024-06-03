@@ -1,16 +1,26 @@
 <p-toast position="top-center"></p-toast>
 
-<div class="container">
+<div class="container-fluid">
+  <!-- Cabecera estilizada -->
+  <div class="header text-center mb-4 p-2 rounded shadow-sm">
+    <h2 class="display-4">Editar Contratante</h2>
+    <p class="lead">Complete el siguiente campo para actualizar el contratante.</p>
+    <hr class="my-4" style="border-top: 2px solid #ccc;">
+  </div>
+
   <div class="row">
     <div class="col m-4">
+      <!-- Formulario en la columna del medio -->
       <form [formGroup]="contratanteForm" (ngSubmit)="editContratante()" class="text-center">
         <div class="form-group">
-          <label for="name"><strong>Nombre del contratante</strong></label>
-          <input id="name" type="text" formControlName="name" class="form-control text-center">
+          <p-floatLabel>
+            <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
+            <label for="name"><strong>Nombre del contratante</strong></label>
+          </p-floatLabel>
         </div>
-        <button type="submit" class="btn btn-info" [disabled]="contratanteForm.invalid">
-          Save &nbsp; <i class="pi pi-save"></i>
-        </button>
+        <p-button type="submit" severity="success" class="btn-subir align-right" [disabled]="contratanteForm.invalid">
+          Guardar Cambios &nbsp; <i class="pi pi-save"></i>
+        </p-button>
       </form>
     </div>
   </div>

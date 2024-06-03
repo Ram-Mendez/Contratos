@@ -9,14 +9,25 @@ import {TreeNode} from "primeng/api";
 export class AdministracionComponent {
   data: TreeNode[] = [
     {
-      label: 'Authority',
+      label: 'Authorities ',
       selectable: false,
       expanded: true,
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
         {label: 'Add Authority', data: {path: '/administration/create-authority', icon: 'pi pi-plus'}, expanded: true},
-        {label: 'List Authority', data: {path: '/administration/list-authorities', icon: 'pi pi-list'}, expanded: true},
+        {label: 'List Authorities', data: {path: '/administration/list-authorities', icon: 'pi pi-list'}, expanded: true},
+      ]
+    },
+    {
+      label: 'Contractors',
+      selectable: false,
+      expanded: true,
+      expandedIcon: 'pi pi-folder-open',
+      collapsedIcon: 'pi pi-folder',
+      children: [
+        {label: 'Add Contractor', data: {path: '/administration/create-contractor', icon: 'pi pi-briefcase '}, expanded: true},
+        {label: 'List Contractors', data: {path: '/administration/list-contractors', icon: 'pi pi-list'}, expanded: true},
       ]
     },
     {
@@ -42,14 +53,14 @@ export class AdministracionComponent {
       ]
     },
     {
-      label: 'Entities',
+      label: 'Administrators',
       selectable: false,
       expanded: true,
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
-        {label: 'Designate Administrator', data: {path: '/administration/create-role', icon: 'pi pi-user-edit'}, expanded: true},
-        {label: 'List Administrators', data: {path: '/administration/list-roles', icon: 'pi pi-list'}, expanded: true},
+        {label: 'Designate Administrator', data: {path: '/administration/create-administrator', icon: 'pi pi-user-edit'}, expanded: true},
+        {label: 'List Administrators', data: {path: '/administration/list-administrator', icon: 'pi pi-list'}, expanded: true},
       ]
     }
 

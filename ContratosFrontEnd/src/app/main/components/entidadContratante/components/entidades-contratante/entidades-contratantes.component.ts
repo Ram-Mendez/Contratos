@@ -39,7 +39,7 @@ export class EntidadesContratantesComponent implements OnInit {
   editContratante() {
     this.contratanteService.getEntidadContratanteById(this.id).subscribe(
       () => {
-        this.router.navigate(['/gestiones/contractor', this.id]);
+        this.router.navigate(['/administration/edit-contractor', this.id]);
       })
 
 

@@ -1,3 +1,6 @@
+.container-height {
+  height: 80vh;
+}
 .container {
   max-width: 600px;
   margin: auto;
@@ -14,7 +17,9 @@ label {
   text-align: left;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="date"],
+select.form-control {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
@@ -23,8 +28,58 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
+.custom-select-wrapper {
+  position: relative;
+}
+
+select.form-control.custom-select {
+  appearance: none;
+  background: none;
+  padding-right: 2.5rem;
+}
+
+.custom-select-wrapper::after {
+  content: '\25BC'; /* Down arrow */
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #495057;
+}
+
 button[type="submit"] {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
+}
+
+/* Estilos adicionales para badges y cabecera */
+.header {
+  background-color: #DCDDFE;
+  border: 1px solid #dee2e6;
+}
+
+.header .display-4 {
+  font-size: 2.5rem;
+}
+
+.header .lead {
+  font-size: 1.25rem;
+}
+
+.header hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-subir {
+  background-color: #28a745;
+  color: #fff;
+}
+.btn-subir {
+  margin-top: -10px; /* Ajusta este valor según sea necesario */
+}
+.align-right {
+  float: right;
 }

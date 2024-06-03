@@ -1,1 +1,51 @@
-<p>create-administrator works!</p>
+<form [formGroup]="createAdministratorForm" (ngSubmit)="crearAdministrador()">
+  <div class="form-group">
+    <p-floatLabel>
+      <p-dropdown id="contrato"
+                  formControlName="contrato"
+                  [options]="contratosOptions"
+                  optionLabel="label"
+                  optionValue="value"
+                  placeholder="Seleccionar opción"
+                  [style]="{'width':'100%'}">
+      </p-dropdown>
+      <label for="contrato"><strong>Opción 1</strong></label>
+    </p-floatLabel>
+  </div>
+
+  <!-- Segundo p-dropdown -->
+  <div class="form-group">
+    <p-floatLabel>
+      <p-dropdown id="dropdown2"
+                  formControlName="autoridad"
+                  [options]="autoridadOptions"
+                  optionLabel="label"
+                  optionValue="value"
+                  placeholder="Seleccionar opción"
+                  [style]="{'width':'100%'}">
+      </p-dropdown>
+      <label for="dropdown2"><strong>Opción 2</strong></label>
+    </p-floatLabel>
+  </div>
+
+  <!-- p-multiSelect -->
+  <div class="form-group">
+    <p-floatLabel>
+      <p-multiSelect id="selectedRoles"
+                     [options]="roles"
+                     formControlName="roles"
+                     optionLabel="label"
+                     optionValue="value"
+                     display="chip"
+                     placeholder="Seleccionar roles"
+                     [style]="{'width':'100%'}"
+                     [panelStyle]="{'width':'100%'}">
+      </p-multiSelect>
+      <label><strong>Roles</strong></label>
+    </p-floatLabel>
+  </div>
+  <p-button [disabled]="createAdministratorForm.invalid" type="submit" severity="success" class="align-right">
+    Crear Administrador &nbsp; <i class="pi pi-save"> </i>
+  </p-button>
+</form>
+<p-toast position="top-center"></p-toast>

@@ -36,6 +36,24 @@ import {
 import {
   EditRolesRightsComponent
 } from "./headerAndFooter/header/components/administracion/components/roles/edit-roles-rights/edit-roles-rights.component";
+import {
+  CreateAdministratorComponent
+} from "./headerAndFooter/header/components/administracion/components/administrator/create-administrator/create-administrator.component";
+import {
+  EditAdministratorComponent
+} from "./headerAndFooter/header/components/administracion/components/administrator/edit-administrator/edit-administrator.component";
+import {
+  ListAdministratorsComponent
+} from "./headerAndFooter/header/components/administracion/components/administrator/list-administrators/list-administrators.component";
+import {
+  CrearContratanteComponent
+} from "./main/components/entidadContratante/components/crear-contratante/crear-contratante.component";
+import {
+  EntidadContratanteComponent
+} from "./main/components/entidadContratante/components/entidad-contratante/entidad-contratante.component";
+import {
+  EntidadesContratantesComponent
+} from "./main/components/entidadContratante/components/entidades-contratante/entidades-contratantes.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -49,6 +67,9 @@ const routes: Routes = [
     path: 'administration', component: AdministracionComponent, children: [
       {path: 'create-authority', component: CrearAutoridadComponent},
       {path: 'edit-authority/:id', component: EntidadAutoridadComponent},
+      {path: 'create-contractor', component: CrearContratanteComponent},
+      {path: 'edit-contractor/:id', component: EntidadContratanteComponent},
+      {path: 'list-contractors', component: EntidadesContratantesComponent},
       {path: 'list-authorities', component: EntidadesAutoridadComponent},
       {path: 'create-user', component: AddUserComponent},
       {path: 'edit-user/:id', component: EditUserComponent},
@@ -56,6 +77,9 @@ const routes: Routes = [
       {path: 'create-role', component: CreateRolesRightsComponent},
       {path: 'list-roles', component: ListRolesRightsComponent},
       {path: 'edit-role/:id', component: EditRolesRightsComponent},
+      {path: 'create-administrator', component: CreateAdministratorComponent},
+      {path: 'edit-administrador/:id', component: EditAdministratorComponent},
+      {path: 'list-administrators', component: ListAdministratorsComponent},
     ]
   },
   {

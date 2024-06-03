@@ -37,6 +37,7 @@ import {MultiSelectModule} from "primeng/multiselect";
 import { CreateAdministratorComponent } from './headerAndFooter/header/components/administracion/components/administrator/create-administrator/create-administrator.component';
 import { EditAdministratorComponent } from './headerAndFooter/header/components/administracion/components/administrator/edit-administrator/edit-administrator.component';
 import { ListAdministratorsComponent } from './headerAndFooter/header/components/administracion/components/administrator/list-administrators/list-administrators.component';
+import {DropdownModule} from "primeng/dropdown";
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { ListAdministratorsComponent } from './headerAndFooter/header/components
     TableModule,
     ConfirmDialogModule,
     MultiSelectModule,
+    DropdownModule,
 
   ],
   providers: [MessageService, ConfirmationService,],

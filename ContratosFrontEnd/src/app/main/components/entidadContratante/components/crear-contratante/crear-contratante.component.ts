@@ -29,12 +29,11 @@ export class CrearContratanteComponent {
         console.log("Entidad contratante creada.");
         this.messageService.add({
           severity: 'success',
-          summary: 'Saving...Creating Contracting Entity',
-          detail: 'Contracting entity created successfully.',
+          summary: 'Creating contractor',
           icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
-          this.router.navigate(['/gestiones/contractors']);
+          this.router.navigate(['/administration/list-contractors']);
         }, 1500);
       },
       error => {

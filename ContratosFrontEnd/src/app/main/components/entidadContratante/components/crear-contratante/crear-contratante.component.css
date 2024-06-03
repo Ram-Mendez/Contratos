@@ -1,20 +1,47 @@
-.container {
-  max-width: 600px;
+.container-fluid {
+  height: 80vh;
+}
+
+.container-fluid .header {
+  max-width: 100%;
+  margin: auto;
+  background-color: #DCDDFE;
+  border: 1px solid #dee2e6;
+}
+
+.container-fluid .header .display-4 {
+  font-size: 2.5rem;
+}
+
+.container-fluid .header .lead {
+  font-size: 1.25rem;
+}
+
+.container-fluid .header hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container-fluid .row .col {
   margin: auto;
 }
 
-.form-group {
+.container-fluid .row .col form {
+  text-align: center;
+}
+
+.container-fluid .row .col form .form-group {
   margin-bottom: 1.5rem;
 }
 
-label {
+.container-fluid .row .col form .form-group label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
   text-align: left;
 }
 
-input[type="text"] {
+.container-fluid .row .col form .form-group input[type="text"] {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
@@ -23,8 +50,9 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-button[type="submit"] {
+.container-fluid .row .col form .btn-subir {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
+  float: right;
 }

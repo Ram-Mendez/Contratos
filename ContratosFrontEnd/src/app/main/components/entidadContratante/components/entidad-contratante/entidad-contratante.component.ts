@@ -49,12 +49,11 @@ export class EntidadContratanteComponent implements OnInit, OnDestroy {
         console.log("Contratante actualizado.");
         this.messageService.add({
           severity: 'success',
-          summary: 'Saving...Updating Contractor',
-          detail: 'Contractor updated successfully.',
+          summary: 'Updating Contractor',
           icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
-          this.router.navigate(['/gestiones/contractors']);
+          this.router.navigate(['/administration/list-contractors']);
         }, 1500);
       },
       error => {

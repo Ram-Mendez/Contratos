@@ -41,7 +41,8 @@ export class AddUserComponent implements OnInit {
       this.addUserService.addUser(this.createUserForm.value).subscribe(
         res => {
           this.messageService.add({
-            severity: 'success', summary: 'Usuario Creado', detail: 'El usuario ha sido creado con éxito.'
+            severity: 'success', summary: 'Creando Usuario',
+            icon: 'pi pi-spinner pi-spin'
           });
           setTimeout(() => {
             this.router.navigate(['/administration/list-users']);
