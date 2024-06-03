@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 export class AddUserService {
   url = 'http://localhost:8080/add-user';
   url2 = 'http://localhost:8080/users';
-  url3 = 'http://localhost:8080/delete-user';
+  url3 = 'http://localhost:8080/users';
 
   constructor(private http: HttpClient) {
   }
