@@ -71,12 +71,10 @@ export class ListRolesRightsComponent implements OnInit {
     });
   }
 
-  getUsersByRol() {
-    console.log('Selected Role ID:', this.id); // Log for debugging
+  getUsersByRole() {
     this.userService.getUsersByRole(this.id).subscribe(
       (data) => {
         this.users = data;
-        console.log('Users by Role:', this.users); // Debugging log
       },
       (error) => {
         console.log(error);
@@ -87,7 +85,7 @@ export class ListRolesRightsComponent implements OnInit {
   onRowSelect(event: any) {
     this.isRoleSelected = true;
     this.id = event.data.id;
-    this.getUsersByRol();
+    this.getUsersByRole();
   }
 
   onRowUnselect(event: any) {

@@ -99,25 +99,17 @@ export class EditAdministratorComponent implements OnInit {
   }
 
   updateAdministrator() {
-    console.log(this.editAdministratorForm.value);
-    this.administratorService.updateAdministrator(this.id, this.editAdministratorForm.value).subscribe(
-      (response: any) => {
-        console.log(response);
-        setTimeout(() => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
-            detail: 'Administrator updated successfully!'
-          });
-          this.router.navigate(['/administration/list-administrators']);
-        }, 1500)
-      },
-      err => {
-        console.log(err);
-        this.messageService.add({severity: 'error', summary: 'Error', detail: 'Failed to update administrator!'});
-      }
-    );
-
-
+    if (this.editAdministratorForm.valid) {
+      this.administratorService.updateAdministrator(this.id, this.editAdministratorForm.value).subscribe(() => {
+          this.messageService.add({severity: 'success', summary: 'Updating Administrator', icon: 'pi pi-spin pi-spinner'});
+          setTimeout(() => {
+            this.router.navigate(['/administration/list-administrators']);
+          }, 1500);
+        },
+        err => {
+          console.log(err);
+          this.messageService.add({severity: 'error', summary: 'Error', detail: 'Failed to update administrator!'});
+        });
+    }
   }
 }
