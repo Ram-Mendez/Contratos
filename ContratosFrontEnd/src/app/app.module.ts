@@ -38,6 +38,7 @@ import { CreateAdministratorComponent } from './headerAndFooter/header/component
 import { EditAdministratorComponent } from './headerAndFooter/header/components/administracion/components/administrator/edit-administrator/edit-administrator.component';
 import { ListAdministratorsComponent } from './headerAndFooter/header/components/administracion/components/administrator/list-administrators/list-administrators.component';
 import {DropdownModule} from "primeng/dropdown";
+import {ScrollPanelModule} from "primeng/scrollpanel";
 
 @NgModule({
   declarations: [
@@ -57,31 +58,32 @@ import {DropdownModule} from "primeng/dropdown";
     EditAdministratorComponent,
     ListAdministratorsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule,
-    LoginModule,
-    ToastModule,
-    BrowserAnimationsModule,
-    MenubarModule,
-    MainModule,
-    NgOptimizedImage,
-    ButtonModule,
-    InputTextareaModule,
-    ReactiveFormsModule,
-    ChipsModule,
-    TreeModule,
-    RippleModule,
-    FloatLabelModule,
-    TableModule,
-    ConfirmDialogModule,
-    MultiSelectModule,
-    DropdownModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        RouterModule,
+        LoginModule,
+        ToastModule,
+        BrowserAnimationsModule,
+        MenubarModule,
+        MainModule,
+        NgOptimizedImage,
+        ButtonModule,
+        InputTextareaModule,
+        ReactiveFormsModule,
+        ChipsModule,
+        TreeModule,
+        RippleModule,
+        FloatLabelModule,
+        TableModule,
+        ConfirmDialogModule,
+        MultiSelectModule,
+        DropdownModule,
+        ScrollPanelModule,
 
-  ],
+    ],
   providers: [MessageService, ConfirmationService,],
     exports: [
     ],

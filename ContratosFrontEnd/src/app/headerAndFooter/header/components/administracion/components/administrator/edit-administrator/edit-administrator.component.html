@@ -1,1 +1,59 @@
-<p>edit-administrator works!</p>
+<form [formGroup]="editAdministratorForm" (ngSubmit)="updateAdministrator()">
+  <div class="container-fluid">
+    <!-- Cabecera estilizada -->
+    <div class="header text-center mb-4 p-2 rounded shadow-sm">
+      <h2 class="display-4">Editar Administrador</h2>
+      <p class="lead">Complete los siguientes campos para actualizar el administrador.</p>
+      <hr class="my-4" style="border-top: 2px solid #ccc;">
+    </div>
+    <!-- Rest of your form goes here -->
+  </div>
+
+  <div class="form-group">
+    <p-floatLabel>
+      <p-dropdown id="contrato"
+                  [options]="contratosOptions"
+                  formControlName="contrato"
+                  optionLabel="label"
+                  optionValue="value"
+                  placeholder="Seleccionar opción"
+                  [style]="{'width':'100%'}">
+      </p-dropdown>
+      <label for="contrato"><strong>Contrato</strong></label>
+    </p-floatLabel>
+  </div>
+
+  <!-- Segundo p-dropdown -->
+  <div class="form-group">
+    <p-floatLabel>
+      <p-dropdown id="dropdown2"
+                  [options]="autoridadOptions"
+                  formControlName="autoridad"
+                  optionLabel="label"
+                  optionValue="value"
+                  placeholder="Seleccionar opción"
+                  [style]="{'width':'100%'}">
+      </p-dropdown>
+      <label for="dropdown2"><strong>Autoridad</strong></label>
+    </p-floatLabel>
+  </div>
+
+  <!-- p-multiSelect -->
+  <div class="form-group">
+    <p-floatLabel>
+      <p-dropdown id="user"
+                  [options]="userOptions"
+                  formControlName="user"
+                  optionLabel="label"
+                  optionValue="value"
+                  placeholder="Seleccionar usuario"
+                  [style]="{'width':'100%'}"
+                  [panelStyle]="{'width':'100%'}">
+      </p-dropdown>
+      <label for="user"><strong>Usuario</strong></label>
+    </p-floatLabel>
+  </div>
+  <p-button [disabled]="editAdministratorForm.invalid" type="submit" severity="success" class="align-right">
+    Editar Administrador &nbsp; <i class="pi pi-save"> </i>
+  </p-button>
+</form>

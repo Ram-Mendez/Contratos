@@ -60,10 +60,11 @@ export class AdministracionComponent {
       collapsedIcon: 'pi pi-folder',
       children: [
         {label: 'Designate Administrator', data: {path: '/administration/create-administrator', icon: 'pi pi-user-edit'}, expanded: true},
-        {label: 'List Administrators', data: {path: '/administration/list-administrator', icon: 'pi pi-list'}, expanded: true},
+        {label: 'List Administrators', data: {path: '/administration/list-administrators', icon: 'pi pi-list'}, expanded: true},
       ]
     }
 
   ];
+  protected readonly scroll = scroll;
 }
 

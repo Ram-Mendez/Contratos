@@ -29,12 +29,12 @@ export class HeaderComponent implements OnInit {
       {
         label: 'Administration',
         icon: 'pi pi-building',
-        route: '/administration'
+        route: '/administration/list-authorities'
 
       },
       {
-        label: 'Our Mission',
-        icon: 'pi pi-flag',
+        label: 'About Us',
+        icon: 'pi pi-fw pi-info-circle', // Changed icon here
         route: '/about-page'
       },
       {

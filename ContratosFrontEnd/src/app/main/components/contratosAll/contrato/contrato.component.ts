@@ -1,12 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MessageService } from "primeng/api";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ContratoService } from "../service/contrato.service";
-import { FormBuilder, Validators } from "@angular/forms";
-import { formatDate } from "@angular/common";
-import { EntidadContratanteService } from "../../entidadContratante/service/entidad-contratante.service";
-import { EntidadAutoridadService } from "../../entidadAutoridad/service/entidad-autoridad.service";
-import { Contrato } from "../service/contrato";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MessageService} from "primeng/api";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ContratoService} from "../service/contrato.service";
+import {FormBuilder, Validators} from "@angular/forms";
+import {formatDate} from "@angular/common";
+import {EntidadContratanteService} from "../../entidadContratante/service/entidad-contratante.service";
+import {EntidadAutoridadService} from "../../entidadAutoridad/service/entidad-autoridad.service";
+import {Contrato} from "../service/contrato";
 
 @Component({
   selector: 'app-contrato',
@@ -28,13 +28,13 @@ export class ContratoComponent implements OnInit, OnDestroy {
 
   editContractForm = this.fb.group({
     name: ['', [Validators.required, Validators.nullValidator]],
-    creationDate: ['', [Validators.required, Validators.nullValidator]],
+    startDate: ['', [Validators.required, Validators.nullValidator]],
     contractingEntity: ['', [Validators.required, Validators.nullValidator]],
     authorityEntity: ['', [Validators.required, Validators.nullValidator]],
   });
 
   ngOnInit() {
-  this.unsubscribe =  this.route.parent?.params.subscribe(params => {
+    this.unsubscribe = this.route.parent?.params.subscribe(params => {
       const id = params['id'];
       this.contratoService.getContratoById(id).subscribe(contrato => {
         console.log(contrato);
@@ -42,7 +42,7 @@ export class ContratoComponent implements OnInit, OnDestroy {
 
         this.editContractForm.setValue({
           name: this.contrato.name,
-          creationDate: formatDate(this.contrato.creationDate, 'yyyy-MM-dd', 'en'),
+          startDate: formatDate(this.contrato.creationDate, 'yyyy-MM-dd', 'en'),
           contractingEntity: this.contrato.contractingEntity.id,
           authorityEntity: this.contrato.authorityEntity.id
         });
@@ -64,7 +64,7 @@ export class ContratoComponent implements OnInit, OnDestroy {
     if (this.editContractForm.valid) {
       this.contratoService.editContrato(this.contrato.id, this.editContractForm.value as Contrato).subscribe(
         (response) => {
-          console.log({ response });
+          console.log({response});
           console.log("Contrato actualizado.");
           this.messageService.add({
             severity: 'success',
@@ -96,6 +96,6 @@ export class ContratoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-  this.unsubscribe.unsubscribe();
+    this.unsubscribe.unsubscribe();
   }
 }

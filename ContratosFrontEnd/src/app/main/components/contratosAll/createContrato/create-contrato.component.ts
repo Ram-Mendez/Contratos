@@ -26,7 +26,7 @@ export class CreateContratoComponent implements OnInit {
 
   createContractForm = this.fb.group({
     name: ['', [Validators.required, Validators.nullValidator]],
-    creationDate: ['', [Validators.required, Validators.nullValidator]],
+    startDate: ['', [Validators.required, Validators.nullValidator]],
     contractingEntity: ['', [Validators.required, Validators.nullValidator]],  // Updated to match backend field
     authorityEntity: ['', [Validators.required, Validators.nullValidator]],  // Updated to match backend field
   });

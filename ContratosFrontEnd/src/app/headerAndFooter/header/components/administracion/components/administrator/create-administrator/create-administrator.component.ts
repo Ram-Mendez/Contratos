@@ -9,6 +9,10 @@ import {
 } from "../../../../../../../main/components/entidadAutoridad/service/entidad-autoridad.service";
 import {RolesService} from "../../roles/services/roles.service";
 import {AdministratorService} from "../services/administrator.service";
+import {Router} from "@angular/router";
+import {MessageService} from "primeng/api";
+import {UserService} from "../../../../../../../login/services/user.service";
+import {AddUserService} from "../../users/services/add-user.service";
 
 @Component({
   selector: 'app-create-administrator',
@@ -16,11 +20,15 @@ import {AdministratorService} from "../services/administrator.service";
   styleUrl: './create-administrator.component.css'
 })
 export class CreateAdministratorComponent implements OnInit {
+   users: any;
+
   constructor(private fb: FormBuilder,
               private contratoService: ContratoService,
               private authorityService: EntidadAutoridadService,
-              private rolesService: RolesService,
-              private administratorService: AdministratorService) {
+              private userService: AddUserService,
+              private administratorService: AdministratorService,
+              private router: Router,
+              private messageService: MessageService,) {
   }
 
   ngOnInit() {
@@ -37,32 +45,47 @@ export class CreateAdministratorComponent implements OnInit {
         value: authority.id.toString()
       }));
     });
-
-    this.rolesService.getRoles().subscribe((roles: any) => {
-      this.roles = roles.map((role: any) => ({
-        label: role.nombre,
-        value: role.id.toString()
-      }));
-    });
+    this.getUsers();
   }
 
   createAdministratorForm = this.fb.group({
     contrato: ['', [Validators.required]],
     autoridad: ['', [Validators.required]],
-    roles: ['', [Validators.required]]
+    user: ['', [Validators.required]]
   });
 
   contratosOptions = [];
-
   autoridadOptions = [];
-
-  roles = [];
 
   crearAdministrador() {
     if (this.createAdministratorForm.valid) {
-      this.administratorService.createAdministrator(this.createAdministratorForm.value).subscribe((response: any) => {
-        console.log(response, "Administrador creado correctamente");
+      const formValues = this.createAdministratorForm.value;
+      console.log("Datos enviados:", formValues);
+      this.administratorService.createAdministrator(formValues).subscribe((response: any) => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Creating Administrator',
+          icon: 'pi pi-spin pi-spinner'
+        });
+        setTimeout(() => {
+          this.router.navigate(['/administration/list-administrators']);
+
+        }, 1500);
+        console.log("Respuesta del servidor:", response);
       });
     }
   }
+
+  getUsers() {
+    this.userService.getUsers().subscribe(
+      (users: any) => {
+        this.users = users.map((user: any) => ({
+          label: user.name,
+          value: user.id.toString()
+        }));
+      }
+    );
+
+  }
+
 }
