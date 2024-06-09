@@ -17,8 +17,13 @@ export class AddUserService {
     return this.http.get(`${this.url2}/${id}`);
 
   }
+
   getUsers(): Observable<any> {
     return this.http.get(this.url2);
+  }
+
+  getUsersByRole(role: any): Observable<any> {
+    return this.http.get(`http://localhost:8080/roles/${role}/users`);
   }
 
   addUser(user: any): Observable<any> {

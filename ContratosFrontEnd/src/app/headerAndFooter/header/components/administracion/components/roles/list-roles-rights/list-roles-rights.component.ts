@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
 import {RolesService} from "../services/roles.service";
 import {ConfirmationService, MessageService} from "primeng/api";
+import {AddUserService} from "../../users/services/add-user.service";
 
 @Component({
   selector: 'app-list-roles-rights',
@@ -13,13 +14,15 @@ export class ListRolesRightsComponent implements OnInit {
   roles: any;
   isRoleSelected: boolean = false;
   id: any;
+  users: any;
 
 
   constructor(private fb: FormBuilder,
               private rolesService: RolesService,
               private router: Router,
               private messageService: MessageService,
-              private confirmationService: ConfirmationService,) {
+              private confirmationService: ConfirmationService,
+              private userService: AddUserService) {
   }
 
   ngOnInit() {
@@ -68,10 +71,23 @@ export class ListRolesRightsComponent implements OnInit {
     });
   }
 
+  getUsersByRol() {
+    console.log('Selected Role ID:', this.id); // Log for debugging
+    this.userService.getUsersByRole(this.id).subscribe(
+      (data) => {
+        this.users = data;
+        console.log('Users by Role:', this.users); // Debugging log
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 
   onRowSelect(event: any) {
     this.isRoleSelected = true;
     this.id = event.data.id;
+    this.getUsersByRol();
   }
 
   onRowUnselect(event: any) {

@@ -1,32 +1,58 @@
+/* Contenedor que envuelve las tablas */
+.box {
+  background-color: var(--surface-e);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  overflow-x: auto; /* Añadir scroll horizontal si es necesario */
+  max-width: 100%; /* Asegurar que no exceda el ancho del contenedor padre */
+}
 
+/* Ajustes específicos para tablas */
+table {
+  width: 100%; /* Ajustar el ancho de la tabla al contenedor */
+  max-width: 100%; /* Asegurar que no exceda el ancho del contenedor */
+  table-layout: fixed; /* Ayuda a controlar el tamaño de las celdas */
+  word-wrap: break-word; /* Permitir el salto de línea en palabras largas */
+}
+
+/* Estilo para las celdas de la tabla */
+td, th {
+  padding: 10px; /* Espaciado interno de las celdas */
+  border: 1px solid #ddd; /* Bordes de las celdas */
+  text-align: left; /* Alineación del texto */
+  word-wrap: break-word; /* Permitir el salto de línea en palabras largas */
+  overflow-wrap: break-word; /* Alternativa para asegurar el salto de línea */
+}
+
+/* Otros estilos generales */
 .app-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #DCDDFE;/* Cambia esto a tu color deseado */
+  background-color: #DCDDFE;
   color: black;
-
   text-align: center;
   padding: 10px 0;
   height: 40px;
-  z-index: 1000; /* Asegura que esté sobre otros contenidos */
+  z-index: 1000;
 }
-
 
 .p-menubar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #DCDDFE; /* Custom background color */
+  background-color: #DCDDFE;
   color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px; /* Adjust height as necessary */
-  padding: 0 20px; /* Space around elements */
-  box-sizing: border-box; /* Ensure padding is included in total height */
+  height: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .menu-start, .menu-end {
@@ -40,38 +66,30 @@
 }
 
 .p-menuitem-link {
-  color: black; /* Link color */
-  padding: 0 10px; /* Space around links */
-  line-height: 50px; /* Ensure links are vertically centered */
+  color: black;
+  padding: 0 10px;
+  line-height: 50px;
   display: flex;
   align-items: center;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
 }
 
 .p-menuitem-link i {
-  margin-right: 8px; /* Space between icon and label */
+  margin-right: 8px;
 }
 
 .p-menuitem-link:hover {
 }
 
 .p-menubar .p-menubar-end .p-button {
-  background-color: #f44336; /* Logout button color */
+  background-color: #f44336;
   border: none;
-  height: 30px; /* Adjust button height as necessary */
-  line-height: 30px; /* Ensure button text is vertically centered */
+  height: 30px;
+  line-height: 30px;
 }
 
 .p-menubar .p-menubar-end .p-button:hover {
-  background-color: #d32f2f; /* Hover effect for logout button */
-}
-
-.box {
-  background-color: var(--surface-e);
-  text-align: center;
-  padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  background-color: #d32f2f;
 }
 
 /* Remove borders from p-tree */
