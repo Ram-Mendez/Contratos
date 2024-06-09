@@ -1,14 +1,11 @@
 <form [formGroup]="contactForm">
-  <div class="contact-page">
+  <div class="contact-page custom-height">
     <div class="contact-container">
       <div class="contact-form">
-
-        <!-- Introductory message -->
         <div class="introductory-message">
-          <h2>Contact us</h2>
+          <h2 class="text-center">Contact us</h2>
           <p>Estamos aquí para ayudarte. Por favor, completa el formulario a continuación para ponerte en contacto con nosotros.</p>
         </div>
-
 
         <!-- Campo de Nombre -->
         <div class="p-field">
@@ -51,8 +48,9 @@
       </div>
 
       <!-- Logo -->
-      <img src="./assets/logo.png" alt="Company Logo" class="logo">
+      <div class="logo-container">
+        <img src="./assets/logo.png" alt="Company Logo" class="logo">
+      </div>
     </div>
   </div>
 </form>
-

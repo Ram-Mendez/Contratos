@@ -13,7 +13,7 @@
         <div class="form-group">
           <p-floatLabel>
             <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
-            <label for="name"><strong>Nombre del contrato</strong></label>
+            <label for="name"><strong>Nombre del Contrato</strong></label>
           </p-floatLabel>
         </div>
 
@@ -30,7 +30,7 @@
               <option value="" disabled selected hidden>Selecciona entidad contratante</option>
               <option *ngFor="let contratante of contratantes" [value]="contratante.id">{{ contratante.name }}</option>
             </select>
-            <label for="contractingEntity"><strong>Entidad contratante</strong></label>
+            <label for="contractingEntity"><strong>Entidad Contratante</strong></label>
           </p-floatLabel>
         </div>
 
@@ -40,7 +40,7 @@
               <option value="" disabled selected hidden>Selecciona entidad autoridad</option>
               <option *ngFor="let autoridad of autoridades" [value]="autoridad.id">{{ autoridad.name }}</option>
             </select>
-            <label for="authorityEntity"><strong>Entidad autorizadora</strong></label>
+            <label for="authorityEntity"><strong>Entidad Autorizadora</strong></label>
           </p-floatLabel>
         </div>
 

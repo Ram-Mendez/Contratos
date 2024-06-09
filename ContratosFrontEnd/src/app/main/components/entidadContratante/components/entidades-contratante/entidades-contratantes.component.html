@@ -1,33 +1,27 @@
-
-
 <div class="d-flex justify-content-center align-items-center ">
   <p-button
     class="m-2"
     severity="success"
     (click)="editContratante()"
     [disabled]="!isContractSelected"
-    ><span class="pi pi-pencil"></span>&nbsp;  Edit
+  ><span class="pi pi-pencil"></span>&nbsp;  Edit
   </p-button>
   <p-button
     severity="danger"
     (click)="deleteContratante()"
     [disabled]="!isContractSelected"
-><span class="pi pi-trash"></span>&nbsp;  Delete
+  ><span class="pi pi-trash"></span>&nbsp;  Delete
   </p-button>
 </div>
-
-
 
 <div class="card">
   <p-table [value]="contratantes" selectionMode="single"
            (onRowSelect)="onRowSelect($event)"
            (onRowUnselect)="onRowUnselect($event)">
-  >
     <ng-template pTemplate="header" class="text-center">
       <tr>
         <th pSortableColumn="id"> Id <p-sortIcon field="id"></p-sortIcon></th>
-        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-        <th></th>
+        <th pSortableColumn="name">Contractor Name <p-sortIcon field="name"></p-sortIcon></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-contratante>
@@ -38,4 +32,3 @@
     </ng-template>
   </p-table>
 </div>
-
