@@ -54,6 +54,7 @@ import {
 import {
   EntidadesContratantesComponent
 } from "./main/components/entidadContratante/components/entidades-contratante/entidades-contratantes.component";
+import {ContratoInventoryComponent} from "./main/components/contratosAll/inventario/contrato-inventory.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -85,7 +86,9 @@ const routes: Routes = [
   {
     path: 'gestiones/:id', component: GestionesComponent,
     children: [
-      {path: '', component: ContratoComponent} // Cargar ContratoComponent por defecto
+      {path: '', redirectTo: 'editar-contrato', pathMatch: 'full'},
+      {path: 'editar-contrato', component: ContratoComponent},
+      {path: 'inventario', component: ContratoInventoryComponent}
     ]
   },
   {path: '**', redirectTo: ''}

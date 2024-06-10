@@ -19,7 +19,8 @@ export class GestionesComponent implements OnInit, OnDestroy {
       label: 'Gestiones', selectable: false, expanded: true, expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
-        {label: 'Editar Contratos', data: {path: '', icon: 'pi pi-pencil'}, expanded: true},
+        {label: 'Editar Contrato', data: {path: 'editar-contrato', icon: 'pi pi-pencil'}, expanded: true},
+        {label: 'Inventario', data: {path: 'inventario', icon: 'pi pi-list'}, expanded: true},
       ]
     },
   ];

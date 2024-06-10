@@ -114,3 +114,7 @@ td, th {
 .p-tree .p-treenode-content {
   border-bottom: none !important;
 }
+
+.p-tree .p-treenode-children .p-treenode-label {
+  padding-left: 8px; /* Ajusta este valor según sea necesario */
+}

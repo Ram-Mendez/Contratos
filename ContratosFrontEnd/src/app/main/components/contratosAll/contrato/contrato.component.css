@@ -90,3 +90,12 @@ button[type="submit"] {
   text-align: right;
   margin-bottom: 0; /* Elimina el margen inferior */
 }
+
+
+.contract-list-header {
+  background-color : #DCDDFE;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5em;
+  color: #333;
+}

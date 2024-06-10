@@ -40,6 +40,7 @@ import {
 import {FloatLabelModule} from "primeng/floatlabel";
 import {DropdownModule} from "primeng/dropdown";
 import {MultiSelectModule} from "primeng/multiselect";
+import { ContratoInventoryComponent } from './components/contratosAll/inventario/contrato-inventory.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import {MultiSelectModule} from "primeng/multiselect";
     EntidadesAutoridadComponent,
     EntidadContratanteComponent,
     EntidadAutoridadComponent,
+    ContratoInventoryComponent,
 
   ],
   imports: [
