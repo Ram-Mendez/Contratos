@@ -1,5 +1,5 @@
 <form [formGroup]="contactForm">
-  <div class="contact-page custom-height">
+  <div class="contact-page ">
     <div class="contact-container">
       <div class="contact-form">
         <div class="introductory-message">
@@ -10,9 +10,7 @@
         <!-- Campo de Nombre -->
         <div class="p-field">
           <span class="p-float-label">
-            <input id="name"
-                   formControlName="name"
-                   type="text" pInputText class="mb-2" />
+            <input id="name" formControlName="name" type="text" pInputText class="mb-2" />
             <label for="name"><i class="pi pi-user"></i> Name</label>
           </span>
         </div>
@@ -20,9 +18,7 @@
         <!-- Campo de Email -->
         <div class="p-field">
           <span class="p-float-label">
-            <input
-              formControlName="email"
-              id="email" type="text" class="mb-2" pInputText />
+            <input formControlName="email" id="email" type="text" class="mb-2" pInputText />
             <label for="email"><i class="pi pi-envelope"></i> Email</label>
           </span>
         </div>
@@ -30,20 +26,14 @@
         <!-- Campo de Mensaje -->
         <div class="p-field">
           <span class="p-float-label">
-            <textarea
-              formControlName="message"
-              id="message" pInputTextarea></textarea>
+            <textarea formControlName="message" id="message" pInputTextarea></textarea>
             <label for="message"><i class="pi pi-comment"></i> Message</label>
           </span>
         </div>
 
         <!-- Botón de Enviar -->
         <div class="button-container">
-          <p-button
-            [disabled]="contactForm.invalid"
-            (click)="SendMessage()"
-            type="button"> Send Message &nbsp; <span class="pi pi-send"></span>
-          </p-button>
+          <p-button [disabled]="contactForm.invalid" (click)="SendMessage()" type="button">Send Message &nbsp; <span class="pi pi-send"></span></p-button>
         </div>
       </div>
 

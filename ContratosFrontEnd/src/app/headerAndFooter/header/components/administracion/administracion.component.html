@@ -1,9 +1,9 @@
-<div class="container-fluid p-3">
-  <div class="row">
-    <div class="col-3 box full-height">
+<div class="container-fluid p-3" >
+  <div class="row" >
+    <div class="col-3 box full-height" style=" overflow: hidden" >
       <p-scrollPanel [style]="{ height: '80vh', overflowX: 'hidden' }">
-        <p-tree [value]="data" selectionMode="single" styleClass="overflow-horizontal"
-                [propagateSelectionDown]="true" [propagateSelectionUp]="true">
+        <p-tree [value]="data" selectionMode="single" styleClass="overflow-horizontal "
+                [propagateSelectionDown]="true" [propagateSelectionUp]="true" >
           <ng-template let-node pTemplate="default">
             <div
               routerLinkActive="ui-state-highlight" pRipple class="relative-children row"

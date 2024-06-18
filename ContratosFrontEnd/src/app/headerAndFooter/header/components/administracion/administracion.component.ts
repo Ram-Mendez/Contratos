@@ -11,7 +11,7 @@ export class AdministracionComponent {
     {
       label: 'Authorities ',
       selectable: false,
-      expanded: true,
+      expanded: false,
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
@@ -22,7 +22,7 @@ export class AdministracionComponent {
     {
       label: 'Contractors',
       selectable: false,
-      expanded: true,
+      expanded: false,
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
@@ -33,7 +33,7 @@ export class AdministracionComponent {
     {
       label: 'Users',
       selectable: false,
-      expanded: true,
+      expanded: false,
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
@@ -44,7 +44,7 @@ export class AdministracionComponent {
     {
       label: 'Roles',
       selectable: false,
-      expanded: true,
+      expanded: false,
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
@@ -55,7 +55,7 @@ export class AdministracionComponent {
     {
       label: 'Administrators',
       selectable: false,
-      expanded: true,
+      expanded: false,
       expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [

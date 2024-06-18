@@ -1,1 +1,35 @@
-<p>contrato-inventory works!</p>
+<div class="row">
+  <div class="col-6">
+    <div class="button-container">
+      <p-button
+        (click)="crearNodo()"
+        severity="primary"
+        class="m-2 btn-uniform">
+        <span class="pi pi-plus"></span> &nbsp; New
+      </p-button>
+    </div>
+    <div class="content-container"> <!-- Agregado un contenedor para el margen -->
+      <p-treeTable
+        selectionMode="single"
+        [(selection)]="selectedNode"
+        [value]="files" [scrollable]="false"
+        (onNodeSelect)="onNodeSelect($event)">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Description</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+          <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+            <td>
+              <p-treeTableToggler [rowNode]="rowNode"/>
+              {{ rowData.description }}
+            </td>
+          </tr>
+        </ng-template>
+      </p-treeTable>
+    </div>
+  </div>
+  <div class="col-6">
+  </div>
+</div>

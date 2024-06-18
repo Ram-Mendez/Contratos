@@ -95,6 +95,7 @@ td, th {
 /* Remove borders from p-tree */
 .p-tree {
   border: none !important;
+
 }
 
 .p-tree-container,

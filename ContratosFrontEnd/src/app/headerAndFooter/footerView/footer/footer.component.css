@@ -1,5 +1,4 @@
 .footer {
-  height: 70px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -34,4 +33,9 @@
 h6 {
   margin: 0;
   font-size: 14px; /* Ajusta este valor para reducir el tamaño del texto */
+}
+
+.footer-content a {
+  cursor: pointer;
+  color: black;
 }

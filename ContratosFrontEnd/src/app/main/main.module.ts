@@ -41,6 +41,8 @@ import {FloatLabelModule} from "primeng/floatlabel";
 import {DropdownModule} from "primeng/dropdown";
 import {MultiSelectModule} from "primeng/multiselect";
 import { ContratoInventoryComponent } from './components/contratosAll/inventario/contrato-inventory.component';
+import {MenubarModule} from "primeng/menubar";
+import {TreeTableModule} from "primeng/treetable";
 
 
 @NgModule({
@@ -59,27 +61,29 @@ import { ContratoInventoryComponent } from './components/contratosAll/inventario
     ContratoInventoryComponent,
 
   ],
-  imports: [
-    CommonModule,
-    MainRoutingModule,
-    RouterModule,
-    InputSwitchModule,
-    TableModule,
-    ChipsModule,
-    ReactiveFormsModule,
-    ToastModule,
-    ButtonModule,
-    TreeModule,
-    FormsModule,
-    ConfirmDialogModule,
-    CalendarModule,
-    PaginatorModule,
-    FloatLabelModule,
-    DropdownModule,
-    MultiSelectModule
+    imports: [
+        CommonModule,
+        MainRoutingModule,
+        RouterModule,
+        InputSwitchModule,
+        TableModule,
+        ChipsModule,
+        ReactiveFormsModule,
+        ToastModule,
+        ButtonModule,
+        TreeModule,
+        FormsModule,
+        ConfirmDialogModule,
+        CalendarModule,
+        PaginatorModule,
+        FloatLabelModule,
+        DropdownModule,
+        MultiSelectModule,
+        MenubarModule,
+        TreeTableModule
 
 
-  ],
+    ],
   providers: [MessageService],
   exports: [
     FooterComponent

@@ -10,13 +10,12 @@ html, body {
   display: flex;
   align-items: center; /* Center the container vertically */
   justify-content: center;
-  height: 100vh; /* Full viewport height */
-  padding: 20px;
+  height: 100%; /* Full viewport height */
+  padding: 0;
   box-sizing: border-box;
 }
 
 /* Container for the form and image */
-/* Adjust the position of the second container to be higher */
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -30,9 +29,8 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 4%; /* Match the margin-bottom of the first container */
-  margin-top: -10px; /* Add negative margin to lift the container */
+  margin-top: 20px; /* Add negative margin to lift the container */
 }
-
 
 /* Form styling */
 .contact-form {
@@ -84,3 +82,4 @@ button:hover {
   max-width: 100px;
   height: auto;
 }
+
