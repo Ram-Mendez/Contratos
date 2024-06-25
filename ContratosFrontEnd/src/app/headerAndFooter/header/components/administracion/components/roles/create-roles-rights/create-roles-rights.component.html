@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <!-- Cabecera estilizada -->
   <div class="header text-center mb-4 p-2 rounded shadow-sm">
-    <h2 class="display-4">Crear Nuevo Rol</h2>
+    <h2 class="display-4">Create New Role</h2>
     <hr class="my-4" style="border-top: 2px solid #ccc;">
   </div>
 
@@ -15,7 +15,7 @@
             <input id="nombre"
                    formControlName="nombre"
                    pInputText type="text" class="form-control text-center">
-            <label for="nombre"><strong>Nombre</strong></label>
+            <label for="nombre"><strong>Name</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
@@ -23,11 +23,11 @@
             <input id="description"
                    formControlName="description"
                    pInputText type="text" class="form-control text-center">
-            <label for="description"><strong>Descripción</strong></label>
+            <label for="description"><strong>Description</strong></label>
           </p-floatLabel>
         </div>
         <p-button [disabled]="createRoleForm.invalid" type="submit" severity="success" class="align-right">
-          Crear Role &nbsp; <i class="pi pi-save"></i>
+          <i class="pi pi-save"></i>   &nbsp; Create Role
         </p-button>
       </form>
     </div>

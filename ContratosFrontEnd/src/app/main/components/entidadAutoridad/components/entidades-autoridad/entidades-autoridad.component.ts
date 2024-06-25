@@ -55,7 +55,7 @@ export class EntidadesAutoridadComponent implements OnInit {
           () => {
             this.messageService.add({
               severity: 'success',
-              summary: 'Deleting Authority...',
+              summary: 'Deleting Authority',
               icon: 'pi pi-spin pi-spinner'
             });
             console.log('Entidad autoridad eliminada');

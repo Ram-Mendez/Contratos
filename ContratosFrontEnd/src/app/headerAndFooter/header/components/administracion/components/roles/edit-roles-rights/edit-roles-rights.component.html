@@ -1,8 +1,7 @@
-
 <div class="container-fluid">
   <!-- Cabecera estilizada -->
   <div class="header text-center mb-4 p-2 rounded shadow-sm">
-    <h2 class="display-4">Editar Rol</h2>
+    <h2 class="display-4">Edit Role</h2>
     <hr class="my-4" style="border-top: 2px solid #ccc;">
   </div>
 
@@ -15,7 +14,7 @@
             <input
               formControlName="nombre"
               id="rolName" pInputText type="text" class="form-control text-center" placeholder="Nombre del Rol">
-            <label for="rolName"><strong>Nombre del Rol</strong></label>
+            <label for="rolName"><strong>Role Name</strong></label>
           </p-floatLabel>
         </div>
 
@@ -24,13 +23,13 @@
             <input
               formControlName="description"
               id="description" pInputText type="text" class="form-control text-center" placeholder="Descripción">
-            <label for="description"><strong>Descripción</strong></label>
+            <label for="description"><strong>Description</strong></label>
           </p-floatLabel>
         </div>
 
-        <div class="mt-5 text-right-custom">
+        <div class="mt-5 d-flex justify-content-end">
           <p-button severity="success" type="submit" [disabled]="editRoleForm.invalid">
-            Guardar Cambios &nbsp; <i class="pi pi-save"></i>
+            <i class="pi pi-save"></i> &nbsp; Save Changes
           </p-button>
         </div>
 

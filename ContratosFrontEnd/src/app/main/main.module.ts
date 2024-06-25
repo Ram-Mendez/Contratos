@@ -43,6 +43,7 @@ import {MultiSelectModule} from "primeng/multiselect";
 import { ContratoInventoryComponent } from './components/contratosAll/inventario/contrato-inventory.component';
 import {MenubarModule} from "primeng/menubar";
 import {TreeTableModule} from "primeng/treetable";
+import {DialogModule} from "primeng/dialog";
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import {TreeTableModule} from "primeng/treetable";
         DropdownModule,
         MultiSelectModule,
         MenubarModule,
-        TreeTableModule
+        TreeTableModule,
+        DialogModule
 
 
     ],

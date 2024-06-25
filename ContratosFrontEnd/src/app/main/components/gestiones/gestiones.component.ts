@@ -16,11 +16,11 @@ export class GestionesComponent implements OnInit, OnDestroy {
 
   data: TreeNode[] = [
     {
-      label: 'Gestiones', selectable: false, expanded: true, expandedIcon: 'pi pi-folder-open',
+      label: 'Procedures', selectable: false, expanded: true, expandedIcon: 'pi pi-folder-open',
       collapsedIcon: 'pi pi-folder',
       children: [
-        {label: 'Editar Contrato', data: {path: 'editar-contrato', icon: 'pi pi-pencil'}, expanded: true},
-        {label: 'Inventario', data: {path: 'inventario', icon: 'pi pi-list'}, expanded: true},
+        {label: 'Edit Contract', data: {path: 'editar-contrato', icon: 'pi pi-pencil'}, expanded: true},
+        {label: 'Inventory', data: {path: 'inventario', icon: 'pi pi-list'}, expanded: true},
       ]
     },
   ];

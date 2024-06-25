@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <!-- Cabecera estilizada -->
   <div class="header text-center mb-4 p-2 rounded shadow-sm">
-    <h2 class="display-4">Editar Autoridad</h2>
+    <h2 class="display-4">Edit Authority</h2>
     <hr class="my-4" style="border-top: 2px solid #ccc;">
   </div>
 
@@ -13,7 +13,7 @@
         <div class="form-group">
           <p-floatLabel>
             <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
-            <label for="name"><strong>Nombre completo</strong></label>
+            <label for="name"><strong>Full Name</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
@@ -25,35 +25,35 @@
         <div class="form-group">
           <p-floatLabel>
             <input id="address" pInputText type="text" formControlName="address" class="form-control text-center">
-            <label for="address"><strong>Dirección de residencia</strong></label>
+            <label for="address"><strong>Address</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
           <p-floatLabel>
             <input id="municipality" pInputText type="text" formControlName="municipality" class="form-control text-center">
-            <label for="municipality"><strong>Municipio</strong></label>
+            <label for="municipality"><strong>Municipality</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
           <p-floatLabel>
             <input id="zipCode" pInputText type="text" formControlName="zipCode" class="form-control text-center">
-            <label for="zipCode"><strong>Código postal</strong></label>
+            <label for="zipCode"><strong>Zip Code</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
           <p-floatLabel>
             <input id="country" pInputText type="text" formControlName="country" class="form-control text-center">
-            <label for="country"><strong>Pais</strong></label>
+            <label for="country"><strong>Country</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
           <p-floatLabel>
             <input id="phone" pInputText type="text" formControlName="phone" class="form-control text-center">
-            <label for="phone"><strong>Teléfono</strong></label>
+            <label for="phone"><strong>Phone Number</strong></label>
           </p-floatLabel>
         </div>
         <p-button type="submit" severity="success" class="btn-subir align-right" [disabled]="autoridadForm.invalid">
-          Guardar Cambios &nbsp; <i class="pi pi-save"></i>
+          <i class="pi pi-save"></i> &nbsp; Save Changes
         </p-button>
       </form>
     </div>

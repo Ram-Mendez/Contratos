@@ -39,6 +39,7 @@ import { EditAdministratorComponent } from './headerAndFooter/header/components/
 import { ListAdministratorsComponent } from './headerAndFooter/header/components/administracion/components/administrator/list-administrators/list-administrators.component';
 import {DropdownModule} from "primeng/dropdown";
 import {ScrollPanelModule} from "primeng/scrollpanel";
+import {DialogModule} from "primeng/dialog";
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import {ScrollPanelModule} from "primeng/scrollpanel";
         MultiSelectModule,
         DropdownModule,
         ScrollPanelModule,
+        DialogModule,
 
     ],
   providers: [MessageService, ConfirmationService,],

@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <!-- Cabecera estilizada -->
   <div class="header text-center mb-4 p-2 rounded shadow-sm">
-    <h2 class="display-4">Crear Nuevo Contratante</h2>
+    <h2 class="display-4">Create New Contractor</h2>
     <hr class="my-4" style="border-top: 2px solid #ccc;">
   </div>
 
@@ -13,11 +13,11 @@
         <div class="form-group">
           <p-floatLabel>
             <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
-            <label for="name"><strong>Nombre completo</strong></label>
+            <label for="name"><strong>Full Name</strong></label>
           </p-floatLabel>
         </div>
         <p-button type="submit" severity="success" class="btn-subir align-right" [disabled]="contratanteForm.invalid">
-          Crear Contratante &nbsp; <i class="pi pi-save"></i>
+          <i class="pi pi-save"></i> &nbsp; Create Contractor
         </p-button>
       </form>
     </div>

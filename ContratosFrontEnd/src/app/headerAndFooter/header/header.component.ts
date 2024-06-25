@@ -10,7 +10,6 @@ import {ContratoService} from "../../main/components/contratosAll/service/contra
   styleUrls: ['./header.component.css'] // Corrección aquí para 'styleUrls'
 })
 export class HeaderComponent implements OnInit {
-  filteredContratos: Contrato[] = [];
 
   items: MenuItem[] | undefined;
 
@@ -19,6 +18,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
 
     this.items = [
       {
@@ -42,13 +43,12 @@ export class HeaderComponent implements OnInit {
       //   icon: 'pi pi-envelope',
       //   route: '/contact-page'
       // },
-      {
-        label: 'Login',
-        icon: 'pi pi-sign-in',
-        route: '/login'
-      }
+      // {
+      //   label: 'Login',
+      //   icon: 'pi pi-sign-in',
+      //   route: '/login'
+      // }
     ]
-
   }
 
   logOut() {

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {TreeNode} from "primeng/api";
+import {TreeNode, TreeTableNode} from "primeng/api";
+import {DialogModule} from 'primeng/dialog';
 
 
 @Component({
@@ -10,8 +11,11 @@ import {TreeNode} from "primeng/api";
 export class ContratoInventoryComponent implements OnInit {
   files!: TreeNode[];
   selectedNode!: TreeNode;
+  visible: boolean = false;
 
-  constructor() {}
+
+  constructor() {
+  }
 
   ngOnInit() {
     // this.nodeService.getFilesystem().then((files) => (this.files = files));
@@ -45,7 +49,19 @@ export class ContratoInventoryComponent implements OnInit {
     console.log('Node selected:', this.selectedNode);
   }
 
-  crearNodo() {
+  mostrarDialogo() {
+    this.visible = true;
+  }
 
+  createNode() {
+    this.visible = false;
+    console.log('Node created:', this.selectedNode);
+    //http post al NodeEntityController que acepte el id del nodo padre y el nombre del nodo a crear y la descripcion
+
+  }
+
+  onNodeExpand(node: TreeTableNode<any>) {
+    console.log(node);
+    //get hijos del nodo
   }
 }

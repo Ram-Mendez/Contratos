@@ -3,7 +3,7 @@
     <div class="col-lg-8 col-md-10 col-sm-12 mt-3">
       <!-- Cabecera estilizada -->
       <div class="header text-center mb-4 p-2 rounded shadow-sm">
-        <h3 class="display-6">Crear Nuevo Contrato</h3>
+        <h3 class="display-6">Create New Contract</h3>
         <hr class="my-4" style="border-top: 2px solid #ccc;">
       </div>
 
@@ -12,14 +12,14 @@
         <div class="form-group">
           <p-floatLabel>
             <input id="name" pInputText type="text" formControlName="name" class="form-control text-center">
-            <label for="name"><strong>Nombre del Contrato</strong></label>
+            <label for="name"><strong>Contract Name</strong></label>
           </p-floatLabel>
         </div>
 
         <div class="form-group mt-4">
           <p-floatLabel>
             <input id="startDate" pInputText type="date" formControlName="startDate" class="form-control text-center">
-            <label for="startDate"><strong>Fecha de Inicio</strong></label>
+            <label for="startDate"><strong>Starting Date</strong></label>
           </p-floatLabel>
         </div>
 
@@ -29,7 +29,7 @@
               <option value="" disabled selected hidden>Selecciona entidad contratante</option>
               <option *ngFor="let contratante of contratantes" [value]="contratante.id">{{ contratante.name }}</option>
             </select>
-            <label for="contractingEntity"><strong>Entidad Contratante</strong></label>
+            <label for="contractingEntity"><strong>Contracting Entity</strong></label>
           </p-floatLabel>
         </div>
 
@@ -39,13 +39,13 @@
               <option value="" disabled selected hidden>Selecciona entidad autoridad</option>
               <option *ngFor="let autoridad of autoridades" [value]="autoridad.id">{{ autoridad.name }}</option>
             </select>
-            <label for="authorityEntity"><strong>Entidad Autorizadora</strong></label>
+            <label for="authorityEntity"><strong>Authority Entity</strong></label>
           </p-floatLabel>
         </div>
 
         <div class="mt-5 button-container">
           <p-button severity="success" type="submit" [disabled]="createContractForm.invalid">
-            Crear Contrato &nbsp; <i class="pi pi-save"></i>
+            <i class="pi pi-save"></i>   &nbsp;  Create Contract
           </p-button>
         </div>
       </form>

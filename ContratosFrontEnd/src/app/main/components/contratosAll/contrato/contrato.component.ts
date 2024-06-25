@@ -65,7 +65,7 @@ export class ContratoComponent implements OnInit, OnDestroy {
       this.contratoService.editContrato(this.contrato.id, this.editContractForm.value as Contrato).subscribe(
         (response) => {
           console.log({response});
-          console.log("Contrato actualizado.");
+          console.log("Updating Contract.");
           this.messageService.add({
             severity: 'success',
             summary: 'Saving',

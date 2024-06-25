@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <!-- Cabecera estilizada -->
   <div class="header text-center mb-4 p-2 rounded shadow-sm">
-    <h2 class="display-4">Crear Nuevo Usuario</h2>
+    <h2 class="display-4">Create New User</h2>
     <hr class="my-4" style="border-top: 2px solid #ccc;">
   </div>
 
@@ -15,7 +15,7 @@
             <input id="firstName"
                    formControlName="name"
                    pInputText type="text" class="form-control text-center">
-            <label for="firstName"><strong>Nombre</strong></label>
+            <label for="firstName"><strong>Name</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
@@ -23,7 +23,7 @@
             <input id="lastName"
                    formControlName="lastName"
                    pInputText type="text" class="form-control text-center">
-            <label for="lastName"><strong>Apellidos</strong></label>
+            <label for="lastName"><strong>Lastname</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group">
@@ -47,7 +47,7 @@
             <input id="phone"
                    formControlName="phone"
                    pInputText type="tel" class="form-control text-center">
-            <label for="phone"><strong>Teléfono</strong></label>
+            <label for="phone"><strong>Phone Number</strong></label>
           </p-floatLabel>
         </div>
 
@@ -69,7 +69,7 @@
         </div>
 
         <p-button [disabled]="createUserForm.invalid" type="submit" severity="success" class="align-right">
-          Crear Usuario &nbsp; <i class="pi pi-save"> </i>
+          <i class="pi pi-save"> </i> &nbsp; Create User
         </p-button>
       </form>
     </div>

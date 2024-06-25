@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <!-- Cabecera estilizada -->
   <div class="header text-center mb-4 p-2 rounded shadow-sm">
-    <h2 class="display-4">Editar Usuario</h2>
+    <h2 class="display-4">Edit User</h2>
     <hr class="my-4" style="border-top: 2px solid #ccc;">
   </div>
 
@@ -15,7 +15,7 @@
             <input
               formControlName="name"
               id="username" pInputText type="text" class="form-control text-center" placeholder="Nombre">
-            <label for="username"><strong>Nombre</strong></label>
+            <label for="username"><strong>Name</strong></label>
           </p-floatLabel>
         </div>
 
@@ -24,7 +24,7 @@
             <input
               formControlName="lastName"
               id="lastName" pInputText type="text" class="form-control text-center" placeholder="Apellido">
-            <label for="lastName"><strong>Apellido</strong></label>
+            <label for="lastName"><strong>Lastname</strong></label>
           </p-floatLabel>
         </div>
 
@@ -42,7 +42,7 @@
             <input
               formControlName="email"
               id="email" pInputText type="email" class="form-control text-center" placeholder="Correo Electrónico">
-            <label for="email"><strong>Correo Electrónico</strong></label>
+            <label for="email"><strong>Email</strong></label>
           </p-floatLabel>
         </div>
 
@@ -51,7 +51,7 @@
             <input
               formControlName="phone"
               id="phone" pInputText type="text" class="form-control text-center" placeholder="Teléfono">
-            <label for="phone"><strong>Teléfono</strong></label>
+            <label for="phone"><strong>Phone Number</strong></label>
           </p-floatLabel>
         </div>
         <div class="form-group mt-4">
@@ -71,7 +71,7 @@
         </div>
         <div class="mt-5 text-right-custom">
           <p-button severity="success" type="submit" [disabled]="editUserForm.invalid">
-            Guardar Cambios &nbsp; <i class="pi pi-save"></i>
+            <i class="pi pi-save"></i> &nbsp; Save Changes
           </p-button>
         </div>
 

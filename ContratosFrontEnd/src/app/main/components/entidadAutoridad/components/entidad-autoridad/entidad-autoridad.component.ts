@@ -60,11 +60,10 @@ export class EntidadAutoridadComponent implements OnInit, OnDestroy {
     this.autoridadService.editEntidadAutoridad(this.id, updatedAutoridad).subscribe(
       (response) => {
         console.log({ response });
-        console.log("Autoridad actualizada.");
+        console.log("Updating Authority.");
         this.messageService.add({
           severity: 'success',
-          summary: 'Saving...Updating Authority',
-          detail: 'Authority updated successfully.',
+          summary: 'Updating Authority',
           icon: 'pi pi-spin pi-spinner'
         });
         setTimeout(() => {
@@ -72,11 +71,10 @@ export class EntidadAutoridadComponent implements OnInit, OnDestroy {
         }, 1500);
       },
       error => {
-        console.log(error, 'No se ha podido actualizar la autoridad');
+        console.log(error, 'Failed to Update Authority.');
         this.messageService.add({
           severity: 'error',
-          summary: 'Error',
-          detail: 'Failed to update authority.',
+          summary: 'Error Updating Authority',
           icon: 'pi pi-exclamation-triangle'
         });
       }

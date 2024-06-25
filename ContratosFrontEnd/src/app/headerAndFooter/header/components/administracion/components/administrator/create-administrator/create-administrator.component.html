@@ -1,6 +1,6 @@
 <form [formGroup]="createAdministratorForm" (ngSubmit)="crearAdministrador()">
   <div class="header text-center mb-4 p-2 rounded shadow-sm">
-    <h2 class="display-4">Crear Nuevo Administrador</h2>
+    <h2 class="display-4">Create New Administrator</h2>
     <hr class="my-4" style="border-top: 2px solid #ccc;">
   </div>
 
@@ -30,7 +30,7 @@
                   placeholder="Seleccionar opción"
                   [style]="{'width':'100%'}">
       </p-dropdown>
-      <label for="contrato"><strong>Contrato</strong></label>
+      <label for="contrato"><strong>Contract To Manage</strong></label>
     </p-floatLabel>
   </div>
 
@@ -45,12 +45,12 @@
                   placeholder="Seleccionar opción"
                   [style]="{'width':'100%'}">
       </p-dropdown>
-      <label for="dropdown2"><strong>Autoridad</strong></label>
+      <label for="dropdown2"><strong>Authority</strong></label>
     </p-floatLabel>
   </div>
 
 
   <p-button [disabled]="createAdministratorForm.invalid" type="submit" severity="success" class="align-right">
-    Crear Administrador &nbsp; <i class="pi pi-save"> </i>
+    <i class="pi pi-save"> </i>  &nbsp; Create Administrator
   </p-button>
 </form>
