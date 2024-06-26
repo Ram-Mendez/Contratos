@@ -3,6 +3,7 @@ import {FormBuilder} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import {NodeService} from "../../service/node.service";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-inventory-amounts',
@@ -14,7 +15,9 @@ export class InventoryAmounts implements OnInit, OnDestroy {
   nodeId: any;
   unsubscribe: Subscription | undefined;
 
-  constructor(private fb: FormBuilder, private nodeService: NodeService, private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private messageService: MessageService,
+    private fb: FormBuilder, private nodeService: NodeService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -27,6 +30,9 @@ export class InventoryAmounts implements OnInit, OnDestroy {
       this.nodeId = nodeId;
       console.log(" tengo el id del nodo", this.nodeId);
     });
+    this.inventoryForm.get('totalExcVat')?.disable();
+    this.inventoryForm.get('totalInclVat')?.disable();
+    this.inventoryForm.get('vat')?.disable();
   }
 
 
@@ -34,17 +40,25 @@ export class InventoryAmounts implements OnInit, OnDestroy {
     description: [''],
     quantity: [''],
     price: [''],
-    totalExcVat: [''],
+    totalExcVat: ['',],
     totalInclVat: [''],
     vat: [''],
     vatPercentage: [''],
   });
 
   updateInventory() {
-    this.nodeService.updateNode(this.nodeId, this.inventoryForm.value)
-      .subscribe((result) => {
-        console.log(result, "resultado de la actualizacion del inventario ")
-      });
+    if (this.inventoryForm.valid) {
+      this.nodeService.updateNode(this.nodeId, this.inventoryForm.value)
+        .subscribe((result) => {
+          console.log(result, "resultado de la actualizacion del inventario ");
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Updating Inventory',
+            icon: 'pi pi-spin pi-spinner'
+          });
+          this.inventoryForm.reset();
+        });
+    }
   }
 
 

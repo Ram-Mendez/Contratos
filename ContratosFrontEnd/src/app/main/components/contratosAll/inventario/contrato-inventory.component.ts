@@ -25,7 +25,6 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.unsubscribe = this.route.parent?.params.subscribe(params => {
       this.id = params['id'];
-
       this.getNodes();
     });
   }
@@ -35,8 +34,6 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     this.nodeService.selectedNode$.next(this.selectedNode.data);
     console.log("nodeOverall", this.selectedNode.data)
     this.nodeService.nodeId$.next(this.selectedNode.data.id);
-    console.log("nodeId", this.selectedNode.data.id);
-    console.log("contratoID", this.selectedNode.data.contrato.id);
 
   }
 
