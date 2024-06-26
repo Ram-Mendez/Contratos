@@ -113,6 +113,8 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     }
   }
 
+
+
   deleteNode() {
     this.confirmationService.confirm({
       message: 'Are you sure you want to delete this node? This action is permanent.',
@@ -122,10 +124,17 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
         if (this.selectedNode) {
           this.nodeService.deleteNode(this.selectedNode.data.id)
             .subscribe(() => {
-              this.messageService.add({severity: 'success', summary: 'Deleting Node', icon: 'pi pi-spin pi-spinner'});
-              this.getNodes();
+              this.messageService.add(
+                {severity: 'success', summary: 'Deleting Node', icon: 'pi pi-spin pi-spinner'}
+              );
 
+              this.nodeService.getNodes(this.id).subscribe((nodes: any) => {
+                this.files = this.mapNodes(nodes);
 
+                if (this.files.length === 0) {
+                  this.router.navigate(['/gestiones', this.id, 'inventario']);
+                }
+              });
             });
         }
       }
