@@ -11,11 +11,10 @@ import {NodeService} from "../../service/node.service";
 })
 export class InventoryAmounts implements OnInit, OnDestroy {
 
-  id: any;
+  nodeId: any;
   unsubscribe: Subscription | undefined;
 
-  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute,
-              private nodeService: NodeService) {
+  constructor(private fb: FormBuilder, private nodeService: NodeService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -24,19 +23,12 @@ export class InventoryAmounts implements OnInit, OnDestroy {
         node
       );
     })
-    this.getContratoId();
-  }
-
-  getContratoId() {
-    this.id = this.nodeService.contratoId$.subscribe((contratoId: any) => {
-      this.id = contratoId;
+    this.nodeId = this.nodeService.nodeId$.subscribe((nodeId: any) => {
+      this.nodeId = nodeId;
+      console.log(" tengo el id del nodo", this.nodeId);
     });
-
   }
 
-  ngOnDestroy() {
-    this.unsubscribe?.unsubscribe();
-  }
 
   inventoryForm = this.fb.group({
     description: [''],
@@ -46,13 +38,17 @@ export class InventoryAmounts implements OnInit, OnDestroy {
     totalInclVat: [''],
     vat: [''],
     vatPercentage: [''],
-
   });
 
-
   updateInventory() {
-    this.nodeService.updateNode(this.id, this.inventoryForm.value)
-      .subscribe(() => {
+    this.nodeService.updateNode(this.nodeId, this.inventoryForm.value)
+      .subscribe((result) => {
+        console.log(result, "resultado de la actualizacion del inventario ")
       });
+  }
+
+
+  ngOnDestroy() {
+    this.unsubscribe?.unsubscribe();
   }
 }

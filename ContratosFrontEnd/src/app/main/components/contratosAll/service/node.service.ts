@@ -12,14 +12,17 @@ export class NodeService {
   apiUrl2 = 'http://localhost:8080/nodes/';
 
   selectedNode$ = new Subject<NodeInput>();
-  contratoId$ = new Subject<Contrato>();
+  nodeId$ = new Subject<NodeInput>();
 
   constructor(private http: HttpClient) {
   }
 
-  // mapear Node con NodeInputdto
   createNode(idContrato: any, node: any) {
     return this.http.post(this.apiUrl + idContrato + '/nodes', node);
+  }
+
+  updateNode(nodeId: any, node: any,) {
+    return this.http.put(this.apiUrl2 + nodeId, node);
   }
 
   getNodes(idContrato: any, parentId?: any) {
@@ -30,9 +33,6 @@ export class NodeService {
     return this.http.get(this.apiUrl + idContrato + '/nodes', {params: params});
   }
 
-  updateNode(idContrato: any, node: any) {
-    return this.http.put(this.apiUrl + idContrato + '/nodes', node);
-  }
 
   deleteNode(id: number) {
     return this.http.delete(this.apiUrl2 + id);
