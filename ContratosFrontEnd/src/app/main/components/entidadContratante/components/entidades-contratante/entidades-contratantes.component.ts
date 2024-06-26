@@ -31,7 +31,6 @@ export class EntidadesContratantesComponent implements OnInit {
       data => {
         this.contratantes = data;
         //filtrar por nombres unicos
-        console.log(this.contratantes);
       }
     );
   }
@@ -59,11 +58,9 @@ export class EntidadesContratantesComponent implements OnInit {
               detail: 'Contract deleted successfully.',
               icon: 'pi pi-spin pi-spinner'
             });
-            console.log('Contrato eliminado');
             this.getEntidadesContratantes();
           },
           error => {
-            console.log(error, 'No se ha podido eliminar el contrato');
             this.messageService.add({
               severity: 'error',
               summary: 'Error',
@@ -74,14 +71,12 @@ export class EntidadesContratantesComponent implements OnInit {
         );
       },
       reject: () => {
-        // Any action you want to do on reject
       },
     });
   }
 
 
   onRowSelect(event: any) {
-    console.log(event);
     this.isContractSelected = true;
     this.id = event.data.id;
   }

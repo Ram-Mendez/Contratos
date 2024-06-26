@@ -59,8 +59,6 @@ export class EntidadAutoridadComponent implements OnInit, OnDestroy {
 
     this.autoridadService.editEntidadAutoridad(this.id, updatedAutoridad).subscribe(
       (response) => {
-        console.log({ response });
-        console.log("Updating Authority.");
         this.messageService.add({
           severity: 'success',
           summary: 'Updating Authority',
@@ -71,7 +69,6 @@ export class EntidadAutoridadComponent implements OnInit, OnDestroy {
         }, 1500);
       },
       error => {
-        console.log(error, 'Failed to Update Authority.');
         this.messageService.add({
           severity: 'error',
           summary: 'Error Updating Authority',

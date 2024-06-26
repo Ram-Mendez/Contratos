@@ -37,7 +37,6 @@ export class AddUserComponent implements OnInit {
 
   addUser() {
     if (this.createUserForm.valid) {
-      console.log(this.createUserForm.value, "valor del form antes de la peticion http")
       this.addUserService.addUser(this.createUserForm.value).subscribe(
         res => {
           this.messageService.add({
@@ -49,7 +48,6 @@ export class AddUserComponent implements OnInit {
           }, 1500);
         },
         err => {
-          console.log(err);
           this.messageService.add({
             severity: 'error', summary: 'Error', detail: 'Hubo un problema al crear el usuario.'
           });
@@ -62,10 +60,8 @@ export class AddUserComponent implements OnInit {
     this.rolesService.getRoles().subscribe(
       listaRoles => {
         this.roles = listaRoles.map(role => ({ label: role.nombre, value: role.id }));
-        console.log(this.roles, "rolessssssssssssss")
       },
       err => {
-        console.log(err);
       }
     );
   }

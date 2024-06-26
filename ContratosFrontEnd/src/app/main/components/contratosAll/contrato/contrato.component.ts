@@ -14,7 +14,6 @@ import {Contrato} from "../service/contrato";
   styleUrls: ['./contrato.component.css']
 })
 export class ContratoComponent implements OnInit, OnDestroy {
-
   contrato!: any;
   contratante!: any;
   contratantes!: any;
@@ -33,11 +32,13 @@ export class ContratoComponent implements OnInit, OnDestroy {
     authorityEntity: ['', [Validators.required, Validators.nullValidator]],
   });
 
+
+
+
   ngOnInit() {
     this.unsubscribe = this.route.parent?.params.subscribe(params => {
       const id = params['id'];
       this.contratoService.getContratoById(id).subscribe(contrato => {
-        console.log(contrato);
         this.contrato = contrato;
 
         this.editContractForm.setValue({
@@ -64,8 +65,6 @@ export class ContratoComponent implements OnInit, OnDestroy {
     if (this.editContractForm.valid) {
       this.contratoService.editContrato(this.contrato.id, this.editContractForm.value as Contrato).subscribe(
         (response) => {
-          console.log({response});
-          console.log("Updating Contract.");
           this.messageService.add({
             severity: 'success',
             summary: 'Saving',
@@ -76,7 +75,6 @@ export class ContratoComponent implements OnInit, OnDestroy {
           }, 1500); // Delay before redirecting to /home
         },
         (error) => {
-          console.error('Error updating contract', error);
           this.messageService.add({
             severity: 'error',
             summary: 'Error',

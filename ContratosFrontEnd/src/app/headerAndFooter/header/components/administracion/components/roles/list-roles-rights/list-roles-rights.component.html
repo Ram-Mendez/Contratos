@@ -15,12 +15,20 @@
   </div>
 
   <div class="card">
-    <p-table [value]="roles" selectionMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+    <p-table [value]="roles" selectionMode="single" (onRowSelect)="onRowSelect($event)"
+             (dblclick)="editRole()"
+             (onRowUnselect)="onRowUnselect($event)">
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
-          <th pSortableColumn="nombre">Role Name <p-sortIcon field="name"></p-sortIcon></th>
-          <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
+          <th pSortableColumn="id">Id
+            <p-sortIcon field="id"></p-sortIcon>
+          </th>
+          <th pSortableColumn="nombre">Role Name
+            <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="description">Description
+            <p-sortIcon field="description"></p-sortIcon>
+          </th>
           <!-- Añade aquí las columnas adicionales que necesites -->
         </tr>
       </ng-template>
@@ -39,8 +47,12 @@
     <p-table [value]="users">
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="name">Associated User <p-sortIcon field="name"></p-sortIcon></th>
-          <th pSortableColumn="email"> Email <p-sortIcon field="email"></p-sortIcon></th>
+          <th pSortableColumn="name">Associated User
+            <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="email"> Email
+            <p-sortIcon field="email"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-user>

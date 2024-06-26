@@ -28,11 +28,9 @@ export class GestionesComponent implements OnInit, OnDestroy {
   ngOnInit() {
  this.unsubscribe =   this.route.params.subscribe(params => {
       const id = params['id'];
-      console.log("ID del contrato:", id);
       this.contratoService.getContratoById(id).subscribe(
         contrato => {
           this.contrato = contrato;
-          console.log("Datos del contrato:", contrato);
         },
         error => {
           console.error("Error al obtener el contrato:", error);

@@ -17,6 +17,7 @@
   <div class="card">
     <p-toast position="top-center"></p-toast>
     <p-table [value]="users" selectionMode="single" (onRowSelect)="onRowSelect($event)"
+             (dblclick)="editUser()"
              (onRowUnselect)="onRowUnselect($event)">
       <ng-template pTemplate="header">
         <tr>

@@ -60,7 +60,6 @@ export class CreateAdministratorComponent implements OnInit {
   crearAdministrador() {
     if (this.createAdministratorForm.valid) {
       const formValues = this.createAdministratorForm.value;
-      console.log("Datos enviados:", formValues);
       this.administratorService.createAdministrator(formValues).subscribe((response: any) => {
         this.messageService.add({
           severity: 'success',
@@ -71,7 +70,6 @@ export class CreateAdministratorComponent implements OnInit {
           this.router.navigate(['/administration/list-administrators']);
 
         }, 1500);
-        console.log("Respuesta del servidor:", response);
       });
     }
   }

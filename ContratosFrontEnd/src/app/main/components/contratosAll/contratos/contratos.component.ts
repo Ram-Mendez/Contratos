@@ -29,7 +29,6 @@ export class ContratosComponent implements OnInit {
   getContratos() {
     this.contratosService.getContratos().subscribe(
       data => {
-        console.log(data);
         this.contratos = data;
       }
     );
@@ -67,7 +66,6 @@ export class ContratosComponent implements OnInit {
             )
           },
           (error) => {
-            console.error('Error deleting contract', error);
             this.messageService.add({
               severity: 'error',
               summary: 'Error',
@@ -84,7 +82,6 @@ export class ContratosComponent implements OnInit {
   }
 
   onRowSelect(event: any) {
-    console.log(event);
     this.isContractSelected = true;
     this.id = event.data.id;
   }

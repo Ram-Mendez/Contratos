@@ -33,10 +33,8 @@ export class ListUsersComponent implements OnInit {
     this.userService.getUsers().subscribe(
       (listUsers) => {
         this.users = listUsers;
-        console.log(listUsers);
       },
       (err) => {
-        console.log(err, 'Error fetching users');
       }
     );
   }

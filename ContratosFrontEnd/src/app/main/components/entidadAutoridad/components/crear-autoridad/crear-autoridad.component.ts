@@ -28,8 +28,6 @@ export class CrearAutoridadComponent {
   crearAutoridad() {
     this.autoridadService.createEntidadAutoridad(this.autoridadForm.value as Autoridad).subscribe(
       (response) => {
-        console.log({ response });
-        console.log("Entidad autoridad creada.");
         this.messageService.add({
           severity: 'success',
           summary: 'Creating Authority ',
@@ -40,7 +38,6 @@ export class CrearAutoridadComponent {
         }, 1500);
       },
       error => {
-        console.log(error, 'No se ha podido crear la entidad autoridad');
         this.messageService.add({
           severity: 'error',
           summary: 'Error',

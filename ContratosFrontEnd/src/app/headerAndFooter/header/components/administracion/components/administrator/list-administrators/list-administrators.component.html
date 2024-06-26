@@ -22,6 +22,7 @@
       [value]="administrators"
       selectionMode="single"
       (onRowSelect)="onRowSelect($event)"
+      (dblclick)="editAdministrator()"
       (onRowUnselect)="onRowUnselect($event)">
       <ng-template pTemplate="header">
         <tr>

@@ -23,13 +23,11 @@ export class MainPageComponent implements OnInit {
   getContratos() {
     this.contratosService.getContratos().subscribe(
       data => {
-        console.log(data);
         this.contratos = data;
       }
     );
   }
   onRowSelect(event: any) {
-    console.log(event);
     this.isContractSelected = true;
     this.id = event.data.id;
   }

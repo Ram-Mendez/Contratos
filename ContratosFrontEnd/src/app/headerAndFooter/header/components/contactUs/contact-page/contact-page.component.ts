@@ -25,7 +25,6 @@ export class ContactPageComponent implements OnInit {
   SendMessage() {
     this.contactUsService.sendContactForm(this.contactForm.value).subscribe( () => {
       this.messaeService.add({severity: 'success', summary: 'Success', detail: 'Message sent successfully'});
-      console.log('Message sent');
     })
   }
 }

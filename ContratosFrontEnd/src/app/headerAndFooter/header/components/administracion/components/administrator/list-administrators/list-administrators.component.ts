@@ -48,10 +48,8 @@ export class ListAdministratorsComponent implements OnInit {
           ...admin,
           user: admin.user ? { ...admin.user, roles: this.mapRoles(admin.user.roles) } : null
         }));
-        console.log(response, "aqui se reciben los administradores");
       },
       error => {
-        console.log(error, 'No se ha podido obtener los administradores');
       }
     );
   }
@@ -90,10 +88,8 @@ export class ListAdministratorsComponent implements OnInit {
     this.rolesService.getRoles().subscribe(
       (response: any) => {
         this.roles = response;
-        console.log(response, "aqui se obtienen los roles");
       },
       error => {
-        console.log(error, 'No se ha podido obtener los roles');
       }
     );
   }
@@ -103,7 +99,6 @@ export class ListAdministratorsComponent implements OnInit {
   }
 
   onRowSelect(event: any) {
-    console.log(event);
     this.isAdminSelected = true;
     this.id = event.data.id;
   }

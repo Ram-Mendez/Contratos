@@ -34,7 +34,6 @@ export class EntidadesAutoridadComponent implements OnInit {
         this.autoridades = response;
       },
       error => {
-        console.log(error, 'No se ha podido obtener las entidades autoridades');
       }
     );
   }
@@ -58,11 +57,9 @@ export class EntidadesAutoridadComponent implements OnInit {
               summary: 'Deleting Authority',
               icon: 'pi pi-spin pi-spinner'
             });
-            console.log('Entidad autoridad eliminada');
             this.getEntidadesAutoridades();
           },
           error => {
-            console.log(error, 'No se ha podido eliminar la entidad autoridad');
             this.messageService.add({
               severity: 'error',
               summary: 'Error',
@@ -80,7 +77,6 @@ export class EntidadesAutoridadComponent implements OnInit {
 
 
   onRowSelect(event: any) {
-    console.log(event);
     this.isAutoridadSelected = true;
     this.id = event.data.id;
   }

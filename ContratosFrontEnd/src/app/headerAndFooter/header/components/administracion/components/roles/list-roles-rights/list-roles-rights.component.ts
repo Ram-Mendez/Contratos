@@ -35,7 +35,6 @@ export class ListRolesRightsComponent implements OnInit {
         this.roles = data;
       },
       (error) => {
-        console.log(error);
       }
     );
   }
@@ -77,7 +76,6 @@ export class ListRolesRightsComponent implements OnInit {
         this.users = data;
       },
       (error) => {
-        console.log(error);
       }
     );
   }

@@ -22,17 +22,34 @@
       [value]="autoridades"
       selectionMode="single"
       (onRowSelect)="onRowSelect($event)"
+      (dblclick)="editAutoridad()"
       (onRowUnselect)="onRowUnselect($event)">
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
-          <th pSortableColumn="name">Authority Name <p-sortIcon field="name"></p-sortIcon></th>
-          <th pSortableColumn="cifDni">C.I.F / D.N.I <p-sortIcon field="cifDni"></p-sortIcon></th>
-          <th pSortableColumn="address">Address <p-sortIcon field="address"></p-sortIcon></th>
-          <th pSortableColumn="municipality">Municipality <p-sortIcon field="municipality"></p-sortIcon></th>
-          <th pSortableColumn="zipCode">Zip Code <p-sortIcon field="zipCode"></p-sortIcon></th>
-          <th pSortableColumn="country">Country <p-sortIcon field="country"></p-sortIcon></th>
-          <th pSortableColumn="phone">Phone Number <p-sortIcon field="phone"></p-sortIcon></th>
+          <th pSortableColumn="id">Id
+            <p-sortIcon field="id"></p-sortIcon>
+          </th>
+          <th pSortableColumn="name">Authority Name
+            <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="cifDni">C.I.F / D.N.I
+            <p-sortIcon field="cifDni"></p-sortIcon>
+          </th>
+          <th pSortableColumn="address">Address
+            <p-sortIcon field="address"></p-sortIcon>
+          </th>
+          <th pSortableColumn="municipality">Municipality
+            <p-sortIcon field="municipality"></p-sortIcon>
+          </th>
+          <th pSortableColumn="zipCode">Zip Code
+            <p-sortIcon field="zipCode"></p-sortIcon>
+          </th>
+          <th pSortableColumn="country">Country
+            <p-sortIcon field="country"></p-sortIcon>
+          </th>
+          <th pSortableColumn="phone">Phone Number
+            <p-sortIcon field="phone"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-autoridad>

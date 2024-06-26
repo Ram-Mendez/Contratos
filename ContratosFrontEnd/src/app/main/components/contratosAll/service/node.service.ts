@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {NodeInput} from "./node-input";
+import {Subject} from "rxjs";
+import {Contrato} from "./contrato";
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +10,9 @@ import {NodeInput} from "./node-input";
 export class NodeService {
   apiUrl = 'http://localhost:8080/contrato/';
   apiUrl2 = 'http://localhost:8080/nodes/';
+
+  selectedNode$ = new Subject<NodeInput>();
+  contratoId$ = new Subject<Contrato>();
 
   constructor(private http: HttpClient) {
   }
@@ -23,6 +28,10 @@ export class NodeService {
       params = {parentId: parentId};
     }
     return this.http.get(this.apiUrl + idContrato + '/nodes', {params: params});
+  }
+
+  updateNode(idContrato: any, node: any) {
+    return this.http.put(this.apiUrl + idContrato + '/nodes', node);
   }
 
   deleteNode(id: number) {

@@ -26,7 +26,6 @@ export class EntidadContratanteComponent implements OnInit, OnDestroy {
     this.route.params.subscribe(params => {
       this.id = params['id'];
       this.contratanteService.getEntidadContratanteById(this.id).subscribe(contratante => {
-        console.log(contratante);
         this.contratante = contratante;
         if (this.contratante) {
           this.contratanteForm.patchValue({
@@ -45,8 +44,6 @@ export class EntidadContratanteComponent implements OnInit, OnDestroy {
 
     this.contratanteService.editEntidadContratante(this.id, updatedContratante).subscribe(
       (response) => {
-        console.log({ response });
-        console.log("Contratante actualizado.");
         this.messageService.add({
           severity: 'success',
           summary: 'Updating Contractor',
@@ -57,7 +54,6 @@ export class EntidadContratanteComponent implements OnInit, OnDestroy {
         }, 1500);
       },
       error => {
-        console.log(error, 'No se ha podido actualizar el contratante');
         this.messageService.add({
           severity: 'error',
           summary: 'Error',

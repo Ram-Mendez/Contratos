@@ -47,7 +47,6 @@ export class EditAdministratorComponent implements OnInit {
 
       this.administratorService.getAdministratorById(this.id).subscribe(administrator => {
         this.administrator = administrator;
-        console.log(this.administrator, "obtiene todos los datos pertinentes");
 
         if (administrator) {
           // Ensure the IDs match the expected types
@@ -57,7 +56,6 @@ export class EditAdministratorComponent implements OnInit {
             contrato: this.administrator.contratos.id, // Assuming there's only one contract
             user: userId
           });
-          console.log(this.editAdministratorForm.value);
         }
       });
     });
@@ -69,7 +67,6 @@ export class EditAdministratorComponent implements OnInit {
         this.contratosOptions = contratos.map((contrato: any) => ({label: contrato.name, value: contrato.id}));
       },
       err => {
-        console.log(err);
       }
     );
   }
@@ -80,21 +77,17 @@ export class EditAdministratorComponent implements OnInit {
         this.autoridadOptions = autoridades.map((autoridad: any) => ({label: autoridad.name, value: autoridad.id}));
       },
       err => {
-        console.log(err);
       }
     );
   }
 
   getUsers() {
     this.userService.getUsers().subscribe((users: any) => {
-      console.log('Fetched users:', users);
       this.userOptions = users.map((user: any) => ({
         label: user.name,
         value: user.id.toString()
       }));
-      console.log('User options:', this.userOptions);
     }, err => {
-      console.log('Error fetching users:', err);
     });
   }
 
@@ -107,7 +100,6 @@ export class EditAdministratorComponent implements OnInit {
           }, 1500);
         },
         err => {
-          console.log(err);
           this.messageService.add({severity: 'error', summary: 'Error', detail: 'Failed to update administrator!'});
         });
     }

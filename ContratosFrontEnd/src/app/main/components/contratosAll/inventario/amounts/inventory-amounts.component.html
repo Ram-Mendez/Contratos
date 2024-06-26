@@ -1,0 +1,67 @@
+<nav class="navbar header mt-1 d-flex justify-content-between">
+  <div class="d-flex">
+    <a class="navbar-brand" [routerLink]="['/gestiones', id, 'inventario', 'detalles']">Amounts</a>
+    <a class="navbar-brand" [routerLink]="['/gestiones', id, 'inventario', 'total']">Total</a>
+  </div>
+</nav>
+
+<form [formGroup]="inventoryForm" (ngSubmit)="updateInventory()" class="p-4 border rounded shadow-sm bg-white">
+  <div class="form-group row">
+    <div class="col-md-12 mb-4">
+      <p-floatLabel>
+        <input id="description" pInputText type="text" formControlName="description" class="form-control text-center">
+        <label for="description"><strong>Description</strong></label>
+      </p-floatLabel>
+    </div>
+    <div class="col-md-6 mb-4">
+      <p-floatLabel>
+        <input id="quantity" pInputText type="number" formControlName="quantity" class="form-control text-center">
+        <label for="quantity"><strong>Quantity</strong></label>
+      </p-floatLabel>
+    </div>
+    <div class="col-md-6 mb-4">
+      <p-floatLabel>
+        <input id="price" pInputText type="number" formControlName="price" class="form-control text-center">
+        <label for="price"><strong>Price</strong></label>
+      </p-floatLabel>
+    </div>
+    <div class="col-md-6 mb-4">
+      <p-floatLabel>
+        <input id="totalExcVat" readonly pInputText  type="number" formControlName="totalExcVat" class="form-control text-center">
+        <label for="totalExcVat"><strong>Total excl. VAT</strong></label>
+      </p-floatLabel>
+    </div>
+    <div class="col-md-6 mb-4">
+      <p-floatLabel>
+        <input id="totalInclVat" readonly pInputText type="number" formControlName="totalInclVat" class="form-control text-center">
+        <label for="totalInclVat"><strong>Total incl. VAT</strong></label>
+      </p-floatLabel>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <p-floatLabel>
+        <input id="VAT" readonly pInputText type="number" formControlName="vat" class="form-control text-center">
+        <label for="VAT"><strong>VAT</strong></label>
+      </p-floatLabel>
+    </div>
+    <div class="col-md-6 mb-4">
+      <p-floatLabel class="flex-grow-1 mr-2">
+        <select id="vatPercentage" formControlName="vatPercentage" class="form-control text-center">
+          <option value="0">0</option>
+          <option value="5">4</option>
+          <option value="10">17</option>
+          <option value="15">21</option>
+        </select>
+        <label for="vatPercentage"><strong>VAT%</strong></label>
+      </p-floatLabel>
+    </div>
+
+    <div class="col-md-12 mb-4 d-flex justify-content-end">
+      <p-button (click)="updateInventory()" type="button" severity="success" class="ml-auto">
+        <i class="pi pi-save"></i> &nbsp; Save Changes
+      </p-button>
+    </div>
+
+
+  </div>
+</form>

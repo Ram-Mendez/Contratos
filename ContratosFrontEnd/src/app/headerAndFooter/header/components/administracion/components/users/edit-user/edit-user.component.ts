@@ -35,7 +35,6 @@ export class EditUserComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      console.log(this.id);
       this.userService.getUserById(this.id).subscribe(user => {
         this.user = user;
         if (user) {
@@ -54,7 +53,6 @@ export class EditUserComponent implements OnInit {
           this.roles = listaRoles.map(role => ({ label: role.nombre, value: role.id }));
         },
         err => {
-          console.log(err);
         }
       );
     });

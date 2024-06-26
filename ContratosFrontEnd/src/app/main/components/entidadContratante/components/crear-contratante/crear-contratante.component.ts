@@ -25,8 +25,6 @@ export class CrearContratanteComponent {
   crearContratante() {
     this.contratanteService.createEntidadContratante(this.contratanteForm.value as Contratante).subscribe(
       (response) => {
-        console.log({ response });
-        console.log("Entidad contratante creada.");
         this.messageService.add({
           severity: 'success',
           summary: 'Creating contractor',
@@ -37,7 +35,6 @@ export class CrearContratanteComponent {
         }, 1500);
       },
       error => {
-        console.log(error, 'No se ha podido crear la entidad contratante');
         this.messageService.add({
           severity: 'error',
           summary: 'Error',

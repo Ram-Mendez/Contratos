@@ -44,8 +44,6 @@ export class CreateContratoComponent implements OnInit {
     if (this.createContractForm.valid) {
       this.contratoService.createContrato(this.createContractForm.value as Contrato).subscribe(
         (response) => {
-          console.log({response});
-          console.log("Contrato creado.");
           this.messageService.add({
             severity: 'success',
             summary: 'Creating Contract',

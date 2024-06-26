@@ -1,35 +1,44 @@
 <div class="row">
   <div class="col-6">
-    <div class="button-container">
+    <div class="header text-center mt-1 mb-4 p-2 rounded shadow-sm w-100">
+      <h3 class="display-4">Contract Inventory</h3>
+      <hr class="my-4" style="border-top: 2px solid #ccc;">
+    </div>
+
+    <div class="button-container text-center">
       <p-button
         (click)="mostrarDialogo()"
         severity="primary"
         class="m-2 btn-uniform">
         <span class="pi pi-plus"></span> &nbsp; New
       </p-button>
+
+
+      <p-button
+        (click)="editNode()"
+        severity="success"
+        class="m-2 btn-uniform">
+        <span class="pi pi-pencil"></span> &nbsp; Edit
+      </p-button>
+
+      <p-button
+        (click)="deleteNode()"
+        severity="danger"
+        class="m-2 btn-uniform">
+        <span class="pi pi-trash"></span> &nbsp; Delete
+      </p-button>
     </div>
 
-    <p-dialog header="Add Node" [modal]="true" [(visible)]="visible" [style]="{width: '450px'}">
-      <div class="flex mb-3 mt-4">
-        <p-floatLabel>
-          <input pInputText id="description" [style]="{width: '400px'}" autocomplete="off"/>
-          <label for="description" class="font-semibold w-6rem">Description</label>
-        </p-floatLabel>
-      </div>
-      <div class="flex justify-content-end gap-2 align-right">
-        <p-button label="Cancel" severity="secondary" (click)="visible = false"/>
-        <p-button label="Save" (click)="createNode()"/>
-      </div>
-    </p-dialog>
-
-    <div class="content-container"> <!-- Agregado un contenedor para el margen -->
+    <div class="content-container">
       <p-treeTable
         selectionMode="single"
         lazy="true"
         [(selection)]="selectedNode"
-        [value]="files" [scrollable]="false"
+        [value]="files"
+        [scrollable]="false"
         (onNodeSelect)="onNodeSelect($event)"
-        (onNodeExpand)="onNodeExpand($event.node)">
+        (dblclick)="editNode()"
+        (onNodeExpand)="onNodeExpand($event)">
 
         <ng-template pTemplate="header">
           <tr>
@@ -40,13 +49,29 @@
           <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
             <td>
               <p-treeTableToggler [rowNode]="rowNode"/>
-              {{ rowData.description }}
+              {{ rowData?.description }}
             </td>
           </tr>
         </ng-template>
       </p-treeTable>
     </div>
+
+    <p-dialog header="Add Node" [modal]="true" [(visible)]="visible" [style]="{width: '450px'}">
+      <div class="flex mb-3 mt-4">
+        <p-floatLabel>
+          <input pInputText id="description" [style]="{width: '400px'}" autocomplete="off"
+                 [(ngModel)]="description"
+          />
+          <label for="description" class="font-semibold w-6rem">Description</label>
+        </p-floatLabel>
+      </div>
+      <div class="flex justify-content-end gap-2 align-right">
+        <p-button label="Cancel" severity="secondary" (click)="visible = false"/>
+        <p-button label="Save" (click)="createNode()"/>
+      </div>
+    </p-dialog>
   </div>
   <div class="col-6">
+    <router-outlet></router-outlet>
   </div>
 </div>
