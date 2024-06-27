@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Subscription} from "rxjs";
+import {Subject, Subscription, takeUntil} from "rxjs";
 import {NodeService} from "../../service/node.service";
 import {MessageService} from "primeng/api";
 
@@ -11,9 +11,9 @@ import {MessageService} from "primeng/api";
   styleUrl: './inventory-amounts.component.css'
 })
 export class InventoryAmounts implements OnInit, OnDestroy {
-
+  contratoId: any;
   nodeId: any;
-  unsubscribe: Subscription | undefined;
+  routeUnsubscribe = new Subject<void>();
 
   constructor(
     private messageService: MessageService,
@@ -21,15 +21,18 @@ export class InventoryAmounts implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.unsubscribe = this.nodeService.selectedNode$.subscribe((node: any) => {
+    this.nodeService.selectedNode$.pipe(
+      takeUntil(this.routeUnsubscribe)
+    ).subscribe((node: any) => {
       this.inventoryForm.patchValue(
         node
       );
     })
-    this.nodeId = this.nodeService.nodeId$.subscribe((nodeId: any) => {
-      this.nodeId = nodeId;
-      console.log(" tengo el id del nodo", this.nodeId);
-    });
+    this.route.parent?.parent?.params.pipe(
+      takeUntil(this.routeUnsubscribe)
+    ).subscribe(params => {
+      this.contratoId = params['id'];
+    })
     this.inventoryForm.get('totalExcVat')?.disable();
     this.inventoryForm.get('totalInclVat')?.disable();
     this.inventoryForm.get('vat')?.disable();
@@ -57,12 +60,16 @@ export class InventoryAmounts implements OnInit, OnDestroy {
             icon: 'pi pi-spin pi-spinner'
           });
           this.inventoryForm.reset();
+          this.router.navigate([`/gestiones/${this.contratoId}/inventario`]);
         });
     }
   }
 
 
   ngOnDestroy() {
-    this.unsubscribe?.unsubscribe();
+
+    this.routeUnsubscribe.next();
+    this.routeUnsubscribe.complete();
+
   }
 }

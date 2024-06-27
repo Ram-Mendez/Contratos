@@ -1,1 +1,29 @@
-<p>total-tab works!</p>
+<nav class="navbar header mt-1 mb-1 d-flex justify-content-between">
+  <div class="d-flex">
+    <a class="navbar-brand" [routerLink]="['/gestiones', contratoId, 'inventario', 'detalles']">Amounts</a>
+    <a class="navbar-brand" [routerLink]="['/gestiones', contratoId, 'inventario', 'total']">Total</a>
+  </div>
+</nav>
+
+<form [formGroup]="inventoryForm" class="p-4 border rounded shadow-sm bg-white">
+  <div class="form-group row">
+    <div class="col-md-12 mb-4">
+      <p-floatLabel>
+        <input id="quantity" pInputText type="text" formControlName="quantity" class="form-control text-center">
+        <label for="quantity"><strong>Quantity</strong></label>
+      </p-floatLabel>
+    </div>
+    <div class="col-md-12 mb-4">
+      <p-floatLabel>
+        <input id="price" pInputText type="text" formControlName="price" class="form-control text-center">
+        <label for="quantity"><strong>Price</strong></label>
+      </p-floatLabel>
+    </div>
+    <div class="col-md-12 mb-4">
+      <p-floatLabel>
+        <input id="totalInclVat" pInputText type="text" formControlName="totalInclVat" class="form-control text-center">
+        <label for="quantity"><strong>Total incl. VAT</strong></label>
+      </p-floatLabel>
+    </div>
+  </div>
+</form>

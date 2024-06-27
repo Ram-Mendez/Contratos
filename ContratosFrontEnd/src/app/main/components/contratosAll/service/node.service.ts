@@ -12,7 +12,6 @@ export class NodeService {
   apiUrl2 = 'http://localhost:8080/nodes/';
 
   selectedNode$ = new Subject<NodeInput>();
-  nodeId$ = new Subject<NodeInput>();
 
   constructor(private http: HttpClient) {
   }

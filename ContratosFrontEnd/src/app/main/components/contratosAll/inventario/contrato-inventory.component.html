@@ -13,13 +13,12 @@
         <span class="pi pi-plus"></span> &nbsp; New
       </p-button>
 
-
-      <p-button
-        (click)="editNode()"
-        severity="success"
-        class="m-2 btn-uniform">
-        <span class="pi pi-pencil"></span> &nbsp; Edit
-      </p-button>
+<!--      <p-button-->
+<!--        (click)="editNode()"-->
+<!--        severity="success"-->
+<!--        class="m-2 btn-uniform">-->
+<!--        <span class="pi pi-pencil"></span> &nbsp; Edit-->
+<!--      </p-button>-->
 
       <p-button
         (click)="deleteNode()"
@@ -37,7 +36,6 @@
         [value]="files"
         [scrollable]="false"
         (onNodeSelect)="onNodeSelect($event)"
-        (dblclick)="editNode()"
         (onNodeExpand)="onNodeExpand($event)">
 
         <ng-template pTemplate="header">

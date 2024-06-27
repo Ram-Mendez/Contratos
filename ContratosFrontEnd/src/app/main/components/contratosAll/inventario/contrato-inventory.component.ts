@@ -32,8 +32,8 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
 
   onNodeSelect(event: any) {
     this.nodeService.selectedNode$.next(this.selectedNode.data);
+    // this.editNode();
     console.log("nodeOverall", this.selectedNode.data)
-    this.nodeService.nodeId$.next(this.selectedNode.data.id);
 
   }
 
@@ -67,6 +67,12 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
       });
   }
 
+  editNode() {
+    if (this.selectedNode) {
+      this.router.navigate(['/gestiones', this.id, 'inventario', 'detalles']);
+    }
+  }
+
   addChildrenToNode(parentId: number, children: any[], nodes: TreeNode[]): void {
     for (let node of nodes) {
       if (node.data.id === parentId) {
@@ -96,6 +102,7 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     });
   }
 
+
   resetNodeSelection() {
     this.selectedNode = {
       data: {
@@ -105,15 +112,6 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
       children: []
     };
   }
-
-
-  ngOnDestroy() {
-    if (this.unsubscribe) {
-      this.unsubscribe.unsubscribe();
-    }
-  }
-
-
 
   deleteNode() {
     this.confirmationService.confirm({
@@ -141,10 +139,9 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     });
   }
 
-
-  editNode() {
-    if (this.selectedNode) {
-      this.router.navigate(['/gestiones', this.id, 'inventario', 'detalles']);
+  ngOnDestroy() {
+    if (this.unsubscribe) {
+      this.unsubscribe.unsubscribe();
     }
   }
 }

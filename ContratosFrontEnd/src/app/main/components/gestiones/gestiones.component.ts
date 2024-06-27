@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {TreeNode} from "primeng/api";
 import {ContratoService} from "../contratosAll/service/contrato.service";
+import {Subject} from "rxjs";
+import {Contrato} from "../contratosAll/service/contrato";
 
 @Component({
   templateUrl: './gestiones.component.html',
@@ -20,7 +22,7 @@ export class GestionesComponent implements OnInit, OnDestroy {
       collapsedIcon: 'pi pi-folder',
       children: [
         {label: 'Edit Contract', data: {path: 'editar-contrato', icon: 'pi pi-pencil'}, expanded: true},
-        {label: 'Inventory', data: {path: 'inventario', icon: 'pi pi-list'}, expanded: true},
+        {label: 'Inventory', data: {path: 'inventario/detalles', icon: 'pi pi-list'}, expanded: true},
       ]
     },
   ];
