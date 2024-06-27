@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subject, Subscription, takeUntil} from "rxjs";
 import {NodeService} from "../../service/node.service";
@@ -24,6 +24,8 @@ export class InventoryAmounts implements OnInit, OnDestroy {
     this.nodeService.selectedNode$.pipe(
       takeUntil(this.routeUnsubscribe)
     ).subscribe((node: any) => {
+
+      this.nodeId = node.id;
       this.inventoryForm.patchValue(
         node
       );
@@ -40,13 +42,13 @@ export class InventoryAmounts implements OnInit, OnDestroy {
 
 
   inventoryForm = this.fb.group({
-    description: [''],
-    quantity: [''],
-    price: [''],
+    description: ['', Validators.required],
+    quantity: ['', Validators.required],
+    price: ['', Validators.required],
     totalExcVat: ['',],
     totalInclVat: [''],
     vat: [''],
-    vatPercentage: [''],
+    vatPercentage: ['', Validators.required],
   });
 
   updateInventory() {
@@ -60,7 +62,7 @@ export class InventoryAmounts implements OnInit, OnDestroy {
             icon: 'pi pi-spin pi-spinner'
           });
           this.inventoryForm.reset();
-          this.router.navigate([`/gestiones/${this.contratoId}/inventario`]);
+          this.router.navigate([`/gestiones/${this.contratoId}/inventario/detalles`]);
         });
     }
   }

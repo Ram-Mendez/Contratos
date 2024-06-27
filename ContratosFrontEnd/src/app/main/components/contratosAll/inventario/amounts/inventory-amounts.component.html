@@ -57,7 +57,7 @@
     </div>
 
     <div class="col-md-12 mb-4 d-flex justify-content-end">
-      <p-button (click)="updateInventory()" type="button" severity="success" class="ml-auto">
+      <p-button [disabled]="inventoryForm.invalid" (click)="updateInventory()" type="button" severity="success" class="ml-auto">
         <i class="pi pi-save"></i> &nbsp; Save Changes
       </p-button>
     </div>

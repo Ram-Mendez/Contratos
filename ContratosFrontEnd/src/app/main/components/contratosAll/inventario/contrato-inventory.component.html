@@ -13,14 +13,8 @@
         <span class="pi pi-plus"></span> &nbsp; New
       </p-button>
 
-<!--      <p-button-->
-<!--        (click)="editNode()"-->
-<!--        severity="success"-->
-<!--        class="m-2 btn-uniform">-->
-<!--        <span class="pi pi-pencil"></span> &nbsp; Edit-->
-<!--      </p-button>-->
-
       <p-button
+        [disabled]="!selectedNode?.data.id"
         (click)="deleteNode()"
         severity="danger"
         class="m-2 btn-uniform">
