@@ -32,7 +32,6 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
 
   onNodeSelect(event: any) {
     this.nodeService.selectedNode$.next(this.selectedNode.data);
-    // this.editNode();
     console.log("nodeOverall", this.selectedNode.data)
 
   }

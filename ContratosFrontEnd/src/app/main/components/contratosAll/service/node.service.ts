@@ -23,6 +23,9 @@ export class NodeService {
   updateNode(nodeId: any, node: any,) {
     return this.http.put(this.apiUrl2 + nodeId, node);
   }
+  getTotalAmounts(nodeid: any) {
+    return this.http.get(this.apiUrl2 + nodeid + '/total');
+  }
 
   getNodes(idContrato: any, parentId?: any) {
     let params = {};
