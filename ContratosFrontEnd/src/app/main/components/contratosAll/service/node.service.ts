@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {NodeInput} from "./node-input";
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
 import {Contrato} from "./contrato";
 
 @Injectable({
@@ -11,7 +11,7 @@ export class NodeService {
   apiUrl = 'http://localhost:8080/contrato/';
   apiUrl2 = 'http://localhost:8080/nodes/';
 
-  selectedNode$ = new Subject<NodeInput>();
+  selectedNode$ = new BehaviorSubject<NodeInput | any>([null]);
 
   constructor(private http: HttpClient) {
   }
@@ -23,6 +23,7 @@ export class NodeService {
   updateNode(nodeId: any, node: any,) {
     return this.http.put(this.apiUrl2 + nodeId, node);
   }
+
   getTotalAmounts(nodeid: any) {
     return this.http.get(this.apiUrl2 + nodeid + '/total');
   }

@@ -29,20 +29,17 @@ export class TotalTabComponent implements OnInit, OnDestroy {
     this.nodeService.selectedNode$.pipe(
       takeUntil(this.routeUnsubscribe)
     ).subscribe((node: any) => {
-
       this.nodeId = node.id;
-
-      this.nodeService.getTotalAmounts(this.nodeId).subscribe((node: any) => {
-        this.inventoryForm.patchValue(
-          node
-        );
-      })
-    })
+      this.nodeService.getTotalAmounts(this.nodeId).subscribe((nodeData: any) => {
+        this.inventoryForm.patchValue(nodeData);
+      });
+    });
 
     this.inventoryForm.get('quantity')?.disable();
     this.inventoryForm.get('price')?.disable();
     this.inventoryForm.get('totalInclVat')?.disable();
   }
+
 
   inventoryForm = this.fb.group({
     quantity: [''],
