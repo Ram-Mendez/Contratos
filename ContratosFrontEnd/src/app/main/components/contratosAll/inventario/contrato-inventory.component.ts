@@ -11,7 +11,7 @@ import {Observable, Subscription} from 'rxjs';
 })
 export class ContratoInventoryComponent implements OnInit, OnDestroy {
   files: TreeNode[] = [];
-  selectedNode!: TreeNode;
+  selectedNode!: TreeNode | any;
   visible: boolean = false;
   description = '';
   unsubscribe: Subscription | undefined;
