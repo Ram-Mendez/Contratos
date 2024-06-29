@@ -65,6 +65,5 @@ export class AdministracionComponent {
     }
 
   ];
-  protected readonly scroll = scroll;
 }
 

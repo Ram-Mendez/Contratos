@@ -10,13 +10,10 @@
   </ng-template>
   <ng-template pTemplate="end">
     <div class="flex-container" style="display: flex; align-items: center;">
-      <ng-container *ngIf="loginService.isUserLoggedIn">
-        <div style="flex-grow: 1;"></div>
-      </ng-container>
-      <strong>{{ loginService.email }} &nbsp;</strong>
-      <p-button *ngIf="loginService.isUserLoggedIn"
+      <div style="flex-grow: 1;"></div>
+      <strong *ngIf="loginService.isUserLoggedIn()">{{ loginService.email }} &nbsp;</strong>
+      <p-button *ngIf="loginService.isUserLoggedIn()"
                 (click)="logOut()"
-                routerLink="/"
                 severity="warning"
                 class="p-button-text p-button-warning">
         <i class="pi pi-sign-out"></i>&nbsp; LOGOUT

@@ -1,59 +1,44 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../../login/services/login.service";
 import {MenuItem} from "primeng/api";
-import { Contrato } from '../../main/components/contratosAll/service/contrato';
-import {ContratoService} from "../../main/components/contratosAll/service/contrato.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'] // Corrección aquí para 'styleUrls'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
   items: MenuItem[] | undefined;
+  userEmail: string | null = null;
 
-  constructor(public loginService: LoginService,
-              private contratoService: ContratoService) {
+
+  constructor(public loginService: LoginService, private router: Router
+  ) {
   }
 
   ngOnInit() {
-
+    localStorage.getItem('userEmail')
 
 
     this.items = [
       {
         label: 'Home',
-        // icon: 'pi pi-home',
         route: '/home'
       },
       {
         label: 'Administration',
-        // icon: 'pi pi-building',
         route: '/administration/list-authorities'
 
       },
-      // {
-      //   label: 'About Us',
-      //   icon: 'pi pi-fw pi-info-circle', // Changed icon here
-      //   route: '/about-page'
-      // },
-      // {
-      //   label: 'Support',
-      //   icon: 'pi pi-envelope',
-      //   route: '/contact-page'
-      // },
-      // {
-      //   label: 'Login',
-      //   icon: 'pi pi-sign-in',
-      //   route: '/login'
-      // }
+
     ]
   }
 
-  logOut() {
-    this.loginService.isUserLoggedIn = false;
-    this.loginService.setEmail('');
+  logOut(): void {
+    this.loginService.logOut();
+    this.router.navigate(['/login']);
   }
 
 }

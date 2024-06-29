@@ -44,15 +44,18 @@
 
 }
 
+
+
+
 .relative-children .col-2 {
   flex: 0 0 auto;
-  width: 25px; /* Reduce el ancho de la columna del icono */
+  width: 15px; /* Reduce más el ancho de la columna del icono */
   padding-right: 0;
 }
 
 .relative-children .col-10 {
   flex: 1 1 auto;
-  max-width: calc(100% - 25px); /* Ajusta el ancho de la columna del texto */
+  max-width: calc(100% - 15px); /* Ajusta más el ancho de la columna del texto */
   padding-left: 0; /* Elimina el padding entre el icono y el texto */
 }
 
@@ -61,8 +64,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-left: 10px; /* Aumenta el espacio entre el icono y el texto para los nodos secundarios */
+  margin-left: 2px; /* Reduce más el espacio entre el icono y el texto */
 }
+
 
 /* Añade esta clase para el badge personalizado */
 .badge-custom {

@@ -9,14 +9,10 @@ import {MenuItem} from "primeng/api";
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  logout() {
-
-    window.location.href = 'https://www.google.com';
-  }
 }

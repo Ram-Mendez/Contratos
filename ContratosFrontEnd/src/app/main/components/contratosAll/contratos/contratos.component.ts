@@ -16,6 +16,7 @@ export class ContratosComponent implements OnInit {
   isContractSelected: boolean = false;
   name: any;
 
+
   constructor(private contratosService: ContratoService,
               private messageService: MessageService,
               private router: Router,

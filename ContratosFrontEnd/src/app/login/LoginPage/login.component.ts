@@ -26,7 +26,9 @@ export class LoginComponent {
     this.loginService.verifyLogin(this.loginForm.value as User).subscribe(
       (isValid: boolean) => {
         if (isValid) {
-          this.loginService.setEmail(this.loginForm.value.email as string);
+          const email = this.loginForm.value.email as string
+          this.loginService.setEmail(email);
+          localStorage.setItem('userEmail', email);
           this.messageService.add({
             severity: 'success',
             summary: 'Login successful',
