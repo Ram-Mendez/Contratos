@@ -14,7 +14,7 @@ export class LoginService {
   private _email: string = '';
 
   constructor(private http: HttpClient) {
-    this._email = localStorage.getItem('userEmail') || '';
+    this._email = sessionStorage.getItem('userEmail') || '';
     this._isUserLoggedIn = !!this._email;
   }
 
@@ -40,7 +40,7 @@ export class LoginService {
 
   setEmail(value: string): void {
     this._email = value;
-    localStorage.setItem('userEmail', value);
+    sessionStorage.setItem('userEmail', value);
   }
 
   isUserLoggedIn(): boolean {
@@ -50,6 +50,6 @@ export class LoginService {
   logOut(): void {
     this._email = '';
     this._isUserLoggedIn = false;
-    localStorage.removeItem('userEmail');
+    sessionStorage.removeItem('userEmail');
   }
 }

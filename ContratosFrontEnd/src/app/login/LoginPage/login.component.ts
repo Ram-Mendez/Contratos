@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {LoginService} from "../services/login.service";
 import {Router} from "@angular/router";
@@ -10,7 +10,7 @@ import {MessageService} from "primeng/api";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private messageService: MessageService,
               private loginService: LoginService, private router: Router) {
@@ -20,6 +20,13 @@ export class LoginComponent {
     email: ['RamMendezGomez@google.com', [Validators.required, Validators.email]],
     password: ['1234', [Validators.required, Validators.minLength(4)]]
   });
+
+  ngOnInit() {
+    if (this.loginService.isUserLoggedIn()) {
+      this.router.navigate(['/home']);
+    }
+
+  }
 
 
   onLogin(): void {
