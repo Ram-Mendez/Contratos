@@ -59,6 +59,7 @@ import {
   InventoryAmounts
 } from "./main/components/contratosAll/inventario/amounts/inventory-amounts.component";
 import {TotalTabComponent} from "./main/components/contratosAll/inventario/total/total-tab.component";
+import {GestorArchivosComponent} from "./main/components/contratosAll/gestor-archivos/gestor-archivos.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -98,7 +99,8 @@ const routes: Routes = [
           {path: 'detalles', component: InventoryAmounts},
           {path: 'total', component: TotalTabComponent}
         ]
-      }
+      },
+      {path: 'gestor-archivos', component: GestorArchivosComponent}
     ]
   },
   {path: '**', redirectTo: ''}

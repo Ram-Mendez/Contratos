@@ -46,6 +46,7 @@ import {TreeTableModule} from "primeng/treetable";
 import {DialogModule} from "primeng/dialog";
 import { InventoryAmounts } from './components/contratosAll/inventario/amounts/inventory-amounts.component';
 import { TotalTabComponent } from './components/contratosAll/inventario/total/total-tab.component';
+import { GestorArchivosComponent } from './components/contratosAll/gestor-archivos/gestor-archivos.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { TotalTabComponent } from './components/contratosAll/inventario/total/to
     ContratoInventoryComponent,
     InventoryAmounts,
     TotalTabComponent,
+    GestorArchivosComponent,
 
   ],
     imports: [

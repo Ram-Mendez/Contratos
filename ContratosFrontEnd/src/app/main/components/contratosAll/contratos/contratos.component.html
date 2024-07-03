@@ -10,17 +10,16 @@
     [disabled]="!isContractSelected"
     severity="success"
     class="m-2 btn-uniform">
-    Edit &nbsp; <span class="pi pi-pencil"></span>
+    <span class="pi pi-pencil"></span> &nbsp; Edit
   </p-button>
   <p-button
     (click)="deleteContrato()"
     [disabled]="!isContractSelected"
     severity="danger"
     class="m-2 btn-uniform">
-    Delete &nbsp; <span class="pi pi-trash"></span>
+    <span class="pi pi-trash"></span> &nbsp; Delete
   </p-button>
 </div>
-
 
 
 <div class="card">
@@ -32,11 +31,21 @@
     (onRowUnselect)="onRowUnselect($event)">
     <ng-template pTemplate="header">
       <tr>
-        <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
-        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-        <th pSortableColumn="creationDate">Creation Date <p-sortIcon field="creationDate"></p-sortIcon></th>
-        <th pSortableColumn="contractingEntity.name">Contracting Entity <p-sortIcon field="contractingEntity.name"></p-sortIcon></th>
-        <th pSortableColumn="authorityEntity.name">Authority Entity <p-sortIcon field="authorityEntity.name"></p-sortIcon></th>
+        <th pSortableColumn="id">Id
+          <p-sortIcon field="id"></p-sortIcon>
+        </th>
+        <th pSortableColumn="name">Name
+          <p-sortIcon field="name"></p-sortIcon>
+        </th>
+        <th pSortableColumn="creationDate">Creation Date
+          <p-sortIcon field="creationDate"></p-sortIcon>
+        </th>
+        <th pSortableColumn="contractingEntity.name">Contracting Entity
+          <p-sortIcon field="contractingEntity.name"></p-sortIcon>
+        </th>
+        <th pSortableColumn="authorityEntity.name">Authority Entity
+          <p-sortIcon field="authorityEntity.name"></p-sortIcon>
+        </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-contrato>

@@ -1,0 +1,33 @@
+<div class="button-container mb-3">
+  <p-button
+    (click)="addFile()"
+    severity="primary"
+    class="m-2 btn-uniform">
+    <span class="pi pi-plus"></span> &nbsp; New
+  </p-button>
+  <p-button
+    (click)="deleteFile()"
+    [disabled]="!isFileSelected"
+    severity="danger"
+    class="m-2 btn-uniform">
+    <span class="pi pi-trash"></span> &nbsp; Delete
+  </p-button>
+</div>
+
+
+<p-table
+  selectionMode="single">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="fileName">File Name
+        <p-sortIcon field="fileName"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-contrato>
+    <tr [pSelectableRow]="contrato">
+      <!-- files will be listed here -->
+
+    </tr>
+  </ng-template>
+</p-table>

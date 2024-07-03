@@ -28,18 +28,18 @@
         <tr>
           <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
           <th pSortableColumn="user.name">Administrator <p-sortIcon field="user.name"></p-sortIcon></th>
-          <th pSortableColumn="user.roles">Roles <p-sortIcon field="user.roles"></p-sortIcon></th>
-          <th pSortableColumn="autoridad.name">Authority <p-sortIcon field="autoridad.name"></p-sortIcon></th>
           <th pSortableColumn="contratos.name">Contract <p-sortIcon field="contratos.name"></p-sortIcon></th>
+          <th pSortableColumn="autoridad.name">Authority <p-sortIcon field="autoridad.name"></p-sortIcon></th>
+          <th pSortableColumn="user.roles">Roles <p-sortIcon field="user.roles"></p-sortIcon></th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-administrator>
         <tr [pSelectableRow]="administrator">
           <td>{{ administrator.id }}</td>
           <td>{{ administrator.user?.name }}</td>
-          <td>{{ administrator.user?.roles }}</td>
-          <td>{{ administrator.autoridad?.name }}</td>
           <td>{{ administrator.contratos?.name }}</td>
+          <td>{{ administrator.autoridad?.name }}</td>
+          <td>{{ administrator.user?.roles }}</td>
         </tr>
       </ng-template>
     </p-table>
