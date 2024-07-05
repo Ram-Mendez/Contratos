@@ -10,12 +10,21 @@
     (uploadHandler)="myUploader($event)"
   />
   <p-button
+    (click)="downloadFile()"
+    [disabled]="!isFileSelected"
+    severity="success"
+    class="download-button">
+    <span class="pi pi-save"></span> &nbsp; Download
+  </p-button>
+
+  <p-button
     (click)="deleteFile()"
     [disabled]="!isFileSelected"
     severity="danger"
     class="delete-button">
     <span class="pi pi-trash"></span> &nbsp; Delete
   </p-button>
+
 </div>
 
 
