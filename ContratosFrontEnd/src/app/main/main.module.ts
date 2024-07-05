@@ -47,6 +47,7 @@ import {DialogModule} from "primeng/dialog";
 import { InventoryAmounts } from './components/contratosAll/inventario/amounts/inventory-amounts.component';
 import { TotalTabComponent } from './components/contratosAll/inventario/total/total-tab.component';
 import { GestorArchivosComponent } from './components/contratosAll/gestor-archivos/gestor-archivos.component';
+import {FileUploadModule} from "primeng/fileupload";
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { GestorArchivosComponent } from './components/contratosAll/gestor-archiv
         MultiSelectModule,
         MenubarModule,
         TreeTableModule,
-        DialogModule
+        DialogModule,
+        FileUploadModule
 
 
     ],

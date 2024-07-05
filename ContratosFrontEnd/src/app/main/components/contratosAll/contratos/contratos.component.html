@@ -52,7 +52,7 @@
       <tr [pSelectableRow]="contrato">
         <td>{{ contrato.id }}</td>
         <td>{{ contrato.name }}</td>
-        <td>{{ contrato.creationDate | date:'medium' }}</td>
+        <td>{{ contrato.creationDate | date: 'dd/MM/yyyy' }}</td>
         <td>{{ contrato.contractingEntity.name }}</td>
         <td>{{ contrato.authorityEntity.name }}</td>
       </tr>

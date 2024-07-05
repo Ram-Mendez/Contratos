@@ -1,33 +1,54 @@
-<div class="button-container mb-3">
-  <p-button
-    (click)="addFile()"
-    severity="primary"
-    class="m-2 btn-uniform">
-    <span class="pi pi-plus"></span> &nbsp; New
-  </p-button>
+<div class="mb-3 button-container">
+  <p-fileUpload
+    mode="basic"
+    name="demo[]"
+    chooseIcon="pi pi-upload"
+    chooseLabel="Add File"
+    [auto]="true"
+    [multiple]="true"
+    [customUpload]="true"
+    (uploadHandler)="myUploader($event)"
+  />
   <p-button
     (click)="deleteFile()"
     [disabled]="!isFileSelected"
     severity="danger"
-    class="m-2 btn-uniform">
+    class="delete-button">
     <span class="pi pi-trash"></span> &nbsp; Delete
   </p-button>
 </div>
 
 
-<p-table
-  selectionMode="single">
-  <ng-template pTemplate="header">
-    <tr>
-      <th pSortableColumn="fileName">File Name
-        <p-sortIcon field="fileName"></p-sortIcon>
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-contrato>
-    <tr [pSelectableRow]="contrato">
-      <!-- files will be listed here -->
 
-    </tr>
-  </ng-template>
-</p-table>
+<div class="card">
+  <p-table
+    [value]="files"
+    selectionMode="single"
+    (onRowSelect)="onRowSelect($event)"
+    (onRowUnselect)="onRowUnselect($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="fileId">File ID
+          <p-sortIcon field="fileId"></p-sortIcon>
+        </th>
+        <th pSortableColumn="fileName">File Name
+          <p-sortIcon field="fileName"></p-sortIcon>
+        </th>
+        <th pSortableColumn="fileType">File Type
+          <p-sortIcon field="fileType"></p-sortIcon>
+        </th>
+        <th pSortableColumn="idContrato">Contract ID
+          <p-sortIcon field="idContrato"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-file>
+      <tr [pSelectableRow]="file">
+        <td>{{ file.id }}</td>
+        <td>{{ file.fileName }}</td>
+        <td>{{ file.type }}</td>
+        <td>{{ file.contrato.id }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
