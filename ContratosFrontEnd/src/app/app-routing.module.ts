@@ -60,50 +60,52 @@ import {
 } from "./main/components/contratosAll/inventario/amounts/inventory-amounts.component";
 import {TotalTabComponent} from "./main/components/contratosAll/inventario/total/total-tab.component";
 import {GestorArchivosComponent} from "./main/components/contratosAll/gestor-archivos/gestor-archivos.component";
+import {authGuard} from "./login/services/auth.guard";
+
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'register', component: CreateUserComponent},
-  {path: 'contact-page', component: ContactPageComponent},
-  {path: 'about-page', component: AboutUsComponent},
-  {path: 'home', component: ContratosComponent},
-  {path: 'contratos', component: ContratosComponent},
-  {path: 'create-contract', component: CreateContratoComponent},
+  { path: '', component: LoginComponent },
+  { path: 'register', component: CreateUserComponent },
+  { path: 'contact-page', component: ContactPageComponent },
+  { path: 'about-page', component: AboutUsComponent },
+  { path: 'home', component: ContratosComponent, canActivate: [authGuard] },
+  { path: 'contratos', component: ContratosComponent, canActivate: [authGuard] },
+  { path: 'create-contract', component: CreateContratoComponent, canActivate: [authGuard] },
   {
-    path: 'administration', component: AdministracionComponent, children: [
-      {path: 'create-authority', component: CrearAutoridadComponent},
-      {path: 'edit-authority/:id', component: EntidadAutoridadComponent},
-      {path: 'create-contractor', component: CrearContratanteComponent},
-      {path: 'edit-contractor/:id', component: EntidadContratanteComponent},
-      {path: 'list-contractors', component: EntidadesContratantesComponent},
-      {path: 'list-authorities', component: EntidadesAutoridadComponent},
-      {path: 'create-user', component: AddUserComponent},
-      {path: 'edit-user/:id', component: EditUserComponent},
-      {path: 'list-users', component: ListUsersComponent},
-      {path: 'create-role', component: CreateRolesRightsComponent},
-      {path: 'list-roles', component: ListRolesRightsComponent},
-      {path: 'edit-role/:id', component: EditRolesRightsComponent},
-      {path: 'create-administrator', component: CreateAdministratorComponent},
-      {path: 'edit-administrador/:id', component: EditAdministratorComponent},
-      {path: 'list-administrators', component: ListAdministratorsComponent},
+    path: 'administration', component: AdministracionComponent, canActivate: [authGuard], children: [
+      { path: 'create-authority', component: CrearAutoridadComponent, canActivate: [authGuard] },
+      { path: 'edit-authority/:id', component: EntidadAutoridadComponent, canActivate: [authGuard] },
+      { path: 'create-contractor', component: CrearContratanteComponent, canActivate: [authGuard] },
+      { path: 'edit-contractor/:id', component: EntidadContratanteComponent, canActivate: [authGuard] },
+      { path: 'list-contractors', component: EntidadesContratantesComponent, canActivate: [authGuard] },
+      { path: 'list-authorities', component: EntidadesAutoridadComponent, canActivate: [authGuard] },
+      { path: 'create-user', component: AddUserComponent, canActivate: [authGuard] },
+      { path: 'edit-user/:id', component: EditUserComponent, canActivate: [authGuard] },
+      { path: 'list-users', component: ListUsersComponent, canActivate: [authGuard] },
+      { path: 'create-role', component: CreateRolesRightsComponent, canActivate: [authGuard] },
+      { path: 'list-roles', component: ListRolesRightsComponent, canActivate: [authGuard] },
+      { path: 'edit-role/:id', component: EditRolesRightsComponent, canActivate: [authGuard] },
+      { path: 'create-administrator', component: CreateAdministratorComponent, canActivate: [authGuard] },
+      { path: 'edit-administrator/:id', component: EditAdministratorComponent, canActivate: [authGuard] },
+      { path: 'list-administrators', component: ListAdministratorsComponent, canActivate: [authGuard] },
     ]
   },
   {
-    path: 'gestiones/:id', component: GestionesComponent,
+    path: 'gestiones/:id', component: GestionesComponent, canActivate: [authGuard],
     children: [
-      {path: '', redirectTo: 'editar-contrato', pathMatch: 'full'},
-      {path: 'editar-contrato', component: ContratoComponent},
+      { path: '', redirectTo: 'editar-contrato', pathMatch: 'full' },
+      { path: 'editar-contrato', component: ContratoComponent, canActivate: [authGuard] },
       {
-        path: 'inventario', component: ContratoInventoryComponent,
+        path: 'inventario', component: ContratoInventoryComponent, canActivate: [authGuard],
         children: [
-          {path: 'detalles', component: InventoryAmounts},
-          {path: 'total', component: TotalTabComponent}
+          { path: 'detalles', component: InventoryAmounts, canActivate: [authGuard] },
+          { path: 'total', component: TotalTabComponent, canActivate: [authGuard] }
         ]
       },
-      {path: 'gestor-archivos', component: GestorArchivosComponent}
+      { path: 'gestor-archivos', component: GestorArchivosComponent, canActivate: [authGuard] }
     ]
   },
-  {path: '**', redirectTo: ''}
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -85,5 +85,15 @@ export class GestorArchivosComponent implements OnInit {
 
   }
 
+  downloadFile(): void {
+    this.fileManager.downloadFile(this.file).subscribe(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'downloadedFile';
+      a.click();
+      window.URL.revokeObjectURL(url);
+    });
+  }
 }
 

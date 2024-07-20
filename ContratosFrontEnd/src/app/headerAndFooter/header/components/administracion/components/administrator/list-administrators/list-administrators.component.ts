@@ -55,6 +55,7 @@ export class ListAdministratorsComponent implements OnInit {
   }
 
   editAdministrator() {
+
     this.router.navigate(['/administration/edit-administrador', this.id]);
   }
 

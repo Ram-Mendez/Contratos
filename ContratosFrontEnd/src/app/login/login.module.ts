@@ -8,6 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CreateUserComponent } from './CreateUser/create-user.component';
 import {RippleModule} from "primeng/ripple";
 import {ToastModule} from "primeng/toast";
+import {MessageService} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -24,5 +25,6 @@ import {ToastModule} from "primeng/toast";
     ToastModule,
     RippleModule
   ],
+  providers: [MessageService]
 })
 export class LoginModule { }

@@ -29,7 +29,8 @@ export class InventoryAmounts implements OnInit, OnDestroy {
       this.inventoryForm.patchValue(
         node
       );
-    })
+    });
+
     this.route.parent?.parent?.params.pipe(
       takeUntil(this.routeUnsubscribe)
     ).subscribe(params => {

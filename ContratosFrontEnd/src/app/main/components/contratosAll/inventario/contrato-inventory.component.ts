@@ -1,8 +1,8 @@
-import {Component, EventEmitter, OnDestroy, OnInit} from '@angular/core';
-import {ConfirmationService, Message, MessageService, TreeNode, TreeTableNode} from 'primeng/api';
-import {NodeService} from '../service/node.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Observable, Subscription} from 'rxjs';
+import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { ConfirmationService, MessageService, TreeNode } from 'primeng/api';
+import { NodeService } from '../service/node.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contrato-inventory',
@@ -16,11 +16,11 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
   description = '';
   unsubscribe: Subscription | undefined;
   id: any;
+  hasNodes: boolean = false;
 
   constructor(public nodeService: NodeService, private route: ActivatedRoute, private router: Router,
               private messageService: MessageService, private confirmationService: ConfirmationService) {
   }
-
 
   ngOnInit() {
     this.unsubscribe = this.route.parent?.params.subscribe(params => {
@@ -29,11 +29,9 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     });
   }
 
-
   onNodeSelect(event: any) {
     this.nodeService.selectedNode$.next(this.selectedNode.data);
-    console.log("nodeOverall", this.selectedNode.data)
-
+    console.log("nodeOverall", this.selectedNode.data);
   }
 
   mostrarDialogo() {
@@ -47,7 +45,7 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
       description: this.description
     })
       .subscribe(() => {
-        this.messageService.add({severity: 'success', summary: 'Creating Node', icon: 'pi pi-spin pi-spinner'});
+        this.messageService.add({ severity: 'success', summary: 'Creating Node', icon: 'pi pi-spin pi-spinner' });
         this.getNodes();
       });
   }
@@ -56,6 +54,7 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     this.nodeService.getNodes(this.id, parentId)
       .subscribe((nodes: any) => {
         console.log('Nodes:', nodes);
+        this.hasNodes = nodes.length > 0;
         if (!parentId) {
           this.files = this.mapNodes(nodes);
         } else {
@@ -64,12 +63,6 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
         }
         this.resetNodeSelection();
       });
-  }
-
-  editNode() {
-    if (this.selectedNode) {
-      this.router.navigate(['/gestiones', this.id, 'inventario', 'detalles']);
-    }
   }
 
   addChildrenToNode(parentId: number, children: any[], nodes: TreeNode[]): void {
@@ -101,7 +94,6 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     });
   }
 
-
   resetNodeSelection() {
     this.selectedNode = {
       data: {
@@ -122,12 +114,12 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
           this.nodeService.deleteNode(this.selectedNode.data.id)
             .subscribe(() => {
               this.messageService.add(
-                {severity: 'success', summary: 'Deleting Node', icon: 'pi pi-spin pi-spinner'}
+                { severity: 'success', summary: 'Deleting Node', icon: 'pi pi-spin pi-spinner' }
               );
 
               this.nodeService.getNodes(this.id).subscribe((nodes: any) => {
                 this.files = this.mapNodes(nodes);
-
+                this.hasNodes = this.files.length > 0;
                 if (this.files.length === 0) {
                   this.router.navigate(['/gestiones', this.id, 'inventario']);
                 }
@@ -144,4 +136,3 @@ export class ContratoInventoryComponent implements OnInit, OnDestroy {
     }
   }
 }
-
