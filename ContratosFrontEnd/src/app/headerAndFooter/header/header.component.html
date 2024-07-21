@@ -1,4 +1,4 @@
-<p-menubar [model]="items">
+<p-menubar *ngIf="loginService.isUserLoggedIn()" [model]="items">
   <ng-template pTemplate="start">
     <img src="./assets/logo.png" alt="Logo" class="logo" style="height: 50px;">
   </ng-template>
